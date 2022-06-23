@@ -110,7 +110,7 @@
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
-				<li><a href="#" class="nav-link px-2 text-light">AGENTE TÈCNICO</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">ADMINISTRADOR</a></li>
 				
 			</ul>
 
@@ -218,44 +218,175 @@
 	</div>
 		<!--Fin menu slider-->
 		<!--Comienzo contenido de la pagina-->
-		<div class="contenido">
-			
-			
-			
-				
-			<div>
-				<h3>Productividad <h3/> 
+		<!--Comienzo contenido de la pagina-->
+	<div class="contenido">
+		<div
+			class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+			<h1 class="col-md-6 h2">¡BIENVENIDO!</h1>
+			<div class="btn-toolbar mb-2 mb-md-0">
+                    
+				<div class="btn-group mr-2">
+				     <a href="#" class="btn btn-dark" th:href="@{/listarmasivos}">Anuncio</a>
+					
+				</div>
+				<div class="btn-group mr-2">
+					<button type="button" class="btn btn-dark dropdown-toggle">Notificaciones</button>
+				</div>
+				<button type="button" class="btn btn-dark dropdown-toggle">
+					PENDIENTES
+				</button>
+			</div>
+		</div>
+		<!--  -->
+		<div class="content">
+			<div class="row">
+
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="card card-stats">
+						<div class="card-body ">
+							<div class="row">
+								<div class="col-5 col-md-4">
+									<div class="icon-big text-center icon-warning">
+										<a href="users.html"><i class="fas fa-hand-holding-usd"></i></a>
+
+									</div>
+								</div>
+								<div class="col-7 col-md-8">
+									<div class="numbers">
+										<p class="card-category">Ingresos Mensuales</p>
+										<p class="card-title">$1.5 M
+										<p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card-footer ">
+							<hr>
+							<div class="stats">
+								<i class="fas fa-search-dollar"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="card card-stats">
+						<div class="card-body ">
+							<div class="row">
+								<div class="col-5 col-md-4">
+									<div class="icon-big text-center icon-warning">
+										<a href="doctors.html"><i class="fab fa-product-hunt"></i> </a>
+									</div>
+								</div>
+								<div class="col-7 col-md-8">
+									<div class="numbers">
+										<p class="card-category">Productos <br>Activos</p>
+										<p class="card-title">25
+										<p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card-footer ">
+							<hr>
+							<div class="stats">
+								<i class="fas fa-notes-medical"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="card card-stats">
+						<div class="card-body ">
+							<div class="row">
+								<div class="col-5 col-md-4">
+									<div class="icon-big text-center icon-warning">
+										<a href="patients.html"><i class="fas fa-users"></i></a>
+									</div>
+								</div>
+								<div class="col-7 col-md-8">
+									<div class="numbers">
+										<p class="card-category">Numero de Usuarios</p>
+										<p class="card-title">250
+										<p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card-footer ">
+							<hr>
+							<div class="stats">
+								<i class="fas fa-user-plus"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="card card-stats">
+						<div class="card-body ">
+							<div class="row">
+								<div class="col-5 col-md-4">
+									<div class="icon-big text-center icon-warning">
+										<a href="inventory.html"><i class="fas fa-user-plus"></i></a>
+									</div>
+								</div>
+								<div class="col-7 col-md-8">
+									<div class="numbers">
+										<p class="card-category">Numero de usuarios Nuevos</p>
+										<p class="card-title">60
+										<p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card-footer ">
+							<hr>
+							<div class="stats">
+								<i class="fa fa-refresh"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<!-- POLITICA AMBIENTAL  -->
+
+
+				<div class="row">
+					<div class="col-md-5 ml-2">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Politica ambiental</h5>
+								<p class="card-text">En Quimaslim nos comprometemos a promover un buen desempe o
+									ambiental y la mejora continua al desarrollar nuestras actividades buscando siempre
+									la prevención de la contaminación y el control de los impactos ambientales
+									generados por nuestros procesos, de igual manera nos comprometemos a dar
+									cumplimiento de los requisitos legales ambientales y procurar la generación de
+									nuevos productos que sean ambientalmente amigables, eco eficientes y de baja
+									toxicidad, preponderando por el cuidado del medio ambiente a traves de la
+									implementacion de tecnologias limpias con todos nuestros clientes.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-5 ml-2">
+						<div class="card">
+							<div class="card-header">
+
+							</div>
+							<div class="card-body">
+								<h5 class="card-title">Como manejamos la politica ambiental?</h5>
+								<div class="grafico" id="grafico"></div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+
 			</div>
 			
-			<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">TUS DATOS</h5>
-        <p class="card-text">Nombre: Antonio <br> Apellido: Lopez <br> Celular: 3214905454
-        <br> Correo: AL01@mrtwL.com <br> Rol: Agente Técnico</p>
-       
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">PUNTAJE TOTAL</h5>
-        Puntaje:
-        <span th:text="${Puntaje}"></span>
-        <p class="card-text">
-        <div class="col-auto">
-        <form class="row g-3">
-        <tr><br>
-						  
-</tr>
-        </p>
-        
-      </div>
-    </div>
-  </div>
-</div>
 			
 			<!--Comienzo contenido del footer-->
 			<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
