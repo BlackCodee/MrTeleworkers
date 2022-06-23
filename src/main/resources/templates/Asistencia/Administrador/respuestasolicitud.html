@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <link rel="stylesheet" href="/css/morris.css">
+  <script src="/js/morris.min.js"></script>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/estilosadminAsistenciaT.css">
+  
+  <title>
+    INCIDENTES
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="calendario/jsCalendar.css">
+  <link rel="stylesheet" type="text/css" href="calendario/jsCalendar.clean.css">
+  <script type="text/javascript" src="calendario/jsCalendar.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <!-- CSS Files -->
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- <link href="/assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" /> -->
+  <link rel="stylesheet" href="/css/estilosSlider.css">
+  
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="/assets/demo/demo.css" rel="stylesheet" />
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link rel="stylesheet" href="calendario/estilosCalendar.css">
+   <link rel="stylesheet" href="/css/style_calendar_dash.css">
+   <link rel="stylesheet" href="/css/estiloscartas.css">
+</head>
+
+<body class="">
+        <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+			<a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">MR.TW</a>
+			<button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="buscar">
+				<i class="buscar fas fa-search"></i>
+			</div>
+			<input class="form-control form-control-dark w-50" type="text" placeholder="Buscar" aria-label="Search">
+			<ul class="navbar-nav px-3">
+				<li class="nav-item text-nowrap">
+				<form class="d-flex" th:action="@{/logout}" method="post">
+              		<input class="btn btn-outline-light me-2" type="submit" value="Salir" />
+	           	</form>
+				</li>
+			</ul>
+		</nav>
+		<!--inicio menu slider-->
+		<div class="sidebar">
+			<h2>MRTW</h2>
+			<ul class="list">
+				<li class="list__item">
+					<div class="list__button">
+						<img src="/assets/dashboard.svg" class="list__img">
+						<a th:href="@{/dashboard-Admin}" class="nav__link">Inicio</a>
+					</div>
+				</li>
+
+				<li class="list__item list__item--click">
+					<div class="list__button list__button--click">
+						<img src="/assets/docs.svg" class="list__img">
+						<a href="#" class="nav__link">SEGUIMIENTO EMPLEADO</a>
+						<img src="/assets/arrow.svg" class="list__arrow">
+					</div>
+
+					<ul class="list__show">
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/newUsuario}">Crear Usuarios</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarUsuario}">Ver Usuarios</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarCapacitaciones}">Gestionar Capacitacion</a>
+						</li>
+					</ul>
+
+				</li>
+
+				<li class="list__item list__item--click">
+					<div class="list__button list__button--click">
+						<img src="/assets/stats.svg" class="list__img">
+						<a href="#" class="nav__link">INVENTARIOS</a>
+						<img src="/assets/arrow.svg" class="list__arrow">
+					</div>
+					<ul class="list__show">
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarInsumos}">Insumos</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarComputador}">Computadores</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarProveedor}">Proveedores</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarStock}">Stock</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="list__item list__item--click">
+					<div class="list__button list__button--click">
+						<img src="/assets/message.svg" class="list__img">
+						<a href="#" class="nav__link">ASISTENCIA TECNICA</a>
+						<img src="/assets/arrow.svg" class="list__arrow">
+					</div>
+
+					<ul class="list__show">
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarSolicitudes}">Gestion de Solicitudes</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/Informes-Admin}">Informe</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarAgentes}">agentes Tecnicos</a>
+						</li>
+					</ul>
+				</li>
+
+
+				<li class="list__item">
+					<div class="list__button">
+						<img src="/assets/bell.svg" class="list__img">
+						<a href="#" class="nav__link">Contacto</a>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+		<!--Fin menu slider-->
+		<!--Comienzo contenido de la pagina-->
+		<div class="contenido">
+			<img src="assets/message.svg" alt="" class="menu-bar">
+  <div class="main-panel">
+
+  <p>
+    <a class="btn btn-outline-success" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="fas fa-phone"></i></a>
+    <button class="btn btn-outline-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2"><i class="fas fa-bell"></i></button>
+    <button class="btn btn-outline-success" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2"><i class="fas fa-envelope"></i></button>
+  </p>
+  <div class="row">
+    <div class="col">
+      <div class="collapse multi-collapse" id="multiCollapseExample1">
+        <div class="card card-body">
+          Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="collapse multi-collapse" id="multiCollapseExample2">
+        <div class="card card-body">
+          Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+        </div>
+      </div>
+    </div>
+  </div>
+<!--  -->
+  <div class="row">
+  <div class="col-3">
+    <form>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Solicitante</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="empleado #">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Agente Asignado</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>Agente 1</option>
+          <option>Agente 2</option>
+          <option>Agente 3</option>
+          <option>Agente 4</option>
+          <option>Agente 5</option>
+        </select>
+      </div>
+      
+      
+    </form>
+  </div>
+  <div class="col-9">
+    <div class="tab-content" id="v-pills-tabContent">
+      
+      <div class="card text-left">
+        <div class="card-header">
+          Incidente en la red
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><i class="fas fa-user-cog">Empleado de recursos humanos:</i></h5>
+          <p class="card-text">Hola, Juan Alberto: <br> <br>
+Este es su primer Incidente. Â¡Ya ve! Las solicitudes de los empleados que se envÃ­en a los 
+canales admitidos (correo electrÃ³nico, chat, buzÃ³n de voz, formulario web y tweet) se 
+convertirÃ¡n en solicitudes de Soporte Tecnico, igual que este. Para responder a este incidente, escriba
+un mensaje y haga clic en Enviar. Para ver cÃ³mo un correo electrÃ³nico se convierte en un
+incidente. <br> Problema: SeÃ±al intermitenete, Que puedo hacer ?</p>
+         
+        </div>
+        <div class="card-footer text-muted">
+          Hace 5 minutos
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1"> Solictante: Efren Jose-empleado</label>
+          <textarea class="form-control" placeholder="Enviar mensaje...." id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <br>
+        <button type="button" class="col-4 btn btn-dark">Enviar</button>
+      </div>
+      
+      
+  </div>
+  
+</div>
+
+</div>
+
+
+</div>
+  <footer class="footer footer-black  footer-white ">
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="footer-nav">
+          <ul>
+            <li>
+              <a href="#" target="_blank">MR TW</a>
+            </li>
+            <li>
+              <a href="#" target="_blank">CONTACTO</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="credits ml-auto">
+          <span class="copyright">
+            Â©
+            <script>
+              document.write(new Date().getFullYear())
+            </script>, GAES 4 (SENA) <i class="fab fa-facebook-square">&nbsp;&nbsp;</i><i class="fab fa-twitter-square">&nbsp;&nbsp;</i><i class="fab fa-google-plus"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+  <!--   Enlaces   -->
+  <script src="/js/sliderjs.js"></script>
+  <script src="/js/validaformAsistenciaT"></script>
+  <script src="/js/morris.js"></script>
+  <script src="/assets/js/core/jquery.min.js"></script>
+  <script src="/assets/js/core/popper.min.js"></script>
+  <script src="/assets/js/core/bootstrap.min.js"></script>
+  <script src="/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="/assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="/assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="/assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+  <script src="/assets/demo/demo.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in /assets/assets-for-demo/js/demo.js
+      demo.initChartsPages();
+    });
+  </script>
+</body>
+
+</html>

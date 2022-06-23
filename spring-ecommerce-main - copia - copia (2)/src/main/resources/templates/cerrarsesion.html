@@ -1,0 +1,27 @@
+<%-- 
+    Document   : cerrarsesion
+    Created on : 30/11/2021, 03:13:02 PM
+    Author     : Usuario
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <%
+            //TRAER LA SESION
+            HttpSession sesionOK = request.getSession();
+
+            //ALIMINAMOS LAS VARIABLES
+            request.getSession().removeAttribute("usuario");
+            sesionOK.invalidate();
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+
+        %>
+
+    </body>
+</html>

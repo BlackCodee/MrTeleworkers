@@ -1,0 +1,10 @@
+#error-username-required,
+#error-DNI-required,
+#error-date-required,
+#error-tel-required,
+#error-email-required,
+#error-horario-required,
+#error-rol-required{
+	color: red;
+	display: none;
+}

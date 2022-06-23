@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container mt-4">
+	<a th:href="@{/newActividad}" class="btn btn-primary">Nuevo</a> <br><br>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id_Actividad</th>
+					<th>Nombre_Actividad</th>
+					<th>Fecha_Modificacion</th>
+					<th>Fecha_Publicacion</th>
+					<th>Fecha_Entrega</th>
+					<th>Hora_Entrega</th>
+					<th>Descripcion</th>
+					<th>entregable</th>
+					<th>estado</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="actividadLaboral:${actividadLaboral}">
+					<td th:text="${actividadLaboral.idActividad}"></td>
+					<td th:text="${actividadLaboral.Nombre_Actividad}"></td>
+					<td th:text="${actividadLaboral.fechaModificacion}"></td>
+					<td th:text="${actividadLaboral.fechaPublicacion}"></td>
+					<td th:text="${actividadLaboral.fechaEntrega}"></td>
+					<td th:text="${actividadLaboral.horaEntrega}"></td>
+					<td th:text="${actividadLaboral.descripcion}"></td>
+					<td th:text="${actividadLaboral.entregable}"></td>
+					<td th:text="${actividadLaboral.estado}"></td>
+					<td>
+						<a th:href="@{/editar/}+${actividadLaboral.idActividad}" class="btn btn-warning">Editar</a> 
+						<a th:onclick="eliminar([[${actividadLaboral.idActividad}]])" class="btn btn-danger">Eliminar</a>
+					</td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="funciones.js"></script>
+
+</body>
+</html>

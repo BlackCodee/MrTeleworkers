@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    
+    overflow:hidden;
+}
+
+body{
+    background: #EAEBEF;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar{
+    position: absolute;
+    width: 250px;
+    height: 100%;
+    background: #333;
+    color: #fff;
+    
+}
+
+.sidebar h2{
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    background: #2a2a2a;
+}
+
+.nav__link{
+    color: #303440;
+    display: block;
+    padding: 15px 0;
+    text-decoration: none;
+}
+
+.nav__link--inside{
+    display: block;
+    border-radius: 6px ;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.nav__link--inside:hover{
+    background: #F6F8FA;
+}
+
+.list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   /*  border-radius: 0 16px 16px 0;*/
+    background: #fff;
+}
+
+.list__item{
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.list__item--click{
+    cursor: pointer;
+}
+
+.list__button{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.arrow .list__arrow{
+    transform: rotate(90deg);
+}
+
+.list__arrow{
+    margin-left: auto;
+    transition: transform .3s;
+}
+
+.list__show{
+    width: 80%;
+    margin-left: auto;
+    border-left: 2px solid #303440;
+    list-style: none;
+    transition: height .4s;
+    height: 0;
+}
+.contenido{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #eee;
+    padding: 30px;
+    
+    overflow: scroll;
+}
+
+.menu-bar{
+    cursor: pointer;
+}
+.abrir{
+    transform: translateX(250px);
+    transition: transform .3s;
+}

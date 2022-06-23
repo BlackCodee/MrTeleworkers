@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>Incio</title>
+		<link rel="stylesheet" href="/css/estilos.css">
+		<link rel="stylesheet" href="/css/styles.css">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/all.css">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+	</head>
+<body>
+	<div class="contenedor">
+		<!-- Barra de Navegacion -->		
+
+		<nav>
+			<div class="logo"><img src="/img/logo-mrtw.png" alt=""></div>
+			<div class="borde navegacion">
+				<ul>
+					<li><a href="#">INICIO</a></li>
+					<li><a href="#">PORTAFOLIO</a></li>
+					<li><a href="#">QUIENES SOMOS</a></li>
+					<li><a href="#">CONTACTENOS</a></li>
+					<li><a th:href="@{/login}" >INGRESAR</a></li>
+				</ul>
+			</div>
+		</nav>
+
+	<header class="borde">
+		<div class="banner">
+			<img src="/img/bienestar-capacitacion.jpg" alt="" class="banner__img">
+			<div class="contenedor">
+				<h2 class="banner__titulo">La oportunidad del teletrabajo a tu alcance</h2>
+				<p class="banner__txt">un software amigable, practico y efectivo</p>
+			</div>
+		</div>
+	</header>
+	<main class="main">
+		<div class="container">
+			<div class="row mt-5">
+				<section class="info">
+					<div class="col-4 col-md-4">
+						<div class="card" style="height: 40rem; background-color: #007991;">
+							<img src="/img/nombre-producto.jpeg" class="card-img-top img-fluid" alt="">
+							<div class="card-body text-light">
+								<center><h3 class="card-tittle">Nombre del producto</h3></center>
+								<p class="card-text">
+								Vishnuchrome 33 <br>
+								Acido Armico al 85% <br>
+								Sulfuro de Sodio <br>
+								Bicarbonato de Sodio <br>
+								Formiato de Sodio <br>
+								Soda Caustica <br>
+								ÃƒÂ�cido Oxilico <br>
+								Bisulfito de Sodio <br>
+								Cloruro de Amonio <br>
+								Sulfato de Aluminio tipo A <br>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-4 col-md-4">
+						<div class="card" style="height: 40rem; background-color: #007991;">
+							<img src="/img/descripcion-producto.jpeg" class="card-img-top img-fluid" alt="">
+							<div class="card-body text-light">
+								<center><h3 class="card-tittle">DescripciÃ³n de producto</h3></center>
+								<p class="card-text">
+								Sulfato bÃ¡sico de cromo al 33% de basicidad <br>
+								Sulfuro de Sodio <br>
+								Bicarbonato de Sodio <br>
+								Formiato de Sodio <br>
+								Soda Caustica <br>
+								ÃƒÂ�cido Oxilico <br>
+								Bisulfito de Sodio <br>
+								Cloruro de Amonio <br>
+								Sulfato de Aluminio tipo A <br>
+								CURTIDO <br>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-4 col-md-4">
+						<div class="card" style="height: 40rem; background-color: #007991;">
+							<img src="/img/marca-producto.jpeg" class="card-img-top img-fluid" alt="">
+							<div class="card-body text-light">
+								<center><h3 class="card-tittle">Productos claves</h3></center>
+								<p class="card-text">
+								Aeronil Beige ES <br>
+								Aeronil Brown KB <br>
+								Aeronil Brown Chocolate <br>
+								Aeronil Brown EGB <br>
+								Aeronil Brown EGG <br>
+								Aeronil Brown NR <br>
+								Aeronil Dark Blue N <br>
+								Aeronil Scarlet R <br>
+								Aeronil Turquoise Blue <br>
+								Milling Yellow R <br>
+								Aeronil negro 180 <br>
+								Eurosintetic EBFV <br>
+								Eurosintetic HLX <br>
+								Eurosintetic LWFG <br>
+								Eurosintetic LWKM <br>
+								</p>
+							</div>
+						</div>
+					</div>	
+				</section>
+
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="section__titulo">Quienes Somos</h2>
+					<br>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6 col-md-6">
+					<div class="card bg-secondary" style="height: 45rem;">
+							<img src="/img/empresa.jpeg" alt="" class="modulos__img">
+							<div class="modulos__descripcion">
+								<h3 class="modulos__titulo">Empresa</h3>
+								<p class="modulos__txt">Empresa Colombiana con mÃ¡s de 30 aÃ±os en el mercado dedicada a la producciÃ³n, importaciÃ³n, comercializaciÃ³n y distribuciÃ³n de materias primas de excelente calidad e indispensablesÂ para las industrias textil, marroquinera y de alimentos. <br><br>Actualmente nuestros procesos de desarrollo, producciÃ³n, comercializaciÃ³n y distribuciÃ³n de materias primas para uso industrial, resina alquÃƒÂ­dica, emulsiones, pinturas para industri de cueros y textil, se encuentran certificados bajo las Normas TÃ©cnicas Colombianas ISO 9001:2015 Sistema de GestiÃ³n de Calidad e ISO 14001:2015 Sistema de GestiÃ³n Ambiental.</p>
+							</div>
+					</div>
+				</div>
+				<div class="col-6 col-md-6">
+					<div class="card bg-secondary" style="height: 45rem;">
+						<img src="/img/vision.jpg" alt="" class="modulos__img">
+						<div class="modulos__descripcion">
+							<h3 class="modulos__titulo">MISION</h3>
+							<p class="modulos__txt">Es una empresa importadora y comercializadora de materias primas de alta calidad para la industria, comprometida con el medio ambiente, la responsabilidad</p>
+							<h3 class="modulos__titulo">VISION</h3>
+							<p class="modulos__txt">En 2025 estaremos posicionados como una empresa productora y comercializadora de productos quÃƒÂ­micos de ÃƒÂºltima tecnologÃƒÂ­a, reconocida en el mercado nacional por el cuidado y protecciÃƒÂ³n del medio ambiente, el apoyo a la industria colombiana y al desarrollo de tecnologÃƒÂ­as innovadoras en procesos.</p>
+						</div>
+					</div>		
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-12">
+					<center><h2 class="section__titulo bg-dark text-">CONTACTENOS</h2></center>
+				</div>
+				<br>
+			</div>
+			<div class="row">
+				<div class="col-6 col-md-6">
+					<div class="row">
+						<div class="card">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15908.656991305394!2d-74.1349564!3d4.5644776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdf46a841c969ef6f!2sQuimaslim%20S.A.S.!5e0!3m2!1ses-419!2sco!4v1624270926999!5m2!1ses-419!2sco" width="568" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col bg-secondary text-light">
+							<p>Direccion Carrera 18 C No. 58, Cl. 57 Sur</p>
+							<p>TelÃƒÂ©fono: 5461600</p>
+							<p>www.sena.edu.co</p>
+							<p>BogotÃƒÂ¡ D.C.</p>
+						</div>
+					</div>
+					
+				</div>
+				<div class="col-6 col-md-6">
+					<div class="card">
+						<div class="card-header bg-dark text-light">
+							<p class="text-center"><strong>CONTACTA CON NOSOTROS</strong></p>
+						</div>
+						<div class="card-body bg-secondary text-light">
+							 <form class="mt-6" action="https://formsubmit.co/csanchex94@gmail.com" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="" placeholder="Nombre" name="Nombre">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="" placeholder="Correo" name="Correo electronico">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="" placeholder="Celular" name="Telefono">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="" placeholder="Mensaje" name="Mensaje" rows="5"></textarea>
+                        </div>
+                       
+                        <button type="submit" class="btn btn-danger">Enviar</button>
+                         <input type="hidden" name="_next" value="http://localhost:8085">
+                          <input type="hidden" name="_template" value="table">
+                    </form>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+	</div>
+			
+
+	</main>
+	<footer class="footer">
+		<div class="social">
+		<!--a
+			<a href="#" class="icono" class="icon-facebook-square"> </a>
+			<a href="#" class="icono" class="icon-twitter"> </a>
+			<a href="#" class="icono" class="icon-whatsapp"> </a>
+		-->		
+		</div>
+		<p class="copy">&copy; Mr Teleworkers - derechos reservados</p>
+	</footer>
+	
+    <script src="/js/validacionindex.js"></script>
+	<script src="/js/jquery-3.5.1.slim.min.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

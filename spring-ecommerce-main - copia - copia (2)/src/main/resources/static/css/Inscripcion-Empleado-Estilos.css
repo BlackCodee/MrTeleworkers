@@ -1,0 +1,9 @@
+#error-username-required,
+#error-DI-required,
+#error-area-required,
+#error-date-required,
+#error-genero-required,
+#error-rol-required{
+	color: red;
+	display: none;
+}

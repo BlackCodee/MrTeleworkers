@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- Bootstrap core CSS-->
+
+<!-- Custom fonts for this template-->
+
+<!-- Custom styles for this template-->
+<link href="/css/sb-admin.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Mr Tw</title>
+<link rel="stylesheet" href="/css/estilo-login.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.all.min.js"></script>
+</head>
+<body>
+
+	<div class="login-box">
+		<img src="/img/logo-blanco.jpg" class="avatar" alt="Avatar Image">
+		<h1>Inicio de sesion</h1>
+		<form th:action="@{/login}" method="post" class="mt-4">
+			<div class="form-group">
+				Correo Electronico<input type="email" id="username" name="username" placeholder="Ingrese su email" 
+				class="form-control mb-4" requiered>
+			</div>
+			<div class="form-group">
+				Contraseña<input type="password" class="form-control mb-4"
+					id="password" name="password" placeholder="Ingrese su contraseña" required>
+			</div>
+			<div class="boton">
+				<button type="submit" class="btn btn-danger">Ingresar</button>
+			</div>
+		</form>
+		<h5 align="center"></h5>
+		<a href="">Olvidaste tu contraseña?</a>
+	</div>
+</body>
+</html>

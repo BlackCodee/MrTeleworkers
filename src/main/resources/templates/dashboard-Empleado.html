@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <link rel="stylesheet" href="/css/morris.css">
+  <script src="/js/morris.min.js"></script>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Dashboard Empleado</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     iconOs     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <!-- CSS Files -->
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- <link href="/assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" /> -->
+  <link rel="stylesheet" href="/css/estilosSlider.css">
+ 
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link rel="stylesheet" href="/css/estiloscartas.css">
+</head>
+<body>
+	<!--inicio header-->
+	<header class=" py-1 mb-0 bg-dark ">
+		<div class="container d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+			<button type="button">
+				<img src="assets/message.svg" alt="" class="menu-bar bi me-2 bg-light text-light">
+			</button>
+
+			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
+				<li><a href="#" class="nav-link px-2 text-light">Home</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">Features</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">About</a></li>
+			</ul>
+
+			<div class="col-md-1 text-center">
+				<a th:href="@{/cerrar}" class="btn btn-outline-light me-2">Salir</a>
+			</div>
+		</div>
+	</header>
+	<!--fin del header-->
+    <!--inicio menu slider-->
+    <div class="sidebar">
+        <h2>MRTW</h2>
+        <ul class="list">
+            <li class="list__item">
+                <div class="list__button">
+                    <img src="/assets/dashboard.svg" class="list__img">
+                    <a th:href="@{/dashboard-Empleado}" class="nav__link">Inicio</a>
+                </div>
+            </li>
+
+            <li class="list__item list__item--click">
+                <div class="list__button list__button--click">
+                    <img src="/assets/docs.svg" class="list__img">
+                    <a href="#" class="nav__link">SEGUIMIENTO EMPLEADO</a>
+                    <img src="/assets/arrow.svg" class="list__arrow">
+                </div>
+
+                <ul class="list__show">
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside" th:href="@{/listarActividadLaboralEmpleado}">Actividades Empleado</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside" th:href="@{/listarCapacitacionesEmpleado}">Capacitaciones</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside" th:href="@{/listarCalendario}">Eventos</a>
+                    </li>
+                </ul>
+
+            </li>
+
+            <li class="list__item list__item--click">
+                <div class="list__button list__button--click">
+                    <img src="/assets/stats.svg" class="list__img">
+                    <a href="#" class="nav__link">INVENTARIOS</a>
+                    <img src="/assets/arrow.svg" class="list__arrow">
+                </div>
+                <ul class="list__show">
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside" th:href="@{/listarInsumosEmpleado}">Insumos</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside" th:href="@{/solicitudComputador}">Requerimiento de Computadores</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list__item list__item--click">
+                <div class="list__button list__button--click">
+                    <img src="/assets/message.svg" class="list__img">
+                    <a href="#" class="nav__link">ASISTENCIA TECNICA</a>
+                    <img src="/assets/arrow.svg" class="list__arrow">
+                </div>
+
+                <ul class="list__show">
+                <li class="list__inside">
+                        <a class="nav_link nav_link--inside" th:href="@{/newSolicitud}">Necesitas ayuda?</a>
+                    </li>
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside" th:href="@{/listarUsuariosSoli}">Solicitudes realizadas</a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="list__item">
+                <div class="list__button">
+                    <img src="/assets/bell.svg" class="list__img">
+                    <a href="#" class="nav__link">Contacto</a>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+    <!--Fin menu slider-->
+    <!--Comienzo contenido de la pagina-->
+    <div class="contenido">
+           
+          <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              <h1 class="col-md-6 h2">¡BIENVENIDO!</h1>
+              <div class="btn-toolbar mb-2 mb-md-0">
+                
+                <div class="btn-group mr-2">
+                  <button type="button" class="btn btn-dark">Perfil</button>
+                </div>
+                <div class="btn-group mr-2">
+                  <button type="button" class="btn btn-dark dropdown-toggle">Notificaciones</button>
+                </div>
+                <button type="button" class="btn btn-dark dropdown-toggle">
+                  PENDIENTES
+                </button>
+              </div>
+            </div>
+               <!--  -->
+            <div class="content">
+                <div class="row">
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                  <div class="card-body ">
+                    <div class="row">
+                      <div class="col-5 col-md-4">
+                        <div class="icon-big text-center icon-warning">
+                          <a href="users.html"><i class="fas fa-hand-holding-usd"></i></a>
+                          
+                        </div>
+                      </div>
+                      <div class="col-7 col-md-8">
+                        <div class="numbers">
+                          <p class="card-category">Ingresos Mensuales</p>
+                          <p class="card-title">$1.5 M
+                            <p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer ">
+                    <hr>
+                    <div class="stats">
+                      <i class="fas fa-search-dollar"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                  <div class="card-body ">
+                    <div class="row">
+                      <div class="col-5 col-md-4">
+                        <div class="icon-big text-center icon-warning">
+                          <a href="doctors.jsp"><i class="fab fa-product-hunt"></i> </a>
+                        </div>
+                      </div>
+                      <div class="col-7 col-md-8">
+                        <div class="numbers">
+                          <p class="card-category">Productos <br>Activos</p>
+                          <p class="card-title">25
+                            <p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer ">
+                    <hr>
+                    <div class="stats">
+                      <i class="fas fa-notes-medical"></i> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                  <div class="card-body ">
+                    <div class="row">
+                      <div class="col-5 col-md-4">
+                        <div class="icon-big text-center icon-warning">
+                          <a href="patients.html"><i class="fas fa-users"></i></a>
+                        </div>
+                      </div>
+                      <div class="col-7 col-md-8">
+                        <div class="numbers">
+                          <p class="card-category">Numero de Usuarios</p>
+                          <p class="card-title">250
+                            <p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer ">
+                    <hr>
+                    <div class="stats">
+                      <i class="fas fa-user-plus"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+                <div class="card card-stats">
+                  <div class="card-body ">
+                    <div class="row">
+                      <div class="col-5 col-md-4">
+                        <div class="icon-big text-center icon-warning">
+                          <a href="inventory.html"><i class="fas fa-user-plus"></i></a>
+                        </div>
+                      </div>
+                      <div class="col-7 col-md-8">
+                        <div class="numbers">
+                          <p class="card-category">Numero de <br> usuarios Nuevos</p>
+                          <p class="card-title">60
+                            <p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer ">
+                    <hr>
+                    <div class="stats">
+                      <i class="fa fa-refresh"></i> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+           
+
+        <!-- POLITICA AMBIENTAL  -->
+
+        
+            <div class="row">
+             <div class="col-md-6 ml-2">
+               <div class="card">
+                 
+                 <div class="card-body">
+                   <h5 class="card-title">Política ambiental</h5>
+                   <p class="card-text">En Química Slim nos comprometemos a promover un buen desempeÃ±o ambiental y la mejora continua al desarrollar nuestras actividades buscando siempre la prevenciÃ³n de la contaminaciÃ³n y el control de los impactos ambientales generados por nuestros procesos, de igual manera nos comprometemos a dar cumplimiento de los requisitos legales ambientales y procurar la generaciÃ³n de nuevos productos que sean ambientalmente amigables, eco eficientes y de baja toxicidad, preponderando por el cuidado del medio ambiente a travÃ©s de la implementaciÃ³n de tecnologÃ­as limpias con todos nuestros clientes.</p>
+                  
+                 </div>
+               </div>
+             </div>
+     
+             <div class="col-md-5">
+               <div class="card">
+                 <div class="card-header">
+                   
+                 </div>
+                 <div class="card-body">
+                   <h5 class="card-title">Cómo manejamos la política ambiental?</h5>
+                   <div class="grafico" id="grafico"></div>
+                  
+                 </div>
+               </div>
+                 
+             </div>
+         </div>
+         
+         </div>
+			<!--Comienzo contenido del footer-->
+			<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+				<div class="col-md-4 d-flex align-items-center">
+					<ul>
+						<li>
+							<a href="#" target="_blank"
+								class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">MR TW</a>
+						</li>
+						<li>
+							<a href="#" target="_blank"
+								class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">CONTACTO</a>
+						</li>
+					</ul>
+				</div>
+				<div
+					class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+					<span class="copyright">
+						Â©
+						<script>
+							document.write(new Date().getFullYear())
+						</script>, GAES 4 (SENA) </i>
+					</span>
+				</div>
+				<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+					<li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-facebook-square" width="24"
+								height="24">&nbsp;&nbsp;</i></a></li>
+					<li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-twitter-square" width="24"
+								height="24">&nbsp;&nbsp;</i></a></li>
+					<li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-google-plus" width="24"
+								height="24">&nbsp;&nbsp;</i></a></li>
+				</ul>
+			</footer>
+			<!--fin contenido del footer-->
+         </div>
+
+    
+      <script src="/js/sliderjs.js"></script>
+      <script src="/js/morris.js"></script>
+      <script src="/assets/js/core/jquery.min.js"></script>
+      <script src="/assets/js/core/popper.min.js"></script>
+      <script src="/assets/js/core/bootstrap.min.js"></script>
+      <script src="/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+
+</body>
+</html>

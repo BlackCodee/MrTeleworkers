@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <link rel="stylesheet" href="/css/morris.css">
+  <script src="/js/morris.min.js"></script>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/estilosadminAsistenciaT.css">
+  
+  <title>
+    INFORMES
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="calendario/jsCalendar.css">
+  <link rel="stylesheet" type="text/css" href="calendario/jsCalendar.clean.css">
+  <script type="text/javascript" src="calendario/jsCalendar.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <!-- CSS Files -->
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- <link href="/assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" /> -->
+  <link rel="stylesheet" href="/css/estilosSlider.css">
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="/assets/demo/demo.css" rel="stylesheet" />
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link rel="stylesheet" href="calendario/estilosCalendar.css">
+   <link rel="stylesheet" href="/css/style_calendar_dash.css">
+   <link rel="stylesheet" href="/css/estiloscartas.css">
+</head>
+
+<body class="">
+       <!--inicio header-->
+	<header class=" py-1 mb-0 bg-dark ">
+		<div class="container d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+			<button type="button">
+				<img src="assets/message.svg" alt="" class="menu-bar bi me-2 bg-light text-light">
+			</button>
+
+			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
+				<li><a href="#" class="nav-link px-2 text-light">Home</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">Features</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">About</a></li>
+			</ul>
+
+			<div class="col-md-1 text-center">
+				<form class="d-flex" th:action="@{/logout}" method="post">
+              		<input class="btn btn-outline-light me-2" type="submit" value="Salir" />
+	           	</form>
+			</div>
+		</div>
+	</header>
+	<!--fin del header-->
+		<!--inicio menu slider-->
+		<div class="sidebar">
+			<h2>MRTW</h2>
+			<ul class="list">
+				<li class="list__item">
+					<div class="list__button">
+						<img src="/assets/dashboard.svg" class="list__img">
+						<a th:href="@{/dashboard-Admin}" class="nav__link">Inicio</a>
+					</div>
+				</li>
+
+				<li class="list__item list__item--click">
+					<div class="list__button list__button--click">
+						<img src="/assets/docs.svg" class="list__img">
+						<a href="#" class="nav__link">SEGUIMIENTO EMPLEADO</a>
+						<img src="/assets/arrow.svg" class="list__arrow">
+					</div>
+
+					<ul class="list__show">
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/newUsuario}">Crear Usuarios</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarUsuario}">Ver Usuarios</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarCapacitaciones}">Gestionar Capacitacion</a>
+						</li>
+					</ul>
+
+				</li>
+
+				<li class="list__item list__item--click">
+					<div class="list__button list__button--click">
+						<img src="/assets/stats.svg" class="list__img">
+						<a href="#" class="nav__link">INVENTARIOS</a>
+						<img src="/assets/arrow.svg" class="list__arrow">
+					</div>
+					<ul class="list__show">
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarInsumos}">Insumos</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarComputador}">Computadores</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarProveedor}">Proveedores</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarStock}">Stock</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="list__item list__item--click">
+					<div class="list__button list__button--click">
+						<img src="/assets/message.svg" class="list__img">
+						<a href="#" class="nav__link">ASISTENCIA TECNICA</a>
+						<img src="/assets/arrow.svg" class="list__arrow">
+					</div>
+
+					<ul class="list__show">
+					 <li class="list__inside">
+                        <a class="nav__link nav__link--inside" th:href="@{/Asistencia-Admin}">Inicio</a>
+                    </li>
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarSolicitudes}">Gestion de Solicitudes</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/Informes-Admin}">Informes</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarAgentes}">agentes Tecnicos</a>
+						</li>
+					</ul>
+				</li>
+
+
+				<li class="list__item">
+					<div class="list__button">
+						<img src="/assets/bell.svg" class="list__img">
+						<a href="#" class="nav__link">Contacto</a>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+		<!--Fin menu slider-->
+		<!--Comienzo contenido de la pagina-->
+		<div class="contenido">
+			
+			  <p>
+				<a class="btn btn-outline-success" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="fas fa-phone"></i></a>
+				<button class="btn btn-outline-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2"><i class="fas fa-bell"></i></button>
+				<button class="btn btn-outline-success" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2"><i class="fas fa-envelope"></i></button>
+			  </p>
+			<div class="row">
+				<div class="col">
+					<div class="collapse multi-collapse" id="multiCollapseExample1">
+						<div class="card card-body">
+							<div class="form-group">
+								<label for="exampleFormControlSelect1">Estado</label>
+								<select class="form-control" id="exampleFormControlSelect1">
+								  <option>Conectado</option>
+								  <option>Solo transferecia</option>
+								  <option>Ausente</option>
+								  <option>Desconectado</option>
+								</select>
+							</div>
+							<br>
+							Sin llamadas
+							<br><br>
+							<div class="form-group">
+								<label for="exampleFormControlSelect1">Numero de cel.</label>
+								<select class="form-control" id="exampleFormControlSelect1">
+								  <option>+(57)3195247896</option>
+								  <option></option>
+								  <option></option>
+								  <option></option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="collapse multi-collapse" id="multiCollapseExample2">
+						<div class="card card-body">
+							<div class="form-group">
+								<label for="exampleFormControlSelect1">Estado</label>
+								<select class="form-control" id="exampleFormControlSelect1">
+								  <option>Conectado</option>
+								  <option>Ausente</option>
+								  <option>Invisible</option>
+								</select>
+							</div>
+							<br>
+							No hay mensajes Nuevos
+							<br><br>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h1>Informes</h1>
+			<br>
+			<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Reporte de Solicitudes</h5>
+        <p class="card-text">Control de Solicitudes realizadas durante todo el año lectivo (2022). Con la finalidad de brindarnos cuál fue el mes más critico en el aspecto de problemas relacionados con fallas técnicas de los usuarios del sistema para brindar una solución.</p>
+        <a class="pdf btn btn-danger" th:href="@{/report/solicitudes/download?mes=abril&total=4&tipo=PDF}" target="blank">PDF</a>
+        <a class="excel btn btn-success" th:href="@{/report/solicitudes/download?mes=abril&total=4&tipo=EXCEL}" target="blank">EXCEL</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Productividad de los Agentes</h5>
+        <p class="card-text">Seguimiento a cada uno de los agentes técnicos con el propósito de revisar que tan eficientes pueden ser durante la solución de problemas asignados o selecionamos a solucionar.</p>
+       
+        <a class="pdf btn btn-danger" th:href="@{/report/agentes/download?numeroSolicitudes=1&total=1&tipo=PDF}" target="blank">PDF</a>
+        <a class="excel btn btn-success" th:href="@{/report/agentes/download?numeroSolicitudes=1&total=1&tipo=EXCEL}" target="blank">EXCEL</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+			<br><br>
+			
+		  
+			<!--Comienzo contenido del footer-->
+			<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+				<div class="col-md-4 d-flex align-items-center">
+					<ul>
+						<li>
+							<a href="#" target="_blank"
+								class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">MR TW</a>
+						</li>
+						<li>
+							<a href="#" target="_blank"
+								class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">CONTACTO</a>
+						</li>
+					</ul>
+				</div>
+				<div
+					class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+					<span class="copyright">
+						©
+						<script>
+							document.write(new Date().getFullYear())
+						</script>, GAES 4 (SENA) </i>
+					</span>
+				</div>
+				<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+					<li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-facebook-square" width="24"
+								height="24">&nbsp;&nbsp;</i></a></li>
+					<li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-twitter-square" width="24"
+								height="24">&nbsp;&nbsp;</i></a></li>
+					<li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-google-plus" width="24"
+								height="24">&nbsp;&nbsp;</i></a></li>
+				</ul>
+			</footer>
+			<!--fin contenido del footer-->
+		</div>
+  <!--   Enlaces   -->
+  <script src="/js/sliderjs.js"></script>
+  <script src="/js/validaformAsistenciaT"></script>
+  <script src="/js/morris.js"></script>
+  <script src="/assets/js/core/jquery.min.js"></script>
+  <script src="/assets/js/core/popper.min.js"></script>
+  <script src="/assets/js/core/bootstrap.min.js"></script>
+  <script src="/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="/assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="/assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="/assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+  <script src="/assets/demo/demo.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in /assets/assets-for-demo/js/demo.js
+      demo.initChartsPages();
+    });
+  </script>
+</body>
+
+</html>

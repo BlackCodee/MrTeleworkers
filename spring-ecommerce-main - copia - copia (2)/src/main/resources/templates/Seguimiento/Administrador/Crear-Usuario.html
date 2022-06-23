@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <link rel="stylesheet" href="/css/morris.css">
+        <script src="/js/morris.min.js"></script>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+        <title>
+            CREAR USUARIO
+        </title>
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+        <!--     Fonts and icons     -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <!--  Datatables  -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>  
+        <!--  extension responsive  -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+        <!-- CSS Files -->
+        <link rel="stylesheet" href="css/Crear_Usuarios-estilos.css">
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- <link href="/assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" /> -->
+        <link href="/assets/demo/demo.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="/css/estilosSlider.css">
+        
+        <link href="/assets/css/sweetalert.css" rel="stylesheet" type="text/css">
+        <script src="/assets/js/sweetalert.min.js" type="text/javascript"></script>
+        <script>
+            function mensaje3() {
+                swal({
+                    title: "¿Seguro, estas por crear un usuario?",
+                    timer: 5000,
+                    type: "success",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-success",
+                    confirmButtonText: "Si, Crear",
+                    closeOnConfirm: false
+                },
+                        function () {
+                        swal("Continuemos!", "¡Vamos a crear el nuevo usuario!", "success");
+                        });
+
+            }
+        </script>
+    </head>
+
+
+    <body onload="mensaje3()">
+	<!--inicio header-->
+	<header class=" py-1 mb-0 bg-dark ">
+		<div class="container d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+			<button type="button">
+				<img src="assets/message.svg" alt="" class="menu-bar bi me-2 bg-light text-light">
+			</button>
+
+			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
+				<li><a href="#" class="nav-link px-2 text-light">Home</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">Features</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">About</a></li>
+			</ul>
+
+			<div class="col-md-1 text-center">
+				<form class="d-flex" th:action="@{/logout}" method="post">
+              		<input class="btn btn-outline-light me-2" type="submit" value="Salir" />
+	           	</form>
+			</div>
+		</div>
+	</header>
+	<!--fin del header-->
+		<!--inicio menu slider-->
+		<div class="sidebar">
+			<h2>MRTW</h2>
+			<ul class="list">
+				<li class="list__item">
+					<div class="list__button">
+						<img src="/assets/dashboard.svg" class="list__img">
+						<a th:href="@{/dashboard-Admin}" class="nav__link">Inicio</a>
+					</div>
+				</li>
+
+				<li class="list__item list__item--click">
+					<div class="list__button list__button--click">
+						<img src="/assets/docs.svg" class="list__img">
+						<a href="#" class="nav__link">SEGUIMIENTO EMPLEADO</a>
+						<img src="/assets/arrow.svg" class="list__arrow">
+					</div>
+
+					<ul class="list__show">
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/newUsuario}">Crear Usuarios</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarUsuario}">Ver Usuarios</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarCapacitaciones}">Gestionar Capacitacion</a>
+						</li>
+					</ul>
+
+				</li>
+
+				<li class="list__item list__item--click">
+					<div class="list__button list__button--click">
+						<img src="/assets/stats.svg" class="list__img">
+						<a href="#" class="nav__link">INVENTARIOS</a>
+						<img src="/assets/arrow.svg" class="list__arrow">
+					</div>
+					<ul class="list__show">
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarInsumos}">Insumos</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarComputador}">Computadores</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarProveedor}">Proveedores</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarStock}">Stock</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="list__item list__item--click">
+					<div class="list__button list__button--click">
+						<img src="/assets/message.svg" class="list__img">
+						<a href="#" class="nav__link">ASISTENCIA TECNICA</a>
+						<img src="/assets/arrow.svg" class="list__arrow">
+					</div>
+
+					<ul class="list__show">
+					 <li class="list__inside">
+                        <a class="nav__link nav__link--inside" th:href="@{/Asistencia-Admin}">Inicio</a>
+                    </li>
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarSolicitudes}">Gestion de Solicitudes</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/Informes-Admin}">Informe</a>
+						</li>
+
+						<li class="list__inside">
+							<a class="nav__link nav__link--inside" th:href="@{/listarAgentes}">agentes Tecnicos</a>
+						</li>
+					</ul>
+				</li>
+
+
+				<li class="list__item">
+					<div class="list__button">
+						<img src="/assets/bell.svg" class="list__img">
+						<a href="#" class="nav__link">Contacto</a>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+		<!--Fin menu slider-->
+		<!--Comienzo contenido de la pagina-->
+		<div class="contenido">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <br><br>
+                            <div class="card">
+                                <div class="card-header bg-dark text-light">
+                                    <center><h4>Formulario de registro de usuarios</h4></center>
+                                </div>
+                                <div class="card-body">
+                                    <form th:action="@{/saveUsuario}" th:object=${usuario} id="form-registro" method="POST">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="name">Nombre</label>
+                                                <input th:field="*{nombre}" type="text" class="form-control" id="name" placeholder="Nombre" name="nombre">
+                                                <span id="error-username-required"> Ingrese un nombre de usuario</span>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="DI">Documento de Identificacion</label>
+                                                <input th:field="*{dni}" type="text" class="form-control" id="DI" placeholder="DNI" name="DNI">
+                                                <span id="error-DNI-required"> Ingrese un Documento de identificación</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="fechaN">Fecha de Nacimiento</label>
+                                                <input th:field="*{fechadenacimiento}" type="text" class="form-control" id="fechaN" placeholder="YYYY-MM-DD" name="nacimiento">
+                                                <span id="error-date-required"> Ingrese fecha de nacimiento</span>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="Telefono">Telefono</label>
+                                                <input th:field="*{telefono}" type="text" class="form-control" id="tel" placeholder="Numero de Telefono" name="telefono">
+                                                <span id="error-tel-required"> Ingrese un numero telefonico</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="email">email</label>
+                                                <input th:field="*{email}" type="email" class="form-control" id="email" placeholder="Email" name="email">
+                                                <span id="error-email-required"> Ingrese un email valido</span>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="area">area</label>
+                                                <select th:field="*{areaidArea.idArea}" id="area" class="form-control" name="area">
+                                                    <option value="1">Contabilidad</option>
+                                                    <option value="2">Manufactura</option>
+                                                    <option value="3">Bienestar al empleado</option>
+                                                    <option value="4">Administrativa</option>
+                                                    <option value="5">Envios</option>
+                                                </select>
+                                                <span id="error-rol-required"> Ingrese un area de usuario</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="horario">Horario</label>
+                                                <select th:field="*{horario}" id="horario" class="form-control" name="horario">
+                                                    <option value="6 AM">6 AM</option>
+                                                    <option value="9 AM">9 AM</option>
+                                                    <option value="2 PM">2 PM</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="rol">Rol del empleado</label>
+                                                <select th:field="*{idRol.idRol}" id="rol" class="form-control" name="rol">
+                                                    <option value="3">Jefe de Area</option>
+                                                    <option value="2">Empleado</option>
+                                                    <option value="4">Agente Tecnico</option>
+                                                    <option value="1">Administrador</option>
+                                                </select>
+                                                <span id="error-rol-required"> Ingrese un rol de usuario</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inventario">inventario</label>
+                                                <input th:field="*{idInventario.idInventario}" type="number" class="form-control" id="inventario" placeholder="inventario" name="inventario">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="calendario">calendario</label>
+                                                <input th:field="*{idCalendario.idCalendario}" type="number" class="form-control" id="calendario" placeholder="calendario" name="calendario">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <div class="form-group">
+                                        <center><button onclick="return mensaje3('')" type="submit" class="btn btn-info text-light" name="btnGrabar">CREAR</button></center>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <br><br>
+                            <div class="card">
+                                <div class="card-header bg-dark text-light">
+                                    <h3>Creados recientemente</h3>
+                                </div>
+
+                                <div class="card-body">
+
+                                </div>
+                                <div class="card-footer">
+                                    <center><a th:href="@{/listarUsuario}" class="btn btn-primary text-light"> Ver todos </a></center>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			<!--Comienzo contenido del footer-->
+			<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+				<div class="col-md-4 d-flex align-items-center">
+					<ul>
+						<li>
+							<a href="#" target="_blank"
+								class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">MR TW</a>
+						</li>
+						<li>
+							<a href="#" target="_blank"
+								class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">CONTACTO</a>
+						</li>
+					</ul>
+				</div>
+				<div
+					class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+					<span class="copyright">
+						Â©
+						<script>
+							document.write(new Date().getFullYear())
+						</script>, GAES 4 (SENA) </i>
+					</span>
+				</div>
+				<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+					<li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-facebook-square" width="24"
+								height="24">&nbsp;&nbsp;</i></a></li>
+					<li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-twitter-square" width="24"
+								height="24">&nbsp;&nbsp;</i></a></li>
+					<li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-google-plus" width="24"
+								height="24">&nbsp;&nbsp;</i></a></li>
+				</ul>
+			</footer>
+			<!--fin contenido del footer-->
+            </div>
+        <!--   Enlaces   -->
+		<script src="/js/sliderjs.js"></script>
+        <script src="/assets/js/core/jquery.min.js"></script>
+        <script src="/assets/js/core/popper.min.js"></script>
+        <script src="/assets/js/core/bootstrap.min.js"></script>
+        <!--   Datatables-->
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>  
+
+        <!-- extension responsive -->
+        <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>  
+        <script>
+            $(document).ready(function () {
+                $('#tableCap').DataTable({
+                    responsive: true
+                });
+            });
+
+        </script>
+
+
+    </body>
+
+</html>

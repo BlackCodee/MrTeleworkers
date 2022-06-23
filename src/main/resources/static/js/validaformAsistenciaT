@@ -1,0 +1,60 @@
+window.onload=initialize;
+
+function initialize(){
+var formRegistro = document.getElementById("form-registro");
+formRegistro.addEventListener("submit", validateFormRegistro);
+}
+
+function validateFormRegistro(event){
+	var formRegistro = event.target;
+	var username = formRegistro["username"].value;
+	//var username = document.getElementById("username").value;
+	
+    if(!username || username==""){
+        event.preventDefault();
+		document.getElementById("error-username-required").style.display="block";
+        console.log("error: nombre de usuario obligatorio");
+	}else{
+        document.getElementById("error-username-required").style.display="none";
+    }
+
+    var lastname = formRegistro["lastname"].value;
+    if(!lastname || lastname==""){
+        event.preventDefault();
+		document.getElementById("error-lastname-required").style.display="block";
+        console.log("error: apellido obligatorio");
+	}else{
+        document.getElementById("error-lastname-required").style.display="none";
+    }
+
+    var email = formRegistro["email"].value;
+    if(!email || email==""){
+        event.preventDefault();
+		document.getElementById("error-email-required").style.display="block";
+        console.log("error:El Correo electronico es obligatoria");
+	}else{
+        document.getElementById("error-email-required").style.display="none";
+    }
+
+    var celular = formRegistro["celular"].value;
+    if(!celular || celular==""){
+        event.preventDefault();
+		document.getElementById("error-celular-required").style.display="block";
+        console.log("error:El numero celular es obligatoria");
+	}else{
+        document.getElementById("error-celular-required").style.display="none";
+    }
+    var opcion = formRegistro["opcion"].value;
+    if(!opcion || opcion==""){
+        event.preventDefault();
+		document.getElementById("error-opcion-required").style.display="block";
+        console.log("error:La selección es obligatoria");
+	}else{
+        document.getElementById("error-opcion-required").style.display="none";
+    }
+
+    
+
+
+}
+

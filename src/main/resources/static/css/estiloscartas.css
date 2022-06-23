@@ -1,0 +1,14 @@
+.grafico{
+ height: 275px;
+}
+
+.card-body{
+    justify-content: center;
+}
+
+.buscar{
+    color: black;
+    height: 25px;
+    margin-left: 175px;
+}
+

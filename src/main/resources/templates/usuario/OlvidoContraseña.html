@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olvido contraseña Mr Tw</title>
+    <link rel="stylesheet" href="/css/estilos-olvidocontraseña.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="login-box">
+      <h1>¿Olvido su contraseña?</h1>
+		<form action="site/prueba.html" id="form-registro" method="POST">
+			<div class="form-group">
+				<label for="">Correo Electrónico de recuperación:</label>
+				<input type="email" placeholder="Email" class="form-control" id="email" name="email">
+				<span id="error-email-required"> Ingrese un Correo Electrónico válido</span>
+			</div>
+			<button type="submit" class="btn btn-danger"><a href="login.html">Envíar</a></button>
+		</form>
+		<a href="/login">Recordaste tu contraseña?</a>
+    </div>
+    <script src="/js/validacionindex.js"></script>
+  </body>
+</html>

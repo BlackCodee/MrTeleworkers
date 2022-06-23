@@ -1,0 +1,262 @@
+h1,h2,h3,h4,h5, button, .amiibo-name{
+    font-family: 'Bitter', serif;
+
+}
+
+
+
+.texto p{
+    align-content: center;
+    font-size: 40px;
+    text-align: center;
+}
+
+.foto{
+    height: 300px;
+}
+
+.foto1{
+    height: 300px;
+}
+
+.alert{
+    text-align: center;
+ font-size: 25px;
+}
+
+#boton{
+ 
+    display: none;
+}
+
+.botonfijo{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.redes a, .fa-plus{
+     display: block;
+     text-decoration: none;
+     background: #cc2b2b;
+     color: #fff;
+     width: 55px;
+     height: 55px;
+     line-height: 55px;
+     text-align: center;
+     border-radius: 50%;
+     box-shadow: 0px 1px 10px
+     rgba(0,0,0,0.4);
+     transition: all 500ms ease;
+
+}
+
+.redes a:hover{
+    background: #fff;
+    color: #cc2b2b;
+}
+
+.redes a{
+    margin-bottom: -15px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#boton:checked~ .redes a{
+    margin-bottom: 10px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.fa-plus{
+    cursor: pointer;
+    background: #f44141;
+    font-size: 23px;
+}
+
+#boton:checked ~ .boton .fa-plus{
+    transform: rotate(137deg);
+    font-size: 25px;
+}
+
+nav ul li a{
+    color: #fff;
+    padding: 0 100px;
+}
+
+nav h1{
+    padding: 0 150px;
+    
+}
+
+.contenedor{
+    padding: -150px -150px;
+    
+}
+
+
+
+
+
+.ribbon{
+
+    background-color: rgb(219, 26, 26);
+    background-image: repeating-linear-gradient(10deg, transparent, transparent 25px, rgba(131, 21, 21, 0.5) 25px, rgba(131, 21, 21, 0.5) 40px);
+    text-align: center
+    align-content: center;
+}
+
+.ribbon::after{
+    content: '';
+    background-color: transparent;
+    display: block;
+    height: 20px;
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+    left: auto;
+    margin-top: -40px;
+    text-align: center;
+    align-content: center;
+}
+.separator-ribbon{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    align-content: center;
+}
+.separator-ribbon .content{
+    width: 150%;
+    height: 150px;
+    margin-left: -25%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    text-align: center;
+    align-content: center;
+
+}
+.birthday{
+    background-color: rgb(219, 26, 26);
+    position: relative;
+    margin-top: -20px;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    align-content: center;
+}
+
+
+.birthday img{
+    position: relative;
+    margin-top: -30px;
+    align-content: center;
+}
+
+.games{
+    background: rgb(255,255,255);
+    background: url(../img/bg-02.png),  linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(99,196,255,1) 57%);
+    background-repeat: repeat-x;
+    background-size: 75%;
+    margin-top: -20px;
+    align-content: center;
+}
+
+.card-border{
+    border: solid 10px white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all ease-out 0.2s;
+}
+.card-border:hover{
+    transform: scale(1.05);
+}
+
+.text-shadow{
+    text-shadow: 0 3px 3px rgba(0,0,0,0.6);
+    align-content: center;
+}
+.separator-amiibos{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    padding: 250px;
+}
+.separator-amiibos .content{
+    background: url(../img/bg-03.png);
+    width: 110%;
+    height: 100px;
+    margin-left: -5%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+     padding: 250px;
+}
+
+.separator-amiibos-footer{
+    height: 20vw;
+     padding: 250px;
+}
+
+
+.amiibos{
+    background: url(../img/bg-01.png),url(../img/bg-03.png);
+    background-repeat: no-repeat, repeat;
+    background-position: bottom center, center center;
+    background-size: 100%, auto;
+    padding: 200px;
+}
+.amiibo{
+    cursor: pointer;
+    transition: all ease-out 0.2s;
+     
+}
+.amiibo:hover{
+    transform: scale(1.05);
+     
+}
+
+.amiibo-name{
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.play{   
+    background: url(../img/bg-04.png);
+    background-color: rgb(255, 255, 219);
+    background-size: 40px 40px;
+    text-align: center;
+}
+
+.col-9{
+    align-content: center;
+    align-items: center;
+}
+
+footer{
+    background:rgb(219, 66, 19);
+    background-color: rgb(71, 68, 63);
+    background-size: 50px 50px;
+    align-content: center;
+    color: #fff;
+    padding: auto;
+}
+
+footer a{
+    color:azure;
+    padding: 0 20px ;
+    font-size: 30px;
+    width: 50px;
+    align-content: center;
+    padding: 0px 3px;
+}
+
+footer button{
+align-content: center;
+align-items: center;
+padding: 100px 100px;
+}

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <link rel="stylesheet" href="/css/morris.css">
+        <script src="/js/morris.min.js"></script>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+		
+        <title>
+            ACTIVIDADES EMPLEADO
+        </title>
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+        <!--     Fonts and icons     -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+              integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <!-- CSS Files -->
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- <link href="/assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" /> -->
+		<link rel="stylesheet" href="/css/estilosSlider.css">
+		
+        <link href="/assets/demo/demo.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--  Datatables  -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>  
+
+        <!--  extension responsive  -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+    </head>
+    <body class="">
+	<!--inicio header-->
+	<header class=" py-1 mb-0 bg-dark ">
+		<div class="container d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+			<button type="button">
+				<img src="/assets/message.svg" alt="" class="menu-bar bi me-2 bg-light text-light">
+			</button>
+
+			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
+				<li><a href="#" class="nav-link px-2 text-light">Home</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">Features</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">About</a></li>
+			</ul>
+
+			<div class="col-md-1 text-center">
+				<form class="d-flex" th:action="@{/logout}" method="post">
+              		<input class="btn btn-outline-light me-2" type="submit" value="Salir" />
+	           	</form>
+			</div>
+		</div>
+	</header>
+	<!--fin del header-->
+    <!--inicio menu slider-->
+    <div class="sidebar">
+        <h2>MRTW</h2>
+        <ul class="list">
+            <li class="list__item">
+                <div class="list__button">
+                    <img src="/assets/dashboard.svg" class="list__img">
+                    <a th:href="@{/dashboard-Empleado}" class="nav__link">Inicio</a>
+                </div>
+            </li>
+
+            <li class="list__item list__item--click">
+                <div class="list__button list__button--click">
+                    <img src="/assets/docs.svg" class="list__img">
+                    <a href="#" class="nav__link">SEGUIMIENTO EMPLEADO</a>
+                    <img src="/assets/arrow.svg" class="list__arrow">
+                </div>
+
+                <ul class="list__show">
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside" th:href="@{/listarActividadLaboralEmpleado}">Actividades Empleado</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside" th:href="@{/listarCapacitacionesEmpleado}">Capacitaciones</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside" th:href="@{/listarCalendario}">Eventos</a>
+                    </li>
+                </ul>
+
+            </li>
+
+            <li class="list__item list__item--click">
+				<div class="list__button list__button--click">
+					<img src="/assets/stats.svg" class="list__img"> <a href="#"
+						class="nav__link">INVENTARIOS</a> <img src="/assets/arrow.svg"
+						class="list__arrow">
+				</div>
+				<ul class="list__show">
+					<li class="list__inside"><a
+						class="nav__link nav__link--inside"
+						th:href="@{/listarInsumosEmpleado}">Insumos</a></li>
+
+					<li class="list__inside"><a
+						class="nav__link nav__link--inside"
+						th:href="@{/solicitudComputador}">Requerimiento de
+							Computadores</a></li>
+							
+					<li class="list__inside"><a
+						class="nav__link nav__link--inside"
+						th:href="@{/listarPrestamosEmpl}">Ver solicitudes realizadas</a></li>
+				</ul>
+			</li>
+
+            <li class="list__item list__item--click">
+                <div class="list__button list__button--click">
+                    <img src="/assets/message.svg" class="list__img">
+                    <a href="#" class="nav__link">ASISTENCIA TECNICA</a>
+                    <img src="/assets/arrow.svg" class="list__arrow">
+                </div>
+
+                <ul class="list__show">
+                   <li class="list__inside">
+                        <a class="nav_link nav_link--inside" th:href="@{/newSolicitud}">Necesitas ayuda?</a>
+                    </li>
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside" th:href="@{/listarUsuariosSoli}">Solicitudes realizadas</a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="list__item">
+                <div class="list__button">
+                    <img src="/assets/bell.svg" class="list__img">
+                    <a href="#" class="nav__link">Contacto</a>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+    <!--Fin menu slider-->
+    <!--Comienzo contenido de la pagina-->
+    <div class="contenido">
+  
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9 col-md-8">
+					<br>
+					<h1 class="font-weight-bold mb-0">Bienvenido Sr@ Trabajador</h1>
+					<p class="lead text-muted">Actividades</p>
+				</div>
+			</div>
+			<br>
+			<br>
+			<br>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							<center><h4 class="card-title">Actividades Asignadas Al Area</h4 ><h4 th:text="${usuario.areaidArea.nombreArea}"></h4></center>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table  id="tableCap" class="table table-bordered  display nowrap" cellspacing="0" width="100%">
+									<thead class=" text-primary">
+									<th>NOMBRE</th>
+									<th>FECHA</th>
+									<th>HORA ENTREGA</th>
+									<th>ENTREGABLE</th>
+									<th>VER</th>
+									</thead>
+									<tbody>
+										<tr th:each="actividadLaboral:${actividadLaboral}" th:if="${actividadLaboral.estado} == activo">
+											<th th:text="${actividadLaboral.Nombre_Actividad}"></th>
+											<th th:text="${actividadLaboral.fechaEntrega}"></th>
+											<th th:text="${actividadLaboral.horaEntrega}"></th>
+											<th th:text="${actividadLaboral.entregable}"></th>
+											<th><a th:href="@{/EntregarActividad/}+${actividadLaboral.idActividad}" class="btn btn-info txt-light">VER</a></th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			<!--Comienzo contenido del footer-->
+			<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+				<div class="col-md-4 d-flex align-items-center">
+					<ul>
+						<li>
+							<a href="#" target="_blank"
+								class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">MR TW</a>
+						</li>
+						<li>
+							<a href="#" target="_blank"
+								class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">CONTACTO</a>
+						</li>
+					</ul>
+				</div>
+				<div
+					class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+					<span class="copyright">
+						Â©
+						<script>
+							document.write(new Date().getFullYear())
+						</script>, GAES 4 (SENA) </i>
+					</span>
+				</div>
+				<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+					<li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-facebook-square" width="24"
+								height="24">&nbsp;&nbsp;</i></a></li>
+					<li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-twitter-square" width="24"
+								height="24">&nbsp;&nbsp;</i></a></li>
+					<li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-google-plus" width="24"
+								height="24">&nbsp;&nbsp;</i></a></li>
+				</ul>
+			</footer>
+			<!--fin contenido del footer-->
+	</div>
+
+	<!--   Enlaces   -->
+	<script src="/js/sliderjs.js"></script>
+	<script src="/js/morris.js"></script>
+	<script src="/assets/js/core/jquery.min.js"></script>
+	<script src="/assets/js/core/popper.min.js"></script>
+	<script src="/assets/js/core/bootstrap.min.js"></script>
+
+	<!--   Datatables-->
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>  
+
+	<!-- extension responsive -->
+	<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>  
+	<script>
+		$(document).ready(function () {
+			$('#tableCap').DataTable({
+				responsive: true
+			});
+		});
+
+	</script>
+</body>
+
+</html>

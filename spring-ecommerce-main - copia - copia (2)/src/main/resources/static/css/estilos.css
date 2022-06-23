@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Open+Sans:wght@300&display=swap');
+/* font-family: 'Open Sans', sans-serif; */
+/* font-family: 'Bree Serif', serif; Titulo */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+img{
+	display: block;
+	max-width: 100%;
+}
+body{
+	margin: 0;
+	padding: 0;
+	background: url(../img/login1.jpg) no-repeat center top;
+	background-size: cover;
+	font-family: 'Open Sans', sans-serif;
+	height: 100vh;
+	background: #F1EBFF;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Bree Serif', serif;
+	letter-spacing: 1.5px;
+}
+.section__titulo {
+	text-align: center;
+	font-size: 40px;
+	color: #fff;
+	padding: 20px;
+	
+	margin-bottom: 20px;
+}
+
+/* Estilos del header */
+.borde {
+
+	border: 1px solid rgb(60, 55, 68, 0);
+}
+.contenedor{
+	width: 100%;
+	margin: auto;
+}
+
+.titulo h1{
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	padding: 50px;
+	background: #3C3744;
+	color: #fff;
+}
+nav{
+	width: 100%;
+	height: 50px;
+	background: rgb(60, 55, 68, 0);
+	/*position: fixed; que este fija en la pagina 
+	que no se mueva aunque suba y baje en la pagina*/
+	position: absolute;
+}
+
+.logo img{
+	width: 25%;
+	height: auto;
+	border-radius: 30px;
+}
+
+.logo{
+	width: 20%;
+	height: 100%;
+	padding: 5px;
+	text-align: center;
+	float: left;
+}
+
+.navegacion{
+	width: 60%;
+	height: 100%;
+	float: left;
+}
+
+nav ul {
+	list-style: none;
+	text-align: right;
+	/*para que lo que tenga me quede en el centro*/
+	align-items: center;
+}
+
+nav ul li {
+	width: 150px;
+	font-size: 16px;
+	display: inline-block;
+}
+nav ul li a{
+	text-decoration: none;
+	text-align: center;
+	padding: 20px 5px;
+	display: block;
+	color: #fff;
+}
+nav ul li a:hover {
+	background-color: #007991;
+	color: #fff;
+}
+nav ul  a:hover {
+	background-color: #007991;
+	color: #fff;
+}
+
+nav ul a{
+	color: #fff;
+}
+/* sub menu */
+.submenu{
+	position: absolute;
+	background-color: #e9c46a;
+	width: 120%;
+	/*display: none; no se ve el sub menu a menos que pase el mouse*/
+	display: none;
+}
+
+.submenu li a{
+	display: block;
+	padding: 5px;
+	color: #000;
+	text-decoration: none;
+	text-align: center;
+}
+.submenu li a:hover{
+	background-color: #e9c46a;
+	color: #fff;
+	font-weight: bold;
+
+}
+.submenu {
+	width: 15%;
+	height: 100%;
+	float: left;
+	text-align: center;
+}
+
+
+/*-----------Estilos del banner-------*/
+
+.banner{
+	margin-top: -60px;
+	position: relative;
+	z-index: -1000;
+	margin-bottom: 20px;
+} 
+.banner .contenedor {
+	
+	font-size: 18px;
+	border-radius: 20px;
+	background: rgba(60, 55, 68, 0.6);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 70%;
+	color: #fff;
+	text-align: center;
+}
+.banner__txt {
+	display: none;
+}
+
+/*-------Estilos de info-------*/
+.info{
+	color: #000;
+}
+.info__titulo{
+	text-align: center;
+}
+/*-------Estilos de modulos-----*/
+.modulos__columna{
+	position: relative;
+	text-align: center;
+}
+.modulos__columna p{
+
+	background: rgba(0,0,0,0.5);
+	color: whitesmoke;
+	margin-right: 10px;
+}
+.modulos__descripcion{
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+}
+.modulos_titulo{
+	font-size: 25px;
+	margin: 5px 0;
+}
+
+/*--------------estilos footer--------------*/
+.footer {
+	background: #3C3744;
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+}
+/*Selecciono todas las clases que esten dentro social y de footer*/
+.footer .social [class^="icon-"] {
+	/*display: inline-block; para ajustar los iconos*/
+	display: inline-block;
+	color: #3C3744;
+	text-decoration: none;
+	font-size: 30px;
+	padding: 10px;
+	background: #fff;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	line-height: 40px;
+}
+/*-------------estilos responsive---------------*/
+@media(min-width: 480px){
+	.logo{
+		font-size: 40px;
+	}
+	.banner__titulo {
+		font-size: 30px;
+		margin: 5px 0;
+	}
+	.banner__txt {
+		display: block;
+		font-size: 18px;
+		margin: 7px 0;
+	}
+	.info, .modulos {
+		display: flex;
+		justify-content: space-between;
+		margin-top: -90px;
+	}
+	.info__columna {
+		width: 32%;
+	}
+	.info__titulo {
+		font-size: 30px;
+		margin: 5px 0;
+	}
+	.section__titulo {
+		width: 100%;
+	}
+	/* modulos */
+	.modulos{
+		/*flex-wrap: wrap; contenido que ya no entre se vaya hacia abajo*/
+		flex-wrap: wrap;
+		margin-top: 0;
+	}
+	
+	.modulos__columna {
+		width: 48%;
+	}
+}
+
+.ingreso{
+    padding: 2px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    text-align: center;
+}
+
+.ingreso:hover{
+    display: flex;
+    background-color: #fff;
+    font-weight: bold;
+    color: #fff;
+    font-family: 'Muli', sans-serif;
+    transition: all.5s;
+}
+
+.ingreso:hover ul li a{
+    color: #001219;
+    font-family: 'Muli', sans-serif;
+    
+}
+
+.ingreso ul li a{
+    color: #001219;
+    font-family: 'Muli', sans-serif;
+    
+}
+#error-name-required,
+#error-lastname-required,
+#error-email-required,
+#error-asunto-required
+{
+    color: red;
+    display: none;
+}
+
+span{
+    font-size: 12px;
+}

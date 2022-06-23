@@ -1,0 +1,11 @@
+#error-name-required,
+#error-DNI-required,
+#error-email-required,
+#error-especializacion-required,
+#error-tel-required,
+#error-clases-required,
+#error-date-required,
+#error-definition-required{
+	color: red;
+	display: none;
+}

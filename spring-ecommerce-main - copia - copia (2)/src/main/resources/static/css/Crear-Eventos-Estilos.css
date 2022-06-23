@@ -1,0 +1,9 @@
+#error-username-required,
+#error-Eventname-required,
+#error-area-required,
+#error-fecha-required,
+#error-hora-required,
+#error-descripcion-required{
+	color: red;
+	display: none;
+}

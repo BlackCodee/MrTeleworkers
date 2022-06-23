@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<link rel="stylesheet" href="/css/morris.css">
+<script src="/js/morris.min.js"></script>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+<title>EVENTOS</title>
+<meta
+	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+	name='viewport' />
+<!--     Fonts and icons     -->
+<link
+	href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"
+	rel="stylesheet" />
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+	crossorigin="anonymous">
+<!-- CSS Files -->
+<link rel="stylesheet" href="/css/eventos-estilos.css">
+<link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+<!-- <link href="/assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" /> -->
+<link rel="stylesheet" href="/css/estilosSlider.css">
+
+<link href="/assets/demo/demo.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+</head>
+
+<!-- Menu desplegable -->
+<body class="">
+	<!--inicio header-->
+	<header class=" py-1 mb-0 bg-dark ">
+		<div
+			class="container d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+			<button type="button">
+				<img src="/assets/message.svg" alt="" class="menu-bar bi me-2 bg-light text-light">
+			</button>
+
+			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
+				<li><a href="#" class="nav-link px-2 text-light">Home</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">Features</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">About</a></li>
+			</ul>
+
+			<div class="col-md-1 text-center">
+				<form class="d-flex" th:action="@{/logout}" method="post">
+              		<input class="btn btn-outline-light me-2" type="submit" value="Salir" />
+	           	</form>
+			</div>
+		</div>
+	</header>
+	<!--fin del header-->
+	<!--inicio menu slider-->
+	<div class="sidebar">
+		<h2>MRTW</h2>
+		<ul class="list">
+			<li class="list__item">
+				<div class="list__button">
+					<img src="/assets/dashboard.svg" class="list__img"> <a
+						th:href="@{/dashboard-Empleado}" class="nav__link">Inicio</a>
+				</div>
+			</li>
+
+			<li class="list__item list__item--click">
+				<div class="list__button list__button--click">
+					<img src="/assets/docs.svg" class="list__img"> <a href="#"
+						class="nav__link">SEGUIMIENTO EMPLEADO</a> <img
+						src="/assets/arrow.svg" class="list__arrow">
+				</div>
+
+				<ul class="list__show">
+					<li class="list__inside"><a
+						class="nav__link nav__link--inside"
+						th:href="@{/listarActividadLaboral}">Actividades del area
+							laboral</a></li>
+
+					<li class="list__inside"><a
+						class="nav__link nav__link--inside"
+						th:href="@{/newActividadLaboral}">Creacion Eventos</a></li>
+
+					<li class="list__inside"><a
+						class="nav__link nav__link--inside"
+						th:href="@{/listarCapacitacionesJefe}">Capacitaciones</a></li>
+				</ul>
+
+			</li>
+
+			<li class="list__item list__item--click">
+				<div class="list__button list__button--click">
+					<img src="/assets/message.svg" class="list__img"> <a href="#"
+						class="nav__link">ASISTENCIA TECNICA</a> <img
+						src="/assets/arrow.svg" class="list__arrow">
+				</div>
+
+				<ul class="list__show">
+					<li class="list__inside"><a
+						class="nav__link nav__link--inside" th:href="@{/Asistencia-Emple}">Solicitudes
+							realizadas</a></li>
+				</ul>
+			</li>
+
+
+			<li class="list__item">
+				<div class="list__button">
+					<img src="/assets/bell.svg" class="list__img"> <a href="#"
+						class="nav__link">Contacto</a>
+				</div>
+			</li>
+
+		</ul>
+	</div>
+	<!--Fin menu slider-->
+	<!--Comienzo contenido de la pagina-->
+	<div class="contenido">
+
+		<div class="content">
+			<div class="row">
+				<div class="col-lg-12 col-md-8 text-lg-center">
+					<br>
+					<h1 class="font-weight-bold mb-0">Bienvenido Sr@ Jefe de Area</h1>
+					<p class="lead text-muted">Entregable</p>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card shadow">
+								<div class="card-header bg-secondary text-light">
+									<h5 class="card-title"></h5>
+								</div>
+								<div class="card-body bg-light text-dark">
+									<div class="row justify-content-center">
+										<div class="col-md-12 border-bottom">
+											<center>
+											<strong ><h4 class="col-md-9 card-tittle text-dark  py-1 my-1" th:text="${actividad.Nombre_Actividad}"></h4></strong>
+											</center>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-9 bg-light">
+											<center>
+												<br>
+												<div  class="col-md-10 bg-light text-dark">		
+												<p  th:text="${actividad.descripcion}"> 
+													
+												</p>
+												</div>
+											</center>
+										</div>
+										<div class="col-md-3 bg-light text-dark py-2 my-2 border-left">
+											<div>
+												<center>
+													<p>
+														<strong>Area:</strong> <span th:text="${actividad.idArea.nombreArea}"></span><br>
+														<strong>Fecha de entrega:</strong></br><span th:text="${actividad.fechaEntrega}"></span><br>
+														<strong>Entregable:</strong><span th:text="${actividad.entregable}"></span>
+													</p>
+												</center>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card-footer bg-light text-text">
+									<div class="stats">
+										<i class="fa fa-history"></i> Actualizado el <span th:text="${actividad.fechaModificacion}"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="row justify-content-center">
+						<div class="col">
+							<div class="card card-stats shadow">
+								<div class="card-header bg-light text-dark">
+									<h3>Entregables</h3>
+								</div>
+								<div class="card-body">
+									<div class="">
+										<span th:text="${entregable.comentario}" class=""></span><br><hr />
+										<a th:href="${entregable.enlace}" th:text="${entregable.enlace}"></a>
+									</div>
+									<div class="py-2 my-2 border-top">
+										<button type="button" class="btn btn-secondary text-light col-md-12 border border-dark"
+											data-toggle="modal" data-target="#exampleModal"
+											th:attr="data-target='#exampleModal'+${entregable.idEntregables}">
+											Marcar como completada
+										</button>
+									</div>
+									
+
+										<!-- Modal -->
+										<div class="modal fade"
+											th:attr="id='exampleModal'+${entregable.idEntregables}"
+											tabindex="-1" aria-labelledby="exampleModalLabel"
+											aria-hidden="true">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="exampleModalLabel">Marcar como completada</h5>
+														<button type="button" class="close" data-dismiss="modal"
+															aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+														Desea marcar como revisada la actividad <span
+															th:text="${entregable.idActividad.Nombre_Actividad}"></span>?
+													</div>
+													<div class="modal-footer">
+														<a th:href="@{/listarEntregables/}+${entregable.idActividad.idActividad}" 
+															type="button" class="btn btn-secondary"> CERRAR</a>
+														<a th:href="@{/marcarRevisado/}+${entregable.idEntregables}"
+															type="button" class="btn btn-primary">REVISADO</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- Modal -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br> <br> <br>
+
+		<!--Comienzo contenido del footer-->
+		<footer
+			class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+			<div class="col-md-4 d-flex align-items-center">
+				<ul>
+					<li><a href="#" target="_blank"
+						class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">MR
+							TW</a></li>
+					<li><a href="#" target="_blank"
+						class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">CONTACTO</a>
+					</li>
+				</ul>
+			</div>
+			<div
+				class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+				<span class="copyright"> Â© <script>
+					document.write(new Date().getFullYear())
+				</script>, GAES 4 (SENA) </i>
+				</span>
+			</div>
+			<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+				<li class="ms-3"><a class="text-muted" href="#"><i
+						class="fab fa-facebook-square" width="24" height="24">&nbsp;&nbsp;</i></a></li>
+				<li class="ms-3"><a class="text-muted" href="#"><i
+						class="fab fa-twitter-square" width="24" height="24">&nbsp;&nbsp;</i></a></li>
+				<li class="ms-3"><a class="text-muted" href="#"><i
+						class="fab fa-google-plus" width="24" height="24">&nbsp;&nbsp;</i></a></li>
+			</ul>
+		</footer>
+		<!--fin contenido del footer-->
+	</div>
+	<!--   Enlaces   -->
+	<script src="/js/sliderjs.js"></script>
+	<script src="/js/calendario-eventos.js"></script>
+	<script src="/assets/js/core/jquery.min.js"></script>
+	<script src="/assets/js/core/popper.min.js"></script>
+	<script src="/assets/js/core/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
