@@ -124,12 +124,12 @@
 	<!--fin del header-->
 		<!--inicio menu slider-->
 		<div class="sidebar">
-			<h2>MRTW</h2>
-			<ul class="list">
-				<li class="list__item">
+		<h2>MRTW</h2>
+		<ul class="list">
+			<li class="list__item">
 				<div class="list__button">
 					<img src="/assets/dashboard.svg" class="list__img">
-					<a href="#" class="nav__link">Inicio</a>
+					<a th:href="@{/dashboard-Admin}" class="nav__link">Inicio</a>
 				</div>
 			</li>
 
@@ -150,8 +150,7 @@
 					</li>
 
 					<li class="list__inside">
-						<a class="nav__link nav__link--inside" th:href="@{/listarCapacitaciones}">Gestionar
-							Capacitacion</a>
+						<a class="nav__link nav__link--inside" th:href="@{/listarCapacitaciones}">Gestionar Capacitacion</a>
 					</li>
 				</ul>
 
@@ -194,8 +193,7 @@
                         <a class="nav__link nav__link--inside" th:href="@{/Asistencia-Admin}">Inicio</a>
                     </li>
 					<li class="list__inside">
-						<a class="nav__link nav__link--inside" th:href="@{/listarSolicitudes}">Gestion de
-							Solicitudes</a>
+						<a class="nav__link nav__link--inside" th:href="@{/listarSolicitudes}">Gestion de Solicitudes</a>
 					</li>
 
 					<li class="list__inside">
@@ -216,24 +214,48 @@
 				</div>
 			</li>
 
-                    
-                </ul>
-
-            </li>
-
-
-				<li class="list__item">
-					<div class="list__button">
-						<img src="/assets/bell.svg" class="list__img">
-						<a href="#" class="nav__link">Contacto</a>
-					</div>
-				</li>
-
-			</ul>
-		</div>
+		</ul>
+	</div>
 		<!--Fin menu slider-->
 		<!--Comienzo contenido de la pagina-->
-		
+		<div class="contenido">
+			
+			
+			
+				
+			<div>
+				<h3>Productividad <h3/> 
+			</div>
+			
+			<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">TUS DATOS</h5>
+        <p class="card-text">Nombre: Antonio <br> Apellido: Lopez <br> Celular: 3214905454
+        <br> Correo: AL01@mrtwL.com <br> Rol: Agente Técnico</p>
+       
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">PUNTAJE TOTAL</h5>
+        Puntaje:
+        <span th:text="${Puntaje}"></span>
+        <p class="card-text">
+        <div class="col-auto">
+        <form class="row g-3">
+        <tr><br>
+						  
+</tr>
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</div>
 			
 			<!--Comienzo contenido del footer-->
 			<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
