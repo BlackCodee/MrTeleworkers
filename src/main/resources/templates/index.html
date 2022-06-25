@@ -18,10 +18,10 @@
 			<div class="logo"><img src="/img/logo-mrtw.png" alt=""></div>
 			<div class="borde navegacion">
 				<ul>
-					<li><a href="#">INICIO</a></li>
-					<li><a href="#">PORTAFOLIO</a></li>
-					<li><a href="#">QUIENES SOMOS</a></li>
-					<li><a href="#">CONTACTENOS</a></li>
+					<li><a href="#inicio">INICIO</a></li>
+					<li><a href="#portafolio">PORTAFOLIO</a></li>
+					<li><a href="#quienes somos">QUIENES SOMOS</a></li>
+					<li><a href="#contactenos">CONTACTENOS</a></li>
 					<li><a th:href="@{/login}" >INGRESAR</a></li>
 				</ul>
 			</div>
@@ -30,7 +30,7 @@
 	<header class="borde">
 		<div class="banner">
 			<img src="/img/bienestar-capacitacion.jpg" alt="" class="banner__img">
-			<div class="contenedor">
+			<div class="contenedor" id="inicio">
 				<h2 class="banner__titulo">La oportunidad del teletrabajo a tu alcance</h2>
 				<p class="banner__txt">un software amigable, practico y efectivo</p>
 			</div>
@@ -38,7 +38,7 @@
 	</header>
 	<main class="main">
 		<div class="container">
-			<div class="row mt-5">
+			<div class="row mt-5" id="portafolio">
 				<section class="info">
 					<div class="col-4 col-md-4">
 						<div class="card" style="height: 40rem; background-color: #007991;">
@@ -52,7 +52,7 @@
 								Bicarbonato de Sodio <br>
 								Formiato de Sodio <br>
 								Soda Caustica <br>
-								ÃƒÂ�cido Oxilico <br>
+								Acido Oxilico <br>
 								Bisulfito de Sodio <br>
 								Cloruro de Amonio <br>
 								Sulfato de Aluminio tipo A <br>
@@ -64,14 +64,14 @@
 						<div class="card" style="height: 40rem; background-color: #007991;">
 							<img src="/img/descripcion-producto.jpeg" class="card-img-top img-fluid" alt="">
 							<div class="card-body text-light">
-								<center><h3 class="card-tittle">DescripciÃ³n de producto</h3></center>
+								<center><h3 class="card-tittle">Descripcion de producto</h3></center>
 								<p class="card-text">
-								Sulfato bÃ¡sico de cromo al 33% de basicidad <br>
+								Sulfato basico de cromo al 33% de basicidad <br>
 								Sulfuro de Sodio <br>
 								Bicarbonato de Sodio <br>
 								Formiato de Sodio <br>
 								Soda Caustica <br>
-								ÃƒÂ�cido Oxilico <br>
+								acido Oxilico <br>
 								Bisulfito de Sodio <br>
 								Cloruro de Amonio <br>
 								Sulfato de Aluminio tipo A <br>
@@ -108,7 +108,7 @@
 				</section>
 
 			</div>
-			<div class="row">
+			<div class="row" id="quienes somos">
 				<div class="col-md-12">
 					<h2 class="section__titulo">Quienes Somos</h2>
 					<br>
@@ -120,7 +120,7 @@
 							<img src="/img/empresa.jpeg" alt="" class="modulos__img">
 							<div class="modulos__descripcion">
 								<h3 class="modulos__titulo">Empresa</h3>
-								<p class="modulos__txt">Empresa Colombiana con mÃ¡s de 30 aÃ±os en el mercado dedicada a la producciÃ³n, importaciÃ³n, comercializaciÃ³n y distribuciÃ³n de materias primas de excelente calidad e indispensablesÂ para las industrias textil, marroquinera y de alimentos. <br><br>Actualmente nuestros procesos de desarrollo, producciÃ³n, comercializaciÃ³n y distribuciÃ³n de materias primas para uso industrial, resina alquÃƒÂ­dica, emulsiones, pinturas para industri de cueros y textil, se encuentran certificados bajo las Normas TÃ©cnicas Colombianas ISO 9001:2015 Sistema de GestiÃ³n de Calidad e ISO 14001:2015 Sistema de GestiÃ³n Ambiental.</p>
+								<p class="modulos__txt">Empresa Colombiana con mas de 30 años en el mercado dedicada a la produccion, importacion, comercializacion y distribucion de materias primas de excelente calidad e indispensablesÂ para las industrias textil, marroquinera y de alimentos. <br><br>Actualmente nuestros procesos de desarrollo, produccion, comercializacion y distribucion de materias primas para uso industrial, resina alquidica, emulsiones, pinturas para industri de cueros y textil, se encuentran certificados bajo las Normas Tecnicas Colombianas ISO 9001:2015 Sistema de Gestion de Calidad e ISO 14001:2015 Sistema de Gestion Ambiental.</p>
 							</div>
 					</div>
 				</div>
@@ -131,14 +131,14 @@
 							<h3 class="modulos__titulo">MISION</h3>
 							<p class="modulos__txt">Es una empresa importadora y comercializadora de materias primas de alta calidad para la industria, comprometida con el medio ambiente, la responsabilidad</p>
 							<h3 class="modulos__titulo">VISION</h3>
-							<p class="modulos__txt">En 2025 estaremos posicionados como una empresa productora y comercializadora de productos quÃƒÂ­micos de ÃƒÂºltima tecnologÃƒÂ­a, reconocida en el mercado nacional por el cuidado y protecciÃƒÂ³n del medio ambiente, el apoyo a la industria colombiana y al desarrollo de tecnologÃƒÂ­as innovadoras en procesos.</p>
+							<p class="modulos__txt">En 2025 estaremos posicionados como una empresa productora y comercializadora de productos quimicos de ultima tecnologia, reconocida en el mercado nacional por el cuidado y proteccion del medio ambiente, el apoyo a la industria colombiana y al desarrollo de tecnologias innovadoras en procesos.</p>
 						</div>
 					</div>		
 				</div>
 			</div>
 			<br>
 			<div class="row">
-				<div class="col-12">
+				<div class="col-12"  id="contactenos">
 					<center><h2 class="section__titulo bg-dark text-">CONTACTENOS</h2></center>
 				</div>
 				<br>
@@ -154,9 +154,9 @@
 					<div class="row">
 						<div class="col bg-secondary text-light">
 							<p>Direccion Carrera 18 C No. 58, Cl. 57 Sur</p>
-							<p>TelÃƒÂ©fono: 5461600</p>
+							<p>Telefono: 5461600</p>
 							<p>www.sena.edu.co</p>
-							<p>BogotÃƒÂ¡ D.C.</p>
+							<p>Bogota D.C.</p>
 						</div>
 					</div>
 					

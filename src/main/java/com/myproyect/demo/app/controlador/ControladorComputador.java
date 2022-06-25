@@ -29,7 +29,7 @@ public class ControladorComputador {
 	
     @RequestMapping("/solicitudComputador")
     public String index(){
-        return "Inventarios/Empleado/compuEmpl";
+        return "/Inventarios/Empleado/compuEmpl";
     }
 	
 	@GetMapping("/listarComputador")
@@ -55,9 +55,9 @@ public class ControladorComputador {
 	
 	@GetMapping("/editarComputador/{idComputador}")
 	public String editar(@PathVariable int idComputador, Model model) {
-		Optional<Computador>computador=service.ListarId(idComputador);
+		Computador computador = iComputador.findId(idComputador);
 		model.addAttribute("computador", computador);
-		return "Inventarios/Administrador/nuevoCompAdmin";
+		return "Inventarios/Administrador/editarCompAdmin";
 	}
 	
 	@RequestMapping("/estadoComputador")

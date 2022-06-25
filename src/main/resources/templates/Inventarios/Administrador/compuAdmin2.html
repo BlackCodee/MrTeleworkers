@@ -126,11 +126,7 @@
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
-				<li><a href="#" class="nav-link px-2 text-light">Home</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">Features</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">About</a></li>
+				<li><a href="#" class="nav-link px-8 text-light">ADMINISTRADOR</a></li>
 			</ul>
 
 			<div class="col-md-1 text-center">
@@ -193,10 +189,6 @@
 						<li class="list__inside">
 							<a class="nav__link nav__link--inside" th:href="@{/listarProveedor}">Proveedores</a>
 						</li>
-
-						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarStock}">Stock</a>
-						</li>
 					</ul>
 				</li>
 
@@ -223,14 +215,6 @@
 							<a class="nav__link nav__link--inside" th:href="@{/listarAgentes}">agentes Tecnicos</a>
 						</li>
 					</ul>
-				</li>
-
-
-				<li class="list__item">
-					<div class="list__button">
-						<img src="/assets/bell.svg" class="list__img">
-						<a href="#" class="nav__link">Contacto</a>
-					</div>
 				</li>
 
 			</ul>
@@ -270,6 +254,7 @@
 									<td th:text="${prestamos?.idComputador?.idComputador}"></td>
 								    <td th:text="${prestamos.estado}"></td>
 									<td>
+									
 									  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" th:attr="data-target='#exampleModal'+${prestamos.idPrestamo}">
 								  <i class="fas fa-screwdriver"></i>
 								</button>   
@@ -279,7 +264,7 @@
 							  <div class="modal-dialog">
 							    <div class="modal-content">
 							      <div class="modal-header">
-							        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+							        <h5 class="modal-title" id="exampleModalLabel">Aceptar o Rechazar Solicitud</h5>
 							        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							          <span aria-hidden="true">&times;</span>
 							        </button>
@@ -288,7 +273,7 @@
 							        Desea cambiar el estado del prestamo <span th:text="${prestamos.nombresUsuario}"></span>?
 							      </div>
 							      <div class="modal-footer">
-							        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 							        <span th:if="${prestamos.estado == 'aceptado'}"><a th:href="@{/estadoPrestamo(idPrestamo=${prestamos.idPrestamo})}" type="button" class="btn btn-danger">RECHAZADO</a></span>
 									<span th:if="${prestamos.estado == 'rechazado'}"><a th:href="@{/estadoPrestamo(idPrestamo=${prestamos.idPrestamo})}" type="button" class="btn btn-warning">ACEPTADO</a></span>
 							      </div>

@@ -137,11 +137,7 @@ function eliminarInsumos(idInsumo){
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
-				<li><a href="#" class="nav-link px-2 text-light">Home</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">Features</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">About</a></li>
+				<li><a href="#" class="nav-link px-8 text-light">ADMINISTRADOR</a></li>
 			</ul>
 
 			<div class="col-md-1 text-center">
@@ -204,10 +200,6 @@ function eliminarInsumos(idInsumo){
 						<li class="list__inside">
 							<a class="nav__link nav__link--inside" th:href="@{/listarProveedor}">Proveedores</a>
 						</li>
-
-						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarStock}">Stock</a>
-						</li>
 					</ul>
 				</li>
 
@@ -234,14 +226,6 @@ function eliminarInsumos(idInsumo){
 							<a class="nav__link nav__link--inside" th:href="@{/listarAgentes}">agentes Tecnicos</a>
 						</li>
 					</ul>
-				</li>
-
-
-				<li class="list__item">
-					<div class="list__button">
-						<img src="/assets/bell.svg" class="list__img">
-						<a href="#" class="nav__link">Contacto</a>
-					</div>
 				</li>
 
 			</ul>
@@ -293,7 +277,7 @@ function eliminarInsumos(idInsumo){
 							  <div class="modal-dialog">
 							    <div class="modal-content">
 							      <div class="modal-header">
-							        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+							        <h5 class="modal-title" id="exampleModalLabel">Inactivar insumo</h5>
 							        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							          <span aria-hidden="true">&times;</span>
 							        </button>
@@ -302,7 +286,7 @@ function eliminarInsumos(idInsumo){
 							        Desea cambiar el estado del insumo <span th:text="${insumos.nombreInsumo}"></span>?
 							      </div>
 							      <div class="modal-footer">
-							        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 							        <span th:if="${insumos.estado == 'activo'}"><a th:href="@{/estadoInsumo(idInsumo=${insumos.idInsumo})}" type="button" class="btn btn-danger">INACTIVO</a></span>
 									<span th:if="${insumos.estado == 'inactivo'}"><a th:href="@{/estadoInsumo(idInsumo=${insumos.idInsumo})}" type="button" class="btn btn-warning">ACTIVO</a></span>
 							      </div>

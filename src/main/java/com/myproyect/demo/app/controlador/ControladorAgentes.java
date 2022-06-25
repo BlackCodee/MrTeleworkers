@@ -1,7 +1,6 @@
 package com.myproyect.demo.app.controlador;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -50,9 +49,9 @@ public class ControladorAgentes {
 	
 	@GetMapping("/editarAgentes/{idAgente}")
 	public String editar(@PathVariable int idAgente, Model model) {
-		Optional<Agentes>agentes=service.ListarId(idAgente);
+		Agentes agentes = iAgentes.findByIdAgente(idAgente);
 		model.addAttribute("agentes", agentes);
-		return "Asistencia/Administrador/nuevoAge";
+		return "Asistencia/Administrador/editarAge";
 	}
 	
 	@GetMapping("/eliminarAgentes/{idAgente}")

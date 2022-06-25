@@ -31,7 +31,7 @@ public class ControladorProveedor {
 	public String listar(Model model) {		
 		List<Proveedor>proveedor=service.Listar();
 		model.addAttribute("proveedor", proveedor);
-		return "Inventarios/Administrador/proveedoresAdmin";
+		return "/Inventarios/Administrador/proveedoresAdmin";
 		
 	}
 	
@@ -50,9 +50,9 @@ public class ControladorProveedor {
 	
 	@GetMapping("/editarProveedor/{idProveedor}")
 	public String editar(@PathVariable int idProveedor, Model model) {
-		Optional<Proveedor>proveedor=service.ListarId(idProveedor);
+		Proveedor proveedor = iProveedor.findId(idProveedor);
 		model.addAttribute("proveedor", proveedor);
-		return "Inventarios/Administrador/nuevoProvAdmin";
+		return "Inventarios/Administrador/editarProvAdmin";
 	}
 	
 	@GetMapping("/eliminarProveedor/{idProveedor}")

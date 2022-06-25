@@ -84,11 +84,7 @@
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
-				<li><a href="#" class="nav-link px-2 text-light">Home</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">Features</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">About</a></li>
+				<li><a href="#" class="nav-link px-8 text-light">JEFE DE AREA</a></li>
 			</ul>
 
 			<div class="col-md-1 text-center">
@@ -132,28 +128,6 @@
                     </li>
                 </ul>
 
-            </li>
-
-            <li class="list__item list__item--click">
-                <div class="list__button list__button--click">
-                    <img src="/assets/message.svg" class="list__img">
-                    <a href="#" class="nav__link">ASISTENCIA TECNICA</a>
-                    <img src="/assets/arrow.svg" class="list__arrow">
-                </div>
-
-                <ul class="list__show">
-                    <li class="list__inside">
-                        <a class="nav__link nav__link--inside" th:href="@{/Asistencia-Emple}">Solicitudes realizadas</a>
-                    </li>
-                </ul>
-            </li>
-
-
-            <li class="list__item">
-                <div class="list__button">
-                    <img src="/assets/bell.svg" class="list__img">
-                    <a href="#" class="nav__link">Contacto</a>
-                </div>
             </li>
 
         </ul>
@@ -227,7 +201,39 @@
                                         </div>
                                         <br>
                                         <div class="form-group">
-                                        <center><button type="submit" class="btn btn-info text-light" name="btnCrear">CREAR</button></center>
+                                        <center>
+											<button type="button" class="btn btn-primary"
+												data-toggle="modal" data-target="#exampleModal"
+												th:attr="data-target='#exampleModal'+${actividadLaboral.idActividad}">
+												CREAR
+											</button>
+		                                    <!-- Modal Editar-->
+												<div class="modal fade text-dark"
+													th:attr="id='exampleModal'+${actividadLaboral.idActividad}"
+													tabindex="-1" aria-labelledby="exampleModalLabel"
+													aria-hidden="true">
+													<div class="modal-dialog">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h5 class="modal-title" id="exampleModalLabel">Crear actividad</h5>
+																<button type="button" class="close" data-dismiss="modal"
+																	aria-label="Close">
+																	<span aria-hidden="true">&times;</span>
+																</button>
+															</div>
+															<div class="modal-body">
+																Desea crear la actividad <span
+																	th:text="${actividadLaboral.idActividad}"></span>?
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+																<button type="submit" class="btn btn-info text-light" name="btnCrear">Crear</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											<!-- Modal -->							
+											</center>
                                         </div>
                                     </form>
                                 </div>

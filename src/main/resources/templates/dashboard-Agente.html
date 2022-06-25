@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="/css/morris.css">
   <script src="/js/morris.min.js"></script>
   <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <title>Dashboard Empleado</title>
+    <title>Dashboard-Agentes</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     iconOs     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
@@ -34,11 +34,12 @@
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
-				<li><a href="#" class="nav-link px-8 text-light">EMPLEADO</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">Agente Técnico</a></li>
+				
 			</ul>
 
 			<div class="col-md-1 text-center">
-				<a th:href="@{/cerrar}" class="btn btn-outline-light me-2">Salir</a>
+				<a th:href="@{/}" class="btn btn-outline-light me-2">Salir</a>
 			</div>
 		</div>
 	</header>
@@ -50,78 +51,48 @@
             <li class="list__item">
                 <div class="list__button">
                     <img src="/assets/dashboard.svg" class="list__img">
-                    <a th:href="@{/dashboard-Empleado}" class="nav__link">Inicio</a>
+                    <a th:href="@{/dashboard-Agentes}" class="nav__link">Inicio</a>
                 </div>
             </li>
 
             <li class="list__item list__item--click">
                 <div class="list__button list__button--click">
                     <img src="/assets/docs.svg" class="list__img">
-                    <a href="#" class="nav__link">SEGUIMIENTO EMPLEADO</a>
+                    <a href="#" class="nav__link">SOLICITUDES</a>
                     <img src="/assets/arrow.svg" class="list__arrow">
                 </div>
 
                 <ul class="list__show">
                     <li class="list__inside">
-                        <a class="nav__link nav__link--inside" th:href="@{/listarActividadLaboralEmpleado}">Actividades Empleado</a>
+                        <a class="nav__link nav__link--inside" th:href="@{/listarAgentesSoli}">Solicitudes Asignadas</a>
                     </li>
 
                     <li class="list__inside">
-                        <a class="nav__link nav__link--inside" th:href="@{/listarCapacitacionesEmpleado}">Capacitaciones</a>
+                        <a class="nav__link nav__link--inside" th:href="@{/newActividadLaboral}">Consultar Solicitudes</a>
                     </li>
 
-                    <li class="list__inside">
-                        <a class="nav__link nav__link--inside" th:href="@{/listarCalendario}">Eventos</a>
-                    </li>
+                    
                 </ul>
 
             </li>
 
-            <li class="list__item list__item--click">
-                <div class="list__button list__button--click">
-                    <img src="/assets/stats.svg" class="list__img">
-                    <a href="#" class="nav__link">INVENTARIOS</a>
-                    <img src="/assets/arrow.svg" class="list__arrow">
+           
+
+
+            <li class="list__item">
+                <div class="list__button">
+                    <img src="/assets/bell.svg" class="list__img">
+                    <a href="#" class="nav__link">Contacto</a>
                 </div>
-                <ul class="list__show">
-                    <li class="list__inside">
-                        <a class="nav__link nav__link--inside" th:href="@{/listarInsumosEmpleado}">Insumos</a>
-                    </li>
-
-                    <li class="list__inside">
-                        <a class="nav__link nav__link--inside" th:href="@{/solicitudComputador}">Requerimiento de Computadores</a>
-                    </li>
-                    <li class="list__inside"><a
-						class="nav__link nav__link--inside"
-						th:href="@{/listarPrestamosEmpl}">Ver solicitudes realizadas</a></li>
-                </ul>
-            </li>
-
-            <li class="list__item list__item--click">
-                <div class="list__button list__button--click">
-                    <img src="/assets/message.svg" class="list__img">
-                    <a href="#" class="nav__link">ASISTENCIA TECNICA</a>
-                    <img src="/assets/arrow.svg" class="list__arrow">
-                </div>
-
-                <ul class="list__show">
-                <li class="list__inside">
-                        <a class="nav_link nav_link--inside" th:href="@{/newSolicitud}">Necesitas ayuda?</a>
-                    </li>
-                    <li class="list__inside">
-                        <a class="nav__link nav__link--inside" th:href="@{/listarUsuariosSoli}">Solicitudes realizadas</a>
-                    </li>
-                </ul>
             </li>
 
         </ul>
     </div>
     <!--Fin menu slider-->
-    <!--Comienzo contenido de la pagina-->
     <div class="contenido">
 		<div
 			class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-			<h1 class="col-md-6 h2">¡BIENVENIDO EMPLEADO!</h1>
+			<h1 class="col-md-6 h2">¡BIENVENIDO AGENTE!</h1>
 			<div class="btn-toolbar mb-2 mb-md-0">
                     
 				
@@ -137,7 +108,8 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0" th:text="${usuarios}"></h3>
+                          <h3 class="mb-0">$12.34</h3>
+                          <p class="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
                         </div>
                       </div>
                       <div class="col-3">
@@ -146,7 +118,7 @@
                         </div>
                       </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Usuarios Activos</h6>
+                    <h6 class="text-muted font-weight-normal">Administradores</h6>
                   </div>
                 </div>
               </div>
@@ -156,7 +128,8 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0" th:text="${insumos}"></h3>
+                          <h3 class="mb-0">$17.34</h3>
+                          <p class="text-success ml-2 mb-0 font-weight-medium">+11%</p>
                         </div>
                       </div>
                       <div class="col-3">
@@ -165,7 +138,7 @@
                         </div>
                       </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Insumos Disponibles</h6>
+                    <h6 class="text-muted font-weight-normal">Jefes de Área</h6>
                   </div>
                 </div>
               </div>
@@ -175,7 +148,8 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0" th:text="${proveedores}"></h3>
+                          <h3 class="mb-0">$12.34</h3>
+                          <p class="text-danger ml-2 mb-0 font-weight-medium">-2.4%</p>
                         </div>
                       </div>
                       <div class="col-3">
@@ -184,7 +158,7 @@
                         </div>
                       </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Proveedores Activos</h6>
+                    <h6 class="text-muted font-weight-normal">Agentes</h6>
                   </div>
                 </div>
               </div>
@@ -194,7 +168,8 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0" th:text="${agentes}"></h3>
+                          <h3 class="mb-0">$31.53</h3>
+                          <p class="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
                         </div>
                       </div>
                       <div class="col-3">
@@ -203,7 +178,7 @@
                         </div>
                       </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Agentes Activos</h6>
+                    <h6 class="text-muted font-weight-normal">Empleados</h6>
                   </div>
                 </div>
               </div>

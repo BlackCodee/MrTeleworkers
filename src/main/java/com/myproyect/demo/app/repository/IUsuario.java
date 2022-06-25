@@ -17,5 +17,10 @@ public interface IUsuario extends JpaRepository<Usuario, Integer>{
 	@Query(value="SELECT * FROM USUARIOS WHERE ID_USUARIO=?",nativeQuery = true)
  	public Usuario findId(int id);
 	
+	@Query(value="SELECT COUNT(*) FROM `usuarios` usu WHERE usu.estado = 'activo'",nativeQuery = true)
+ 	public int usuariosActivos();
+	
+	@Query(value="SELECT COUNT(*) FROM `usuarios` usu WHERE usu.estado = 'activo' AND usu.id_rol = 4",nativeQuery = true)
+ 	public int agentesActivos();
 	/*public Usuario findByEmailAndContrasena(String email, String contrasena);*/
 }

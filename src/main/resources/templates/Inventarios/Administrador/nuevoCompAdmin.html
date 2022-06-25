@@ -64,13 +64,8 @@
 			<button type="button">
 				<img src="/assets/message.svg" alt="" class="menu-bar bi me-2 bg-light text-light">
 			</button>
-
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
-				<li><a href="#" class="nav-link px-2 text-light">Home</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">Features</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">About</a></li>
+				<li><a href="#" class="nav-link px-8 text-light">ADMINISTRADOR</a></li>
 			</ul>
 
 			<div class="col-md-1 text-center">
@@ -132,10 +127,6 @@
 						<li class="list__inside">
 							<a class="nav__link nav__link--inside" th:href="@{/listarProveedor}">Proveedores</a>
 						</li>
-
-						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarStock}">Stock</a>
-						</li>
 					</ul>
 				</li>
 
@@ -162,14 +153,6 @@
 							<a class="nav__link nav__link--inside" th:href="@{/listarAgentes}">agentes Tecnicos</a>
 						</li>
 					</ul>
-				</li>
-
-
-				<li class="list__item">
-					<div class="list__button">
-						<img src="/assets/bell.svg" class="list__img">
-						<a href="#" class="nav__link">Contacto</a>
-					</div>
 				</li>
 
 			</ul>
@@ -241,12 +224,42 @@
 												<div class="valid-feedback">¡Campo Valido!</div>
 												<div class="invalid-feedback">¡Ingrese el estado del computador!</div>
 											</div>
-											<div class="col-md-6 mb-3">
-												<br>
-												<input type="submit" value="Guardar" class="btn btn-success">
-											</div>
+											
 										</div>
-										
+										<div class="form-row justify-content-center">
+		                                    <center>
+											<button type="button" class="btn btn-success"
+												data-toggle="modal" data-target="#exampleModal"
+												th:attr="data-target='#exampleModal'+${computador.idComputador}">
+												Agregar
+											</button>
+		                                    <a th:href="@{/listarComputador}" class="btn btn-primary text-light"> Volver </a>
+		                                    <!-- Modal Editar-->
+												<div class="modal fade"
+													th:attr="id='exampleModal'+${computador.idComputador}"
+													tabindex="-1" aria-labelledby="exampleModalLabel"
+													aria-hidden="true">
+													<div class="modal-dialog">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h5 class="modal-title" id="exampleModalLabel">Agregar Computador</h5>
+																<button type="button" class="close" data-dismiss="modal"
+																	aria-label="Close">
+																	<span aria-hidden="true">&times;</span>
+																</button>
+															</div>
+															<div class="modal-body">
+																¿Desea agregar un computador?
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+																<button type="submit" class="btn btn-info text-light" name="btnEditar">Agregar</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											<!-- Modal -->   
+		                                    </center>
 									</form>
 								</div>
 						</div>

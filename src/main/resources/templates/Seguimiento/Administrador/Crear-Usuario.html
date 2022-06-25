@@ -61,11 +61,7 @@
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
-				<li><a href="#" class="nav-link px-2 text-light">Home</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">Features</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">About</a></li>
+				<li><a href="#" class="nav-link px-8 text-light">ADMINISTRADOR</a></li>
 			</ul>
 
 			<div class="col-md-1 text-center">
@@ -128,10 +124,6 @@
 						<li class="list__inside">
 							<a class="nav__link nav__link--inside" th:href="@{/listarProveedor}">Proveedores</a>
 						</li>
-
-						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarStock}">Stock</a>
-						</li>
 					</ul>
 				</li>
 
@@ -160,14 +152,6 @@
 					</ul>
 				</li>
 
-
-				<li class="list__item">
-					<div class="list__button">
-						<img src="/assets/bell.svg" class="list__img">
-						<a href="#" class="nav__link">Contacto</a>
-					</div>
-				</li>
-
 			</ul>
 		</div>
 		<!--Fin menu slider-->
@@ -183,7 +167,7 @@
                                 </div>
                                 <div class="card-body">
                                     
-                                    <form th:action="@{/saveUsuario}" th:object=${usuario} id="form-registro"  class="needs-validation" method="POST" novalidate>
+                                                                        <form th:action="@{/saveUsuario}" th:object=${usuario} id="form-registro"  class="needs-validation" method="POST" novalidate>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="name" class="control-label">Nombre</label>
@@ -272,8 +256,8 @@
 												<div class="invalid-feedback">¡Ingrese id 1 de inventario!</div>
                                             </div>
                                             <div class="form-group col-md-3">
-                                                <label for="Id">Id</label>
-                                                <input th:field="*{idUsuario}" type="number" class="form-control" id="Id" placeholder="Id" name="Id" readonly="readonly">
+                                            	<label for="idUsuario">Id usuario</label>
+                                                <input th:field="*{idUsuario}" type="number" class="form-control" id="idUsuario" placeholder="idUsuario" name="idUsuario" readonly>
                                             </div>
                                             <div class="form-group col-md-6">
                                             	<label for="contrasena" class="control-label">Contraseña</label>
@@ -283,20 +267,15 @@
 												<div class="invalid-feedback">¡Ingrese una contraseña para el usuario!</div>
                                             </div>
                                         </div>
-                                        <br>
-                                        <br>
-                                        <div class="form-group">
-                                        <center>
+		                                <div class="form-row justify-content-center">
+		                                    <center>
 											<button type="button" class="btn btn-success"
 												data-toggle="modal" data-target="#exampleModal"
 												th:attr="data-target='#exampleModal'+${usuario.idUsuario}">
-												CREAR
+												Crear
 											</button>
-                                        </center>
-                                        </div>
-                                    </form>
-                                    
-											<!-- Modal Agregar-->
+		                                    <a th:href="@{/listarUsuario}" class="btn btn-primary text-light"> Volver </a>
+		                                    <!-- Modal Editar-->
 												<div class="modal fade"
 													th:attr="id='exampleModal'+${usuario.idUsuario}"
 													tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -304,25 +283,27 @@
 													<div class="modal-dialog">
 														<div class="modal-content">
 															<div class="modal-header">
-																<h5 class="modal-title" id="exampleModalLabel">Creacion de usuario</h5>
+																<h5 class="modal-title" id="exampleModalLabel">Crear Usuario</h5>
 																<button type="button" class="close" data-dismiss="modal"
 																	aria-label="Close">
 																	<span aria-hidden="true">&times;</span>
 																</button>
 															</div>
 															<div class="modal-body">
-																Desea Agregar un nuevo usuario <span
+																Desea crear el usuario <span
 																	th:text="${usuario.idUsuario}"></span>?
 															</div>
 															<div class="modal-footer">
-																<button type="button" class="btn btn-secondary"
-																	data-dismiss="modal">Cancelar</button>
-																<button type="submit" class="btn btn-info text-light" name="btnGrabar">CREAR</button>
+																<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+																<button type="submit" class="btn btn-info text-light" name="btnCrear">Crear</button>
 															</div>
 														</div>
 													</div>
 												</div>
-											<!-- Modal -->
+											<!-- Modal -->   
+		                                    </center>
+		                                </div>
+                                </form>
                                 </div>
                             </div>
                         </div>

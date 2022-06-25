@@ -54,18 +54,18 @@ public class ControladorInsumos {
 		return "redirect:listarInsumos";
 		
 	}
-	
+
 	@GetMapping("/editarInsumos/{idInsumo}")
 	public String editar(@PathVariable int idInsumo, Model model) {
-		Optional<Insumos>insumos=service.ListarId(idInsumo);
+		Insumos insumos = iInsumos.findId(idInsumo);
 		model.addAttribute("insumos", insumos);
-		return "Inventarios/Administrador/nuevoInsAdmin";
+		return "Inventarios/Administrador/editarInsAdmin";
 	}
 	
 	@GetMapping("/eliminarInsumos/{idInsumo}")
 	public String delete(Model model, @PathVariable int idInsumo) {
 		service.delete(idInsumo);
-		return "redirect:/listarInsumos";
+		return "redirect:listarInsumos";
 	}
 	
 	@RequestMapping("/estadoInsumo")

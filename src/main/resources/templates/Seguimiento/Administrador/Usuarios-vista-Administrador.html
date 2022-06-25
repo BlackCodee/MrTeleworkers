@@ -91,11 +91,7 @@ function eliminarUsuario(idUsu){
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
-				<li><a href="#" class="nav-link px-2 text-light">Home</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">Features</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">About</a></li>
+				<li><a href="#" class="nav-link px-8 text-light">ADMINISTRADOR</a></li>
 			</ul>
 
 			<div class="col-md-1 text-center">
@@ -159,10 +155,6 @@ function eliminarUsuario(idUsu){
 					<li class="list__inside"><a
 						class="nav__link nav__link--inside" th:href="@{/listarProveedor}">Proveedores</a>
 					</li>
-
-					<li class="list__inside"><a
-						class="nav__link nav__link--inside" th:href="@{/listarStock}">Stock</a>
-					</li>
 				</ul>
 			</li>
 
@@ -191,14 +183,6 @@ function eliminarUsuario(idUsu){
 				</ul>
 			</li>
 
-
-			<li class="list__item">
-				<div class="list__button">
-					<img src="/assets/bell.svg" class="list__img"> <a href="#"
-						class="nav__link">Contacto</a>
-				</div>
-			</li>
-
 		</ul>
 	</div>
 	<!--Fin menu slider-->
@@ -213,7 +197,7 @@ function eliminarUsuario(idUsu){
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-8">
+				<div class="col-md-12">
 					<div class="card">
 						<div class="card-header">
 							<h3>Ultimos Usuarios aceptados</h3>
@@ -313,28 +297,6 @@ function eliminarUsuario(idUsu){
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4">
-					<div class="row">
-						<div class="card">
-							<div class="card-header">
-								<h3>Horario</h3>
-							</div>
-							<div class="card-body">
-								<canvas id="graf"></canvas>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="card">
-							<div class="card-header">
-								<h3>Area</h3>
-							</div>
-							<div class="card-body">
-								<canvas id="graf1"></canvas>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 			<br>
 			<br>
@@ -374,7 +336,6 @@ function eliminarUsuario(idUsu){
 
 	<!--   Enlaces   -->
 	<script src="/js/sliderjs.js"></script>
-	<script src="/js/usuarios_graficas.js"></script>
 	<script src="/assets/js/core/jquery.min.js"></script>
 	<script src="/assets/js/core/popper.min.js"></script>
 	<script src="/assets/js/core/bootstrap.min.js"></script>
@@ -442,7 +403,6 @@ function eliminarUsuario(idUsu){
                     });
                 });
             </script>
-
 
 
 </body>

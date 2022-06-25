@@ -76,7 +76,7 @@
 	}
 </script>
 </head>
-<body onload="mensaje2()">
+<body>
 	<!--inicio header-->
 	<header class=" py-1 mb-0 bg-dark ">
 		<div class="container d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -85,11 +85,7 @@
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
-				<li><a href="#" class="nav-link px-2 text-light">Home</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">Features</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">About</a></li>
+				<li><a href="#" class="nav-link px-8 text-light">ADMINISTRADOR</a></li>
 			</ul>
 
 			<div class="col-md-1 text-center">
@@ -152,10 +148,6 @@
 					<li class="list__inside"><a
 						class="nav__link nav__link--inside" th:href="@{/listarProveedor}">Proveedores</a>
 					</li>
-
-					<li class="list__inside"><a
-						class="nav__link nav__link--inside" th:href="@{/listarStock}">Stock</a>
-					</li>
 				</ul>
 			</li>
 
@@ -182,14 +174,6 @@
 						class="nav__link nav__link--inside" th:href="@{/listarAgentes}">agentes
 							Tecnicos</a></li>
 				</ul>
-			</li>
-
-
-			<li class="list__item">
-				<div class="list__button">
-					<img src="/assets/bell.svg" class="list__img"> <a href="#"
-						class="nav__link">Contacto</a>
-				</div>
 			</li>
 
 		</ul>
@@ -310,7 +294,7 @@
 															placeholder="ingrese el enlace de la reunion" required>
 															
 														<div class="valid-feedback text-light">¡Campo Valido!</div>
-														<div class="invalid-feedbac text-lightk">¡Ingrese el enlace de la reunion!</div>
+														<div class="invalid-feedback text-lightk">¡Ingrese el enlace de la reunion!</div>
 													</div>
 												</div>
 												<div class="form-row">
@@ -328,13 +312,42 @@
 												</div>
 												<div class="row justify-content-center">
 													<div class="col-1">
-														<button type="submit"
-															class="btn btn-info text-light" name="btnCrear">CREAR</button>
+													<button type="button" class="btn btn-primary"
+														data-toggle="modal" data-target="#exampleModal"
+														th:attr="data-target='#exampleModal'+${capacitaciones.idCapacitacion}">
+														Editar
+													</button>
 													</div>
 													<div class="col-1">
 														<a th:href="@{/listarCapacitaciones}"
-															class="btn btn-secondary text-light">VOLVER</a>
+															class="btn btn-secondary text-light">Volver</a>
 													</div>
+				                                    <!-- Modal Editar-->
+														<div class="modal fade text-dark"
+															th:attr="id='exampleModal'+${capacitaciones.idCapacitacion}"
+															tabindex="-1" aria-labelledby="exampleModalLabel"
+															aria-hidden="true">
+															<div class="modal-dialog">
+																<div class="modal-content">
+																	<div class="modal-header">
+																		<h5 class="modal-title" id="exampleModalLabel">Editar capacitacion</h5>
+																		<button type="button" class="close" data-dismiss="modal"
+																			aria-label="Close">
+																			<span aria-hidden="true">&times;</span>
+																		</button>
+																	</div>
+																	<div class="modal-body">
+																		Desea editar la capacitacion <span
+																			th:text="${capacitaciones.idCapacitacion}"></span>?
+																	</div>
+																	<div class="modal-footer">
+																		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+																		<button type="submit" class="btn btn-info text-light" name="btnCrear">Editar</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+													<!-- Modal -->   
 												</div>
 											</form>
                                         </div>

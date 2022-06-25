@@ -14,5 +14,8 @@ public interface IActividadLaboral extends JpaRepository<ActividadLaboral, Integ
 	@Query(value="SELECT * FROM actividad_laboral WHERE id_area=?",nativeQuery = true)
  	public List<ActividadLaboral> findActividadesArea(int idArea);
 	
+	
+	
+	
 	public ActividadLaboral findByIdActividad(int idActividad);
 }

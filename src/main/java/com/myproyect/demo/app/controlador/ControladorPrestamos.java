@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.myproyect.demo.app.data.Computador;
+import com.myproyect.demo.app.data.Insumos;
 import com.myproyect.demo.app.data.Prestamos;
 import com.myproyect.demo.app.interfaceService.IPrestamosService;
 import com.myproyect.demo.app.repository.IComputador;
@@ -66,7 +67,12 @@ public class ControladorPrestamos {
 		
 	}
 	
-	
+	@GetMapping("/editarPrestamos/{idPrestamo}")
+	public String editar(@PathVariable int idPrestamo, Model model) {
+		Prestamos prestamos = iPrestamo.findId(idPrestamo);
+		model.addAttribute("prestamos", prestamos);
+		return "Inventarios/Administrador/editarPresAdmin";
+	}
 	
 	@GetMapping("/eliminarPrestamos/{idPrestamo}")
 	public String delete(Model model, @PathVariable int idPrestamo) {

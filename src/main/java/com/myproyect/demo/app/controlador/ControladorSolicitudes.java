@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
+import com.myproyect.demo.app.data.Insumos;
 import com.myproyect.demo.app.data.Solicitudes;
 import com.myproyect.demo.app.interfaceService.ISolicitudesService;
 import com.myproyect.demo.app.repository.ISolicitudes;
@@ -72,9 +72,9 @@ public class ControladorSolicitudes {
 	
 	@GetMapping("/editarSolicitudes/{idSolicitud}")
 	public String editar(@PathVariable int idSolicitud, Model model) {
-		Optional<Solicitudes>solicitudes=service.ListarId(idSolicitud);
+		Solicitudes solicitudes = iSolicitud.findByIdSolicitud(idSolicitud);
 		model.addAttribute("solicitudes", solicitudes);
-		return "Asistencia/Administrador/nuevaSol";
+		return "Asistencia/Administrador/editarSol";
 	}
 	
 	@GetMapping("/eliminarSolicitudes/{idSolicitud}")

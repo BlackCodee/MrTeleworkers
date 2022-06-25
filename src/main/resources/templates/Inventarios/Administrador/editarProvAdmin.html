@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/css/morris.css">
 <script src="/js/morris.min.js"></script>
 <link rel="stylesheet" href="/css/bootstrap.min.css">
-<title>Solicitud</title>
+<title>Computador</title>
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
 	name='viewport' />
@@ -67,7 +67,7 @@
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
-				<li><a href="#" class="nav-link px-8 text-light">EMPLEADO</a></li>
+				<li><a href="#" class="nav-link px-8 text-light">ADMINISTRADOR</a></li>
 			</ul>
 
 			<div class="col-md-1 text-center">
@@ -79,41 +79,41 @@
 		</div>
 	</header>
 	<!--fin del header-->
-	 <!--inicio menu slider-->
-    <div class="sidebar">
-        <h2>MRTW</h2>
-        <ul class="list">
-            <li class="list__item">
-                <div class="list__button">
-                    <img src="/assets/dashboard.svg" class="list__img">
-                    <a th:href="@{/dashboard-Empleado}" class="nav__link">Inicio</a>
-                </div>
-            </li>
+	<!--inicio menu slider-->
+	<div class="sidebar">
+		<h2>MRTW</h2>
+		<ul class="list">
+			<li class="list__item">
+				<div class="list__button">
+					<img src="/assets/dashboard.svg" class="list__img"> <a
+						th:href="@{/dashboard-Admin}" class="nav__link">Inicio</a>
+				</div>
+			</li>
 
-            <li class="list__item list__item--click">
-                <div class="list__button list__button--click">
-                    <img src="/assets/docs.svg" class="list__img">
-                    <a href="#" class="nav__link">SEGUIMIENTO EMPLEADO</a>
-                    <img src="/assets/arrow.svg" class="list__arrow">
-                </div>
+			<li class="list__item list__item--click">
+				<div class="list__button list__button--click">
+					<img src="/assets/docs.svg" class="list__img"> <a href="#"
+						class="nav__link">SEGUIMIENTO EMPLEADO</a> <img
+						src="/assets/arrow.svg" class="list__arrow">
+				</div>
 
-                <ul class="list__show">
-                    <li class="list__inside">
-                        <a class="nav__link nav__link--inside" th:href="@{/listarActividadLaboralEmpleado}">Actividades Empleado</a>
-                    </li>
+				<ul class="list__show">
+					<li class="list__inside"><a
+						class="nav__link nav__link--inside" th:href="@{/newUsuario}">Crear
+							Usuarios</a></li>
 
-                    <li class="list__inside">
-                        <a class="nav__link nav__link--inside" th:href="@{/listarCapacitacionesEmpleado}">Capacitaciones</a>
-                    </li>
+					<li class="list__inside"><a
+						class="nav__link nav__link--inside" th:href="@{/listarUsuario}">Ver
+							Usuarios</a></li>
 
-                    <li class="list__inside">
-                        <a class="nav__link nav__link--inside" th:href="@{/listarCalendario}">Eventos</a>
-                    </li>
-                </ul>
+					<li class="list__inside"><a
+						class="nav__link nav__link--inside"
+						th:href="@{/listarCapacitaciones}">Gestionar Capacitacion</a></li>
+				</ul>
 
-            </li>
+			</li>
 
-            <li class="list__item list__item--click">
+			<li class="list__item list__item--click">
 				<div class="list__button list__button--click">
 					<img src="/assets/stats.svg" class="list__img"> <a href="#"
 						class="nav__link">INVENTARIOS</a> <img src="/assets/arrow.svg"
@@ -121,41 +121,47 @@
 				</div>
 				<ul class="list__show">
 					<li class="list__inside"><a
-						class="nav__link nav__link--inside"
-						th:href="@{/listarInsumosEmpleado}">Insumos</a></li>
+						class="nav__link nav__link--inside" th:href="@{/listarInsumos}">Insumos</a>
+					</li>
 
 					<li class="list__inside"><a
-						class="nav__link nav__link--inside"
-						th:href="@{/solicitudComputador}">Requerimiento de
-							Computadores</a></li>
-							
+						class="nav__link nav__link--inside" th:href="@{/listarComputador}">Computadores</a>
+					</li>
+
 					<li class="list__inside"><a
-						class="nav__link nav__link--inside"
-						th:href="@{/listarPrestamosEmpl}">Ver solicitudes realizadas</a></li>
+						class="nav__link nav__link--inside" th:href="@{/listarProveedor}">Proveedores</a>
+					</li>
 				</ul>
 			</li>
-            
 
-            <li class="list__item list__item--click">
-                <div class="list__button list__button--click">
-                    <img src="/assets/message.svg" class="list__img">
-                    <a href="#" class="nav__link">ASISTENCIA TECNICA</a>
-                    <img src="/assets/arrow.svg" class="list__arrow">
-                </div>
+			<li class="list__item list__item--click">
+				<div class="list__button list__button--click">
+					<img src="/assets/message.svg" class="list__img"> <a href="#"
+						class="nav__link">ASISTENCIA TECNICA</a> <img
+						src="/assets/arrow.svg" class="list__arrow">
+				</div>
 
-                <ul class="list__show">
-                 <li class="list__inside">
-                        <a class="nav_link nav_link--inside" th:href="@{/newSolicitud}">Necesitas ayuda?</a>
-                    </li>
-                    <li class="list__inside">
-                        <a class="nav__link nav__link--inside" th:href="@{/listarUsuariosSoli}">Solicitudes realizadas</a>
-                    </li>
-                </ul>
-            </li>
+				<ul class="list__show">
+					<li class="list__inside"><a
+						class="nav__link nav__link--inside" th:href="@{/Asistencia-Admin}">Inicio</a>
+					</li>
+					<li class="list__inside"><a
+						class="nav__link nav__link--inside"
+						th:href="@{/listarSolicitudes}">Gestion de Solicitudes</a></li>
 
-        </ul>
-    </div>
-    <!--Fin menu slider-->
+					<li class="list__inside"><a
+						class="nav__link nav__link--inside" th:href="@{/Informes-Admin}">Informe</a>
+					</li>
+
+					<li class="list__inside"><a
+						class="nav__link nav__link--inside" th:href="@{/listarAgentes}">agentes
+							Tecnicos</a></li>
+				</ul>
+			</li>
+
+		</ul>
+	</div>
+	<!--Fin menu slider-->
 	<!--Comienzo contenido de la pagina-->
 	<div class="contenido">
 		<div style="height: 30px;"></div>
@@ -164,115 +170,84 @@
 				<div class="col-lg-12 ml-2">
 					<div class="card shadow mb-5 bg-white">
 						<div class="card-header bg-primary text-center"
-							style="font-size: 20px;">REALIZAR SOLICITUD</div>
+							style="font-size: 20px;">PROVEEDOR</div>
 						<div class="card-body">
 
 
-							<form th:action="@{/savePrestamos}" th:object=${prestamos} method="POST" class="needs-validation" novalidate>
+							<form th:action="@{/saveProveedor}" th:object=${proveedor} method="POST" class="needs-validation" novalidate>
 								<div class="form-row">
 									<div class="col-md-6 mb-3">
-										<label>ID</label> 
-										<input th:field="*{idPrestamo}" type="text" class="form-control" readonly>
-										
+										<label>ID PROVEEDOR</label> 
+										<input th:field="*{idProveedor}" type="text" class="form-control" readonly>
 									</div>
 									<div class="col-md-6 mb-3">
-										<label>NOMBRE SOLICITANTE</label> 
-										<input th:field="*{nombresUsuario}" type="text" class="form-control" required>
+										<label>NOMBRE PROVEEDOR</label> 
+										<input th:field="*{nombreProveedor}" type="text" class="form-control" required>
 										
 										<div class="valid-feedback">¡Campo Valido!</div>
-										<div class="invalid-feedback">¡Ingrese el nombre del solicitante!</div>
+										<div class="invalid-feedback">¡Ingrese el nombre del proveedor!</div>
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="col-md-6 mb-3">
-										<label>ID USUARIO</label> 
-										<input th:field="*{IdUsuario}" type="text" class="form-control" required>
+										<label>CORREO PROVEEDOR</label> 
+										<input th:field="*{correo}" type="text" class="form-control" required>
 										
 										<div class="valid-feedback">¡Campo Valido!</div>
-										<div class="invalid-feedback">¡Ingrese el id del usuario!</div>
-									</div>
-									<div class="col-md-6 mb-3">
-										<label>CANTIDAD</label> 
-										<input th:field="*{cantidad}" type="text" class="form-control" required>
-										
-										<div class="valid-feedback">¡Campo Valido!</div>
-										<div class="invalid-feedback">¡Ingrese una cantidad!</div>
-									</div>
-								</div>
-								<div class="form-row">
-									<div class="col-md-6 mb-3">
-										<label>DETALLE</label> <input th:field="*{detalle}" type="text" class="form-control" required>
-										
-										<div class="valid-feedback">¡Campo Valido!</div>
-										<div class="invalid-feedback">¡Ingrese el detalle!</div>
+										<div class="invalid-feedback">¡Ingrese el correo del proveedor!</div>
 									</div>
 									<div class="col-md-6 mb-3">
 										<label>TELEFONO</label> 
 										<input th:field="*{telefono}" type="text" class="form-control" required>
 										
 										<div class="valid-feedback">¡Campo Valido!</div>
-										<div class="invalid-feedback">¡Ingrese el telefono del solicitante!</div>
+										<div class="invalid-feedback">¡Ingrese el telefono del proveedor!</div>
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="col-md-6 mb-3">
-										<label>EMAIL</label> <input th:field="*{email}" type="text" class="form-control" required>
+										<label>ESTADO</label> <input th:field="*{estado}" type="text" class="form-control" required>
 										
 										<div class="valid-feedback">¡Campo Valido!</div>
-										<div class="invalid-feedback">¡Ingrese el email del solicitante!</div>
+										<div class="invalid-feedback">¡Ingrese el estado del proveedor activo/inactivo!</div>
 									</div>
-									<div class="col-md-6 mb-3">
-										<label>ESTADO</label> 
-										<input th:field="*{estado}" type="text" class="form-control" required>
-										
-										<div class="valid-feedback">¡Campo Valido!</div>
-										<div class="invalid-feedback">¡Ingrese el estado!</div>
-									</div>
+									
 								</div>
-								<div class="col-md-6 mb-3">
-								
-									<label>COMPUTADOR</label> 
-											<select  th:field="*{idComputador}">
-                                            	<option  th:each="computadorItem : ${lstPrestamos}"  th:value="${computadorItem.idComputador}" th:text="${computadorItem.marca}" th:if="${computadorItem.descripcion} == Disponible"></option>
-                                            	
-                                        	</select>
-								
-                                </div>
 								<div class="form-row justify-content-center">
 		                                    <center>
 											<button type="button" class="btn btn-success"
 												data-toggle="modal" data-target="#exampleModal"
-												th:attr="data-target='#exampleModal'+${prestamos.idPrestamo}">
-												Solicitar Computador
+												th:attr="data-target='#exampleModal'+${proveedor.idProveedor}">
+												Editar
 											</button>
-		                                    <a th:href="@{/solicitudComputador}" class="btn btn-primary text-light"> Volver </a>
+		                                    <a th:href="@{/listarProveedor}" class="btn btn-primary text-light"> Volver </a>
 		                                    <!-- Modal Editar-->
 												<div class="modal fade"
-													th:attr="id='exampleModal'+${prestamos.idPrestamo}"
+													th:attr="id='exampleModal'+${proveedor.idProveedor}"
 													tabindex="-1" aria-labelledby="exampleModalLabel"
 													aria-hidden="true">
 													<div class="modal-dialog">
 														<div class="modal-content">
 															<div class="modal-header">
-																<h5 class="modal-title" id="exampleModalLabel">Realizar solicitud</h5>
+																<h5 class="modal-title" id="exampleModalLabel">Editar Proveedor</h5>
 																<button type="button" class="close" data-dismiss="modal"
 																	aria-label="Close">
 																	<span aria-hidden="true">&times;</span>
 																</button>
 															</div>
 															<div class="modal-body">
-																¿Desea realizar una solicitud?
+																Desea editar el proveedor <span
+																	th:text="${proveedor.idProveedor}"></span>?
 															</div>
 															<div class="modal-footer">
 																<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-																<button type="submit" class="btn btn-info text-light" name="btnEditar">Solicitar</button>
+																<button type="submit" class="btn btn-info text-light" name="btnEditar">Editar</button>
 															</div>
 														</div>
 													</div>
 												</div>
 											<!-- Modal -->   
 		                                    </center>
-		                                    
 							</form>
 						</div>
 					</div>
