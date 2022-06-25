@@ -31,7 +31,7 @@ public class ControladorProveedor {
 	public String listar(Model model) {		
 		List<Proveedor>proveedor=service.Listar();
 		model.addAttribute("proveedor", proveedor);
-		return "/Inventarios/Administrador/proveedoresAdmin";
+		return "Inventarios/Administrador/proveedoresAdmin";
 		
 	}
 	
