@@ -111,10 +111,6 @@ ORDER BY Mes ASC;]]>
 				</textElement>
 				<text><![CDATA[Reporte de Solicitudes]]></text>
 			</staticText>
-			<image>
-				<reportElement x="680" y="40" width="80" height="80" uuid="8682e915-f244-4939-a05a-4dd377a8c701"/>
-				<imageExpression><![CDATA["C:/Users/57319/Desktop/logo-blanco.jpg"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="30" y="10" width="150" height="40" uuid="15791618-41ff-4e28-a70d-4be9163adbe2"/>
 				<text><![CDATA[Mr.Teleworkers - Asistencia Técnica]]></text>
@@ -123,6 +119,10 @@ ORDER BY Mes ASC;]]>
 				<reportElement x="10" y="80" width="260" height="52" uuid="d1f2abb8-6366-4b98-a4b5-6122891816e4"/>
 				<text><![CDATA[En este reporte podemos evidenciar las Solicitudes más destacadas y una pequeña gráfica que nos va evidenciar cuál fue el mes en el que se realizaron mas solicitudes durante el año lectivo (2022).]]></text>
 			</staticText>
+			<image>
+				<reportElement x="670" y="40" width="80" height="92" uuid="f7e6df32-52b8-4223-aa15-cb418a3b9263"/>
+				<imageExpression><![CDATA["C:/Users/57319/Desktop/MrTeleworkers/src/main/resources/static/img/logo-blanco.jpg"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>

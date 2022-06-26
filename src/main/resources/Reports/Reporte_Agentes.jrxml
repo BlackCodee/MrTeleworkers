@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reporte_Agentes" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8a428614-ba79-4977-9e6d-e5ceb9db59c2">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Wordpress_Reports_BD"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="NO_DATA_ADAPTER"/>
 	<subDataset name="Agentes" uuid="a0f8258e-4a82-4951-bc30-44408d9f250c">
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Wordpress_Reports_BD"/>
@@ -94,10 +94,6 @@ ORDER BY solicitudes_Solucionadas ASC;]]>
 				</textElement>
 				<text><![CDATA[Reporte de Agentes Técnicos]]></text>
 			</staticText>
-			<image>
-				<reportElement x="700" y="30" width="80" height="80" uuid="49cbedb7-4bb8-48be-b6bf-a500a5727019"/>
-				<imageExpression><![CDATA["C:/Users/57319/Desktop/logo-blanco.jpg"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="30" y="10" width="130" height="30" uuid="1b168cae-54d0-4ca4-a751-3a5fcbee06af"/>
 				<text><![CDATA[Mr.Teleworkers - Asistencia Técnica]]></text>
@@ -106,6 +102,10 @@ ORDER BY solicitudes_Solucionadas ASC;]]>
 				<reportElement x="10" y="80" width="260" height="52" uuid="e3345331-c978-40f6-b150-c9e47aaff914"/>
 				<text><![CDATA[En este reporte podemos evidenciar la productividad de los agentes y en la gráfica evidenciamos los agentes con mas solicitudes solucionadas]]></text>
 			</staticText>
+			<image>
+				<reportElement x="713" y="30" width="78" height="86" uuid="f54d9395-0c2e-4ae9-86e6-449b7b3b1848"/>
+				<imageExpression><![CDATA["C:/Users/57319/Desktop/MrTeleworkers/src/main/resources/static/img/logo-blanco.jpg"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
