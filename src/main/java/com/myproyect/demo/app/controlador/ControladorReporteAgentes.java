@@ -27,7 +27,7 @@ public class ControladorReporteAgentes {
 	@Autowired
 	private ReporteAgentesServiceAPI reporteAgentesServiceAPI;
 
-	@GetMapping(path = "/agentes/download")
+	@GetMapping(path = "agentes/download")
 	public ResponseEntity<Resource> download(@RequestParam Map<String, Object> params)
 			throws JRException, IOException, SQLException {
 		ReporteAgentesDTO dto = reporteAgentesServiceAPI.obtenerReporteAgentes(params);
@@ -40,7 +40,7 @@ public class ControladorReporteAgentes {
 			mediaType = MediaType.APPLICATION_PDF;
 		} 
 
-		return ResponseEntity.ok().header("Content-Disposition", "inline; filename=\"" + dto.getFileName() + "\"")
+		return ResponseEntity.ok().header("Content-Disposition", "inline; filename=\"" + dto.getFileName() + "")
 				.contentLength(dto.getLength()).contentType(mediaType).body(streamResource);
 	}
 
