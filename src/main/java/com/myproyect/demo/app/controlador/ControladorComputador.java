@@ -29,7 +29,7 @@ public class ControladorComputador {
 	
     @RequestMapping("/solicitudComputador")
     public String index(){
-        return "/Inventarios/Empleado/compuEmpl";
+        return "Inventarios/Empleado/compuEmpl";
     }
 	
 	@GetMapping("/listarComputador")

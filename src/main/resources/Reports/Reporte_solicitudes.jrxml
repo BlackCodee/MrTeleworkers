@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reporte_solicitudes" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9dcd528d-f516-436e-b398-49a6925a6e79">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Mrtw_Reports_BD"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapterNube.jrdax"/>
 	<subDataset name="Total_Solicitudes_DataSet" uuid="6b7637ea-42ac-4ad9-a9f4-604c561cc8d7">
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Mrtw_Reports_BD"/>
@@ -112,17 +112,14 @@ ORDER BY Mes ASC;]]>
 				<text><![CDATA[Reporte de Solicitudes]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="30" y="10" width="150" height="40" uuid="15791618-41ff-4e28-a70d-4be9163adbe2"/>
+				<reportElement x="20" y="20" width="150" height="40" uuid="15791618-41ff-4e28-a70d-4be9163adbe2"/>
 				<text><![CDATA[Mr.Teleworkers - Asistencia Técnica]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="10" y="80" width="260" height="52" uuid="d1f2abb8-6366-4b98-a4b5-6122891816e4"/>
+				<reportElement x="40" y="100" width="699" height="30" uuid="d1f2abb8-6366-4b98-a4b5-6122891816e4"/>
+				<textElement textAlignment="Center"/>
 				<text><![CDATA[En este reporte podemos evidenciar las Solicitudes más destacadas y una pequeña gráfica que nos va evidenciar cuál fue el mes en el que se realizaron mas solicitudes durante el año lectivo (2022).]]></text>
 			</staticText>
-			<image>
-				<reportElement x="670" y="40" width="80" height="92" uuid="f7e6df32-52b8-4223-aa15-cb418a3b9263"/>
-				<imageExpression><![CDATA["C:/Users/57319/Desktop/MrTeleworkers/src/main/resources/static/img/logo-blanco.jpg"]]></imageExpression>
-			</image>
 		</band>
 	</title>
 	<pageHeader>

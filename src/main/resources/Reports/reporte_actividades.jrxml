@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte_actividades" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="224c3cd3-9a5a-49b9-b058-44aa77e48aea">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapterNube.jrdax"/>
+	<subDataset name="Actividades_area" uuid="229162af-122f-4d14-8b10-36d515198693">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="bdg2"/>
+		<parameter name="fechaInicio" class="java.lang.String"/>
+		<parameter name="fechaFin" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT COUNT(*) AS Nro_Actividades, ae.nombre_area 
+FROM `actividad_laboral` al INNER JOIN area_empresarial ae 
+ON al.id_area = ae.id_area 
+WHERE al.estado = 'activo' 
+GROUP BY al.id_area]]>
+		</queryString>
+		<field name="Nro_Actividades" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="Nro_Actividades"/>
+			<property name="com.jaspersoft.studio.field.label" value="Nro_Actividades"/>
+		</field>
+		<field name="nombre_area" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nombre_area"/>
+			<property name="com.jaspersoft.studio.field.label" value="nombre_area"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="area_empresarial"/>
+		</field>
+		<group name="nombre_area">
+			<groupExpression><![CDATA[$F{nombre_area}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="fechaInicio" class="java.lang.String"/>
+	<parameter name="fechaFin" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT al.nombre_actividad, al.descripcion, al.entregable, 
+al.fecha_entrega, al.fecha_modificacion, 
+ae.nombre_area FROM actividad_laboral al 
+INNER JOIN area_empresarial ae ON al.id_area = ae.id_area 
+WHERE al.estado = 'activo' AND al.fecha_entrega 
+BETWEEN $P{fechaInicio} AND $P{fechaFin} 
+  ORDER BY al.id_area]]>
+	</queryString>
+	<field name="nombre_actividad" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre_actividad"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre_actividad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="actividad_laboral"/>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.label" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="actividad_laboral"/>
+	</field>
+	<field name="entregable" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="entregable"/>
+		<property name="com.jaspersoft.studio.field.label" value="entregable"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="actividad_laboral"/>
+	</field>
+	<field name="fecha_entrega" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="fecha_entrega"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha_entrega"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="actividad_laboral"/>
+	</field>
+	<field name="fecha_modificacion" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="fecha_modificacion"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha_modificacion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="actividad_laboral"/>
+	</field>
+	<field name="nombre_area" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre_area"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre_area"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="area_empresarial"/>
+	</field>
+	<group name="grupo_actividades"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="-20" width="780" height="132" uuid="f319926c-2c0f-4452-aa71-93984448b124"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Black" size="14"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Reporte de Actividades Activas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="20" width="130" height="30" uuid="4768ee1a-0b6e-47e8-925f-aa24cdd39a75"/>
+				<text><![CDATA[Mr.Teleworkers - Seguimiento al empleado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="80" width="700" height="32" uuid="26d397f9-45e6-4124-a758-8d2ab349e2db"/>
+				<text><![CDATA[En este reporte podemos evidenciar las actividades existentes en la base de datos que se encuentren en estado activo independiente si la actividad ya finalizo o no, y una grafica donde podremos evidenciar el numero de actividades asignadas por area laboral]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="69" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="20" y="20" width="780" height="49" backcolor="#D8E6F1" uuid="c712eadf-55fe-4f84-8c6c-46912102b5d3"/>
+				<staticText>
+					<reportElement x="200" y="4" width="360" height="40" uuid="f37f50d5-8a1c-46dc-98cd-5602b0432655"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="13"/>
+					</textElement>
+					<text><![CDATA[Actividades en estado activo]]></text>
+				</staticText>
+				<frame>
+					<reportElement mode="Opaque" x="0" y="49" width="780" height="50" backcolor="#8BA1D9" uuid="c65c1562-bc64-48b9-94bc-9c08c4fb9348"/>
+					<staticText>
+						<reportElement x="0" y="0" width="120" height="49" uuid="5cee8543-0ab2-4d14-b7ac-c8818e3d8081"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="SansSerif" size="13"/>
+						</textElement>
+						<text><![CDATA[Nombre]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="120" y="0" width="231" height="49" uuid="5c92220d-408a-41ba-ac6a-ef65c8a2345b"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="SansSerif" size="13"/>
+						</textElement>
+						<text><![CDATA[Descripción]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="351" y="0" width="78" height="49" uuid="e60037a9-316d-430a-b43b-c0780d6df20e"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="SansSerif" size="13"/>
+						</textElement>
+						<text><![CDATA[Entregable]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="430" y="2" width="110" height="49" uuid="ceedf07c-c71d-4430-9763-de58291a2c4d"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="SansSerif" size="13"/>
+						</textElement>
+						<text><![CDATA[Fecha Entrega]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="640" y="0" width="140" height="49" uuid="3b935d98-81be-4de9-8a5f-5ee09ab15f96"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="SansSerif" size="13"/>
+						</textElement>
+						<text><![CDATA[Area Empresarial]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="540" y="0" width="100" height="49" uuid="5a235512-2519-42a3-ab29-eaaccc750fc2"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="SansSerif" size="13"/>
+						</textElement>
+						<text><![CDATA[Fecha Modificación]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="51" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="48" splitType="Stretch">
+			<rectangle>
+				<reportElement x="20" y="0" width="780" height="48" uuid="9a3edf19-5abd-4d78-9583-e870c3224a52"/>
+			</rectangle>
+			<textField>
+				<reportElement x="20" y="0" width="120" height="48" uuid="91940b91-61be-4618-ac6d-130731afc519"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{nombre_actividad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="0" width="231" height="48" uuid="98ac12e2-675a-411e-887d-4d11d70e3fe6"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="0" width="78" height="48" uuid="d086a5de-a735-48a8-bf83-cf029c61c2ac"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{entregable}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="560" y="0" width="100" height="48" uuid="c0705b0e-9c42-4af0-9657-0475d202121a"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{fecha_modificacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="660" y="0" width="140" height="48" uuid="b87542c5-b4eb-47e9-8cdd-333765284528"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{nombre_area}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="449" y="0" width="111" height="48" uuid="093aeebb-803f-45bf-b8ba-87fcfc477d29"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{fecha_entrega}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="4" width="100" height="30" uuid="b882618c-f34e-4116-ae99-4d7a5e625bde"/>
+				<text><![CDATA[Mr.Teleworkers - Asutencia Técnica]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="372" splitType="Stretch">
+			<staticText>
+				<reportElement x="315" y="10" width="190" height="30" uuid="5875ac91-11a2-452d-b809-9bd149584964"/>
+				<text><![CDATA[Gràfica de agentes más Productivos]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="20" y="0" width="780" height="38" backcolor="#D8E6F1" uuid="c97615ca-98bd-414f-866a-9b38ed6d589c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="180" y="4" width="400" height="30" uuid="2faa5538-0e74-414d-a8fc-e2fc1a95f4a5"/>
+				<textElement textAlignment="Center">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Gràfica de Actividades asignadas por area]]></text>
+			</staticText>
+			<pieChart>
+				<chart evaluationTime="Report">
+					<reportElement x="180" y="50" width="400" height="200" uuid="a812ce05-9649-40c8-806d-4a216036c51c"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset resetType="Report">
+						<datasetRun subDataset="Actividades_area" uuid="7dcef5f1-96a3-41a4-800b-36b4acf7fede">
+							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+						</datasetRun>
+					</dataset>
+					<keyExpression><![CDATA[$F{nombre_area}]]></keyExpression>
+					<valueExpression><![CDATA[$F{Nro_Actividades}]]></valueExpression>
+					<labelExpression><![CDATA[$F{Nro_Actividades}.toString()]]></labelExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+		</band>
+	</summary>
+</jasperReport>
