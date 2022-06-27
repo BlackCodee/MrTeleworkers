@@ -21,7 +21,7 @@ import com.myproyect.demo.app.service.api.ReporteAgentesServiceAPI;
 import net.sf.jasperreports.engine.JRException;
 
 @RestController
-@RequestMapping("/report")
+@RequestMapping("report")
 public class ControladorReporteAgentes {
 	
 	@Autowired
