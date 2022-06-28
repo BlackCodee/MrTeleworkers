@@ -11,7 +11,7 @@
   <script src="/js/morris.min.js"></script>
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/estilosadminAsistenciaT.css">
-    <title>Puntaje</title>
+    <title>Usuario Info</title>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="calendario/jsCalendar.css">
@@ -106,7 +106,7 @@
 	<header class=" py-1 mb-0 bg-dark ">
 		<div class="container d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 			<button type="button">
-				<img src="assets/message.svg" alt="" class="menu-bar bi me-2 bg-light text-light">
+				<img src="/assets/message.svg" alt="" class="menu-bar bi me-2 bg-light text-light">
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
@@ -142,25 +142,19 @@
 
                 <ul class="list__show">
                     <li class="list__inside">
-                        <a class="nav__link nav__link--inside" th:href="@{/Agente}">Solicitudes Asignadas</a>
+                        <a class="nav__link nav__link--inside" th:href="@{/listarAgentesSoli}">Solicitudes Asignadas</a>
                     </li>
 
                     <li class="list__inside">
-                        <a class="nav__link nav__link--inside" th:href="@{/newActividadLaboral}">Consultar Solicitudes</a>
+                        <a class="nav__link nav__link--inside" th:href="@{/Puntaje}">Consultar Puntaje</a>
                     </li>
-
                     
                 </ul>
 
             </li>
 
 
-				<li class="list__item">
-					<div class="list__button">
-						<img src="/assets/bell.svg" class="list__img">
-						<a href="#" class="nav__link">Contacto</a>
-					</div>
-				</li>
+				
 
 			</ul>
 		</div>
