@@ -26,6 +26,8 @@ public class ControladorAgentes {
 	@Autowired
 	private IAgentes iAgentes;
 	
+	
+	
 	@GetMapping("/listarAgentes")
 	public String listar(Model model) {		
 		List<Agentes>agentes=service.Listar();

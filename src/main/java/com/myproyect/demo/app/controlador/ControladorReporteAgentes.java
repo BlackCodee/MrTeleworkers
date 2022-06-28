@@ -21,7 +21,7 @@ import com.myproyect.demo.app.service.api.ReporteAgentesServiceAPI;
 import net.sf.jasperreports.engine.JRException;
 
 @RestController
-@RequestMapping("report")
+@RequestMapping("reporte")
 public class ControladorReporteAgentes {
 	
 	@Autowired
@@ -42,6 +42,8 @@ public class ControladorReporteAgentes {
 
 		return ResponseEntity.ok().header("Content-Disposition", "inline; filename=\"" + dto.getFileName() + "")
 				.contentLength(dto.getLength()).contentType(mediaType).body(streamResource);
+		
+		
 	}
 
 }
