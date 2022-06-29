@@ -33,7 +33,7 @@ import net.sf.jasperreports.export.SimpleXlsxReportConfiguration;
 @Component
 public class JasperReportManager {
 
-	private static final String REPORT_FOLDER = "templates/Reports";
+	private static final String REPORT_FOLDER = "Reports";
 
 	private static final String JASPER = ".jasper";
 

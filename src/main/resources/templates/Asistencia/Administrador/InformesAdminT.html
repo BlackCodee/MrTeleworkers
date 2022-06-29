@@ -279,21 +279,14 @@
         <h5 class="card-title">Productividad de los Agentes</h5>
         <p class="card-text">Seguimiento a cada uno de los agentes técnicos con el propósito de revisar que tan eficientes pueden ser durante la solución de problemas asignados o selecionamos a solucionar.</p>
        
-        <a class="pdf btn btn-danger"  href="reporte/agentes/download?numeroSolicitudes=1&total=1&tipo=PDF" target="blank">PDF</a>
+        <a class="pdf btn btn-danger"  href="reporte/agentes/download?tipo=PDF" target="blank">PDF</a>
         <a class="excel btn btn-success" href="reporte/agentes/download?numeroSolicitudes=1&total=1&tipo=EXCEL" target="blank">EXCEL</a>
-        <form action="reporte/agentes/download" method="GET">
+        <form action="report/solicitudes/download" method="GET">
                                             <div class="form-group">
                                                 <label class="form-label">Tipo</label> 
                                                 <input type="text" id="tipo" name="tipo" value="PDF" class="form-control mb-4" readonly>
                                             </div>
-                                            <div class="form-group">
-                                                <label class="form-label">Tipo de Reporte</label>
-                                                <select  class="form-control" name="tipo_reporte" style="margin-bottom: 10px">
-                                                    <option value="1">Faltante</option>
-                                                    <option value="2">Sobrante</option>
-                                                    <option value="3">Mal Estado</option>
-                                                </select>
-                                            </div>
+                                           
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-success">Generar</button>
                                     </div>
