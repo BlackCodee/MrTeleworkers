@@ -110,7 +110,7 @@
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
-				<li><a href="#" class="nav-link px-2 text-light">AGENTE TÉCNICO</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">ADMINISTRADOR</a></li>
 				
 			</ul>
 
@@ -154,11 +154,56 @@
 
 			</li>
 
-			
+			<li class="list__item list__item--click">
+				<div class="list__button list__button--click">
+					<img src="/assets/stats.svg" class="list__img">
+					<a href="#" class="nav__link">INVENTARIOS</a>
+					<img src="/assets/arrow.svg" class="list__arrow">
+				</div>
+				<ul class="list__show">
+					<li class="list__inside">
+						<a class="nav__link nav__link--inside" th:href="@{/listarInsumos}">Insumos</a>
+					</li>
 
-			
+					<li class="list__inside">
+						<a class="nav__link nav__link--inside" th:href="@{/listarComputador}">Computadores</a>
+					</li>
+
+					<li class="list__inside">
+						<a class="nav__link nav__link--inside" th:href="@{/listarProveedor}">Proveedores</a>
+					</li>
+
 				</ul>
-			
+			</li>
+
+			<li class="list__item list__item--click">
+				<div class="list__button list__button--click">
+					<img src="/assets/message.svg" class="list__img">
+					<a href="#" class="nav__link">ASISTENCIA TECNICA</a>
+					<img src="/assets/arrow.svg" class="list__arrow">
+				</div>
+
+				<ul class="list__show">
+				 <li class="list__inside">
+                        <a class="nav__link nav__link--inside" th:href="@{/Asistencia-Admin}">Inicio</a>
+                    </li>
+					<li class="list__inside">
+						<a class="nav__link nav__link--inside" th:href="@{/listarSolicitudes}">Gestion de
+							Solicitudes</a>
+					</li>
+
+					<li class="list__inside">
+						<a class="nav__link nav__link--inside" th:href="@{/Informes-Admin}">Informe</a>
+					</li>
+
+					<li class="list__inside">
+						<a class="nav__link nav__link--inside" th:href="@{/listarAgentes}">agentes Tecnicos</a>
+					</li>
+				</ul>
+			</li>
+
+                    
+                </ul>
 
 		</div>
 		<!--Fin menu slider-->
@@ -309,7 +354,9 @@
                       </div>
                       <div class="col-12">
                         <div class="icon icon-box-success">
-                          <div class="grafico" id="grafico"></div>
+                          <center><figure><img src="/img/dash.jpeg" alt=" " style="width:250px; height:250px"></img>
+                         <img src="/img/dash1.jpeg" alt=" " style="width:270px; height:255px"></img></figure></center>
+                         
                         </div>
                       </div>
                     </div>
