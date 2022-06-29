@@ -21,13 +21,13 @@ import com.myproyect.demo.app.service.api.ReporteAgentesServiceAPI;
 import net.sf.jasperreports.engine.JRException;
 
 @RestController
-@RequestMapping("reporte")
+@RequestMapping("/reporte")
 public class ControladorReporteAgentes {
 	
 	@Autowired
 	private ReporteAgentesServiceAPI reporteAgentesServiceAPI;
 
-	@GetMapping(path = "agentes/download")
+	@GetMapping(path = "/agentes/download")
 	public ResponseEntity<Resource> download(@RequestParam Map<String, Object> params)
 			throws JRException, IOException, SQLException {
 		ReporteAgentesDTO dto = reporteAgentesServiceAPI.obtenerReporteAgentes(params);
