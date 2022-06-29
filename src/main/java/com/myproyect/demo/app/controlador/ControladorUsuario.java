@@ -61,7 +61,7 @@ public class ControladorUsuario {
 	public String editar(@PathVariable int idUsuario, Model model) {
 		Usuario usu = iUsuario.findId(idUsuario);
 		model.addAttribute("usuario", usu);
-		return "Seguimiento/Administrador/editar_usuarios_vista_administrador";
+		return "Seguimiento/Administrador/editarUsuarios";
 	}
 	
 	@GetMapping("/eliminarUsuario/{idUsuario}")
