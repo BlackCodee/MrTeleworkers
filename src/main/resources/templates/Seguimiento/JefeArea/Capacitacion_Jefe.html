@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <link rel="stylesheet" href="/css/morris.css">
+        <script src="/js/morris.min.js"></script>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+        <title>
+            Capacitacion-empleado
+        </title>
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+        <!--     Fonts and icons     -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <!-- CSS Files -->
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- <link href="/assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" /> -->
+		<link rel="stylesheet" href="/css/estilosSlider.css">
+		
+        <link href="/assets/demo/demo.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--  Datatables  -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>  
+
+        <!--  extension responsive  -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+    </head>
+
+
+    <body class="">
+	<!--inicio header-->
+	<header class=" py-1 mb-0 bg-dark ">
+		<div class="container d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+			<button type="button">
+				<img src="assets/message.svg" alt="" class="menu-bar bi me-2 bg-light text-light">
+			</button>
+
+			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
+				<li><a href="#" class="nav-link px-8 text-light">JEFE DE AREA</a></li>
+			</ul>
+
+			<div class="col-md-1 text-center">
+				<form class="d-flex" th:action="@{/logout}" method="post">
+              		<input class="btn btn-outline-light me-2" type="submit" value="Salir" />
+	           	</form>
+			</div>
+		</div>
+	</header>
+	<!--fin del header-->
+
+    <!--inicio menu slider-->
+    <div class="sidebar">
+        <h2>MRTW</h2>
+        <ul class="list">
+            <li class="list__item">
+                <div class="list__button">
+                    <img src="/assets/dashboard.svg" class="list__img">
+                    <a th:href="@{/dashboard-Jefe}" class="nav__link">Inicio</a>
+                </div>
+            </li>
+
+            <li class="list__item list__item--click">
+                <div class="list__button list__button--click">
+                    <img src="/assets/docs.svg" class="list__img">
+                    <a href="#" class="nav__link">SEGUIMIENTO EMPLEADO</a>
+                    <img src="/assets/arrow.svg" class="list__arrow">
+                </div>
+
+                <ul class="list__show">
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside" th:href="@{/listarActividadLaboral}">Actividades del area laboral</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside" th:href="@{/newActividadLaboral}">Creacion Eventos</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside" th:href="@{/listarCapacitacionesJefe}">Capacitaciones</a>
+                    </li>
+                </ul>
+
+            </li>
+
+        </ul>
+    </div>
+    <!--Fin menu slider-->
+    <!--Comienzo contenido de la pagina-->
+    <div class="contenido">
+  
+		<div class="content">
+			<div class="row">
+				<div class="col-md-12">
+					<br><br>
+					<div class="card">
+						<div class="card-header  bg-dark text-light">
+							<center><h4 class="card-title">CAPACITACIONES REGISTRADAS</h4></center>
+						</div>
+						<div class="card-body bg-secondary text-light">
+							<div class="table-responsive">
+								<table  id="tableCap" class="table table-bordered  display nowrap" cellspacing="0" width="100%">
+									<thead class=" text-light">
+									<th>ID</th>
+									<th>NOMBRE EVENTO</th>
+									<th>ENCARGADO</th>
+									<th>FECHA DE REALIZACION</th>
+									<th>HORA DE REALIZACION</th>
+									<th>OPCIONES</th>
+									</thead>
+									<tbody  class="text-light">
+										<tr th:each="capacitaciones:${capacitaciones}">
+											<th th:text="${capacitaciones.idCapacitacion}"></th>
+											<th th:text="${capacitaciones.nombreCapacitacion}"></th>
+											<th th:text="${capacitaciones.nombreEncargado}"></th>
+											<th th:text="${capacitaciones.fecha}"></th>
+											<th th:text="${capacitaciones.hora}"></th>
+											<th><a th:href="@{/verCapacitacion/}+${capacitaciones.idCapacitacion}" class="btn btn-primary txt-light">VER</a></th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<br>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			<!--Comienzo contenido del footer-->
+			<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+				<div class="col-md-4 d-flex align-items-center">
+					<ul>
+						<li>
+							<a href="#" target="_blank" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">MR TW</a>
+						</li>
+						<li>
+							<a href="#" target="_blank" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">CONTACTO</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+					<span class="copyright">
+						Â©
+						<script>
+							document.write(new Date().getFullYear())
+						</script>, GAES 4 (SENA) </i>
+					</span>
+				</div>
+				<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+					<li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-facebook-square" width="24" height="24">&nbsp;&nbsp;</i></a></li>
+					<li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-twitter-square" width="24" height="24">&nbsp;&nbsp;</i></a></li>
+					<li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-google-plus" width="24" height="24">&nbsp;&nbsp;</i></a></li>
+				</ul>
+			</footer>
+			<!--fin contenido del footer-->
+	</div>
+	<!--   Enlaces   -->
+	<script src="/js/sliderjs.js"></script>
+	<script src="/assets/js/core/jquery.min.js"></script>
+	<script src="/assets/js/core/popper.min.js"></script>
+	<script src="/assets/js/core/bootstrap.min.js"></script>
+	<!--   Datatables-->
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>  
+
+	<!-- extension responsive -->
+	<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>  
+	<script>
+		$(document).ready(function () {
+			$('#tableCap').DataTable({
+				responsive: true
+			});
+		});
+
+	</script>
+
+
+	</body>
+
+	</html>
