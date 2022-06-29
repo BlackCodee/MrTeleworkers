@@ -137,11 +137,8 @@ function eliminarInsumos(idInsumo){
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
-				<li><a href="#" class="nav-link px-2 text-light">Home</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">Features</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
-				<li><a href="#" class="nav-link px-2 text-light">About</a></li>
+				<li><a href="#" class="nav-link px-2 text-light">ADMINISTRADOR</a></li>
+				
 			</ul>
 
 			<div class="col-md-1 text-center">
@@ -237,12 +234,7 @@ function eliminarInsumos(idInsumo){
 				</li>
 
 
-				<li class="list__item">
-					<div class="list__button">
-						<img src="/assets/bell.svg" class="list__img">
-						<a href="#" class="nav__link">Contacto</a>
-					</div>
-				</li>
+				
 
 			</ul>
 		</div>
@@ -320,31 +312,14 @@ function eliminarInsumos(idInsumo){
 						</tr>
 					</tbody>
 				</table>
+				<a th:href="@{/listarComputador}" class="btn btn-primary">VOLVER A COMPUTADORES</a>
 			</div>
+			
+				
 			<br>
 			<br>
-			<center><div class="title"><h3>Tabla de Computadores sin devolver</h3></div></center>
-			<div class="table-responsive  col-11 ml-5" id="mydatatable-container">
-				<table class="records_list table table-striped table-bordered table-hover" id="mydatatable">
-					<thead class=" text-dark">
-						<th>ID COMPUTADOR</th>
-						<th>MARCA</th>
-						<th>MODELO</th>
-						<th>COLOR</th>
-						<th>DESCRIPCION</th>
-					</thead>
-					<tbody>
-						<tr th:each="computador:${computador}" th:if="${computador.descripcion} == Indisponible">
-							<td th:text="${computador.idComputador}"></td>
-							<td th:text="${computador.marca}"></td>
-							<td th:text="${computador.modelo}"></td>
-							<td th:text="${computador.color}"></td>
-							<td th:text="${computador.descripcion}"></td>								
-						</tr>
-					</tbody>
-				</table>
-				<a th:href="@{/listarComputador}" class="btn btn-primary">VOLVER A COMPUTADORES</a> 
-			</div>
+			 
+		
 		
 <script src="/js/Main2.js"></script>
  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

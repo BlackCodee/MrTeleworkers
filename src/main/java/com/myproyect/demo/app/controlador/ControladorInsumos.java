@@ -57,7 +57,7 @@ public class ControladorInsumos {
 
 	@GetMapping("/editarInsumos/{idInsumo}")
 	public String editar(@PathVariable int idInsumo, Model model) {
-		Insumos insumos = iInsumos.findId(idInsumo);
+		Insumos insumos = iInsumos.findByIdInsumo(idInsumo);
 		model.addAttribute("insumos", insumos);
 		return "Inventarios/Administrador/editarInsAdmin";
 	}
