@@ -28,7 +28,7 @@ public class ControladorReporteSolicitudes {
 	@Autowired
 	private ReporteSolicitudesServiceAPI reporteSolicitudesServiceAPI;
 
-	@GetMapping(path = "/solicitudes/download")
+	@GetMapping(path = "solicitudes/download")
 	public ResponseEntity<Resource> download(@RequestParam Map<String, Object> params)
 			throws JRException, IOException, SQLException {
 		ReporteSolicitudesDTO dto = reporteSolicitudesServiceAPI.obtenerReporteSolicitudes(params);
