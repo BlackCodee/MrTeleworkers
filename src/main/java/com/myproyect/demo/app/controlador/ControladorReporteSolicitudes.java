@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.myproyect.demo.app.enums.TipoReporteEnum;
 import com.myproyect.demo.app.model.ReporteSolicitudesDTO;
 import com.myproyect.demo.app.service.api.ReporteSolicitudesServiceAPI;
@@ -42,5 +43,9 @@ public class ControladorReporteSolicitudes {
 
 		return ResponseEntity.ok().header("Content-Disposition", "inline; filename=\"" + dto.getFileName() + "\"")
 				.contentLength(dto.getLength()).contentType(mediaType).body(streamResource);
+		
+		
 	}
+
+	
 }
