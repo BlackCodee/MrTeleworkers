@@ -286,7 +286,14 @@
                                                 <label class="form-label">Tipo</label> 
                                                 <input type="text" id="tipo" name="tipo" value="PDF" class="form-control mb-4" readonly>
                                             </div>
-                                           
+                                           <div class="form-group">
+                                                <label class="form-label">Tipo de Reporte</label>
+                                                <select  class="form-control" name="tipo_reporte" style="margin-bottom: 10px">
+                                                    <option value="1">Faltante</option>
+                                                    <option value="2">Sobrante</option>
+                                                    <option value="3">Mal Estado</option>
+                                                </select>
+                                            </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-success">Generar</button>
                                     </div>
