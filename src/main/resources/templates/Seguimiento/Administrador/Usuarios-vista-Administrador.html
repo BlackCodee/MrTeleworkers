@@ -202,9 +202,8 @@ function eliminarUsuario(idUsu){
 						<div class="card-header">
 							<h3>Ultimos Usuarios aceptados</h3>
 							
-								<a
-								class="pdf btn btn-danger"
-								th:href="@{/report/actividades/download?fechaInicio=2019-10-10&fechaFin=2030-10-10&tipo=PDF}"><i
+								<a class="pdf btn btn-danger"
+								href="/report/actividades/download?fechaInicio=2019-10-10&fechaFin=2030-10-10&tipo=PDF"><i
 								class="fas fa-file-pdf"></i>
 								</a>
 						</div>
@@ -241,7 +240,7 @@ function eliminarUsuario(idUsu){
 											<th th:text="${usuario.idRol.nomRol}"></th>
 											<th th:text="${usuario.areaidArea.nombreArea}"></th>
 											<th>
-												<a th:href="@{/editarUsuario/}+${usuario.idUsuario}"
+												<a th:href="@{editarUsuario/}+${usuario.idUsuario}"
 												class="btn btn-info txt-light"><img border="0" r6="true"
 												src="/img/boton-editar.png" width="20" height="20"></a>
 												<button type="button" class="btn btn-danger"

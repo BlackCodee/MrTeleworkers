@@ -1,5 +1,6 @@
 package com.myproyect.demo.app.controlador;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,7 +52,7 @@ public class ControladorActividadLaboral {
 		
 	}
 	@GetMapping("/listarActividadLaboralEmpleado")
-	public String listarE(Model model, HttpSession session) {
+	public String listarE(Model model) {
 		int idUsu = (int) session.getAttribute("idusuario");
 		Usuario usu = iUsuario.findId(idUsu); 
 		List<ActividadLaboral> actividadesArea = iActividad.findActividadesArea(usu.getAreaidArea().getIdArea());
@@ -78,6 +79,9 @@ public class ControladorActividadLaboral {
 	
 	@PostMapping("/saveActividadLaboral")
 	public String save(@Validated ActividadLaboral al, Model model) {
+		Date hoy = new Date();
+		al.setFechaModificacion(hoy);
+		al.setEstado("activo");
 		service.save(al);
 		return "redirect:listarActividadLaboral";
 		
@@ -85,7 +89,7 @@ public class ControladorActividadLaboral {
 	
 	@GetMapping("/editarActividadLaboral/{idActividad}")
 	public String editar(@PathVariable int idActividad, Model model) {
-		Optional<ActividadLaboral>actividadLaboral=service.ListarId(idActividad);
+		ActividadLaboral actividadLaboral = iActividad.findByIdActividad(idActividad);
 		model.addAttribute("actividadLaboral", actividadLaboral);
 		return "Seguimiento/JefeArea/editar_actividades";
 	}

@@ -92,15 +92,6 @@ table thead {
 	background-color: #383636;
 }
 </style>
-<style type="text/css">
-	table {
-    counter-reset: tableCount;     
-	}
-	.counterCell:before {              
-	    content: counter(tableCount); 
-	    counter-increment: tableCount; 
-	}
-</style>
 <link href="/assets/css/sweetalert.css" rel="stylesheet" type="text/css">
 <script src="/assets/js/sweetalert.min.js" type="text/javascript"></script>
 
@@ -197,21 +188,22 @@ table thead {
 									class="records_list table table-striped table-bordered table-hover"
 									id="mydatatable">
 									<thead class=" text-black">
-										<th style="color: white;">N°</th>
 										<th style="color: white;">FECHA</th>
 										<th style="color: white;">ESTADO</th>
 										<th style="color: white;">NOMBRE USUARIO</th>
 										<th style="color: white;">NOMBRE ACTIVIDAD</th>
+										<th style="color: white;">REVISADO</th>
 										<th style="color: white;">VER</th>
+										<th></th>
 
 									</thead>
 									<tbody>
 										<tr th:each="entregables:${entregables}">
-											<td class="counterCell"></th>
 											<th th:text="${entregables.fechaEntrega}"></th>
 											<th th:text="${entregables.estado}"></th>
 											<th th:text="${entregables.idUsuario.nombre}"></th>
 											<th th:text="${entregables.idActividad.Nombre_Actividad}"></th>
+											<th th:text="${entregables.revisado}"></th>
 											<th><a
 												th:href="@{/verEntregables/}+${entregables.idActividad.idActividad}+@{/}+${entregables.idEntregables}"
 												class="btn btn-info txt-light">VER

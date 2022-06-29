@@ -72,7 +72,7 @@ public class ControladorCapacitaciones {
 	
 	@GetMapping("/editarCapacitaciones/{idCapacitacion}")
 	public String editar(@PathVariable int idCapacitacion, Model model) {
-		Optional<Capacitaciones>capacitaciones=service.ListarId(idCapacitacion);
+		Capacitaciones capacitaciones = iCapacitacion.findByIdCapacitacion(idCapacitacion);
 		model.addAttribute("capacitaciones", capacitaciones);
 		return "Seguimiento/Administrador/editar_capacitacion";
 	}
