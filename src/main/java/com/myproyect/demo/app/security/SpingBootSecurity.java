@@ -26,7 +26,7 @@ public class SpingBootSecurity extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable().authorizeRequests()
-		.antMatchers("/usuario/*","/index/*", "/OlvidoContrasena/*", "/css/*","/js/*","/assets/*", "/img/*","/bootstrap5-website-master/*","/bootstrap-4.6.0-dist/*","/bootstrap-5.0.2-dist/*", "Reports/*")
+		.antMatchers("/usuario/*","/index/*", "/OlvidoContrasena/*", "/css/*","/js/*","/assets/*", "/img/*","/bootstrap5-website-master/*","/bootstrap-4.6.0-dist/*","/bootstrap-5.0.2-dist/*", "Reports/**")
 	    .permitAll()
 	    .antMatchers("/dashboard-Admin","/Seguimiento/Administrador/**","/Inventarios/Administrador/**","/Asistencia/Administrador/**").hasRole("ADMINISTRADOR")
 		.antMatchers("/dashboard-Empleado","/Seguimiento/Empleado/**","/Inventarios/Empleado/*","/Asistencia/Empleado/**").hasRole("EMPLEADO")
