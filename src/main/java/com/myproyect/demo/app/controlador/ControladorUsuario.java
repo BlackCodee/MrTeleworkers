@@ -2,7 +2,7 @@ package com.myproyect.demo.app.controlador;
 
 import java.util.Date;
 import java.util.List;
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -59,7 +59,8 @@ public class ControladorUsuario {
 	
 	@GetMapping("/editarUsuario/{idUsuario}")
 	public String editar(@PathVariable int idUsuario, Model model) {
-		Usuario usu = iUsuario.findIdUsuario(idUsuario);
+		
+		Optional<Usuario>usu=service.ListarById(idUsuario);
 		model.addAttribute("usuario", usu);
 		return "Seguimiento/Administrador/editarUsuario";
 	}
