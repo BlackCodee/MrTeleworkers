@@ -122,25 +122,25 @@
 		</div>
 	</header>
 	<!--fin del header-->
-		<!--inicio menu slider-->
-		<div class="sidebar">
-			<h2>MRTW</h2>
-			<ul class="list">
-				<li class="list__item">
-					<div class="list__button">
-						<img src="/assets/dashboard.svg" class="list__img">
-						<a th:href="@{/dashboard-Admin}" class="nav__link">Inicio</a>
-					</div>
-				</li>
+		 <!--inicio menu slider-->
+    <div class="sidebar">
+        <h2>MRTW</h2>
+        <ul class="list">
+            <li class="list__item">
+                <div class="list__button">
+                    <img src="/assets/dashboard.svg" class="list__img">
+                    <a th:href="@{/dashboard-Empleado}" class="nav__link">Inicio</a>
+                </div>
+            </li>
 
-				<li class="list__item list__item--click">
-					<div class="list__button list__button--click">
-						<img src="/assets/docs.svg" class="list__img">
-						<a href="#" class="nav__link">SEGUIMIENTO EMPLEADO</a>
-						<img src="/assets/arrow.svg" class="list__arrow">
-					</div>
+            <li class="list__item list__item--click">
+                <div class="list__button list__button--click">
+                    <img src="/assets/docs.svg" class="list__img">
+                    <a href="#" class="nav__link">SEGUIMIENTO EMPLEADO</a>
+                    <img src="/assets/arrow.svg" class="list__arrow">
+                </div>
 
-					 <ul class="list__show">
+                <ul class="list__show">
                     <li class="list__inside">
                         <a class="nav__link nav__link--inside" th:href="@{/listarActividadLaboralEmpleado}">Actividades Empleado</a>
                     </li>
@@ -154,55 +154,51 @@
                     </li>
                 </ul>
 
-				</li>
+            </li>
 
-	            <li class="list__item list__item--click">
-					<div class="list__button list__button--click">
-						<img src="/assets/stats.svg" class="list__img"> <a href="#"
-							class="nav__link">INVENTARIOS</a> <img src="/assets/arrow.svg"
-							class="list__arrow">
-					</div>
-					<ul class="list__show">
-						<li class="list__inside"><a
-							class="nav__link nav__link--inside"
-							th:href="@{/listarInsumosEmpleado}">Insumos</a></li>
-	
-						<li class="list__inside"><a
-							class="nav__link nav__link--inside"
-							th:href="@{/solicitudComputador}">Requerimiento de
-								Computadores</a></li>
-								
-						<li class="list__inside"><a
-							class="nav__link nav__link--inside"
-							th:href="@{/listarPrestamosEmpl}">Ver solicitudes realizadas</a></li>
-					</ul>
-				</li>
+            <li class="list__item list__item--click">
+				<div class="list__button list__button--click">
+					<img src="/assets/stats.svg" class="list__img"> <a href="#"
+						class="nav__link">INVENTARIOS</a> <img src="/assets/arrow.svg"
+						class="list__arrow">
+				</div>
+				<ul class="list__show">
+					<li class="list__inside"><a
+						class="nav__link nav__link--inside"
+						th:href="@{/listarInsumosEmpleado}">Insumos</a></li>
 
-				<li class="list__item list__item--click">
-					<div class="list__button list__button--click">
-						<img src="/assets/message.svg" class="list__img">
-						<a href="#" class="nav__link">ASISTENCIA TECNICA</a>
-						<img src="/assets/arrow.svg" class="list__arrow">
-					</div>
+					<li class="list__inside"><a
+						class="nav__link nav__link--inside"
+						th:href="@{/solicitudComputador}">Requerimiento de
+							Computadores</a></li>
+							
+					<li class="list__inside"><a
+						class="nav__link nav__link--inside"
+						th:href="@{/listarPrestamosEmpl}">Ver solicitudes realizadas</a></li>
+				</ul>
+			</li>
+            
 
-					<ul class="list__show">
-					 <li class="list__inside">
+            <li class="list__item list__item--click">
+                <div class="list__button list__button--click">
+                    <img src="/assets/message.svg" class="list__img">
+                    <a href="#" class="nav__link">ASISTENCIA TECNICA</a>
+                    <img src="/assets/arrow.svg" class="list__arrow">
+                </div>
+
+                <ul class="list__show">
+                 <li class="list__inside">
                         <a class="nav_link nav_link--inside" th:href="@{/newSolicitud}">Necesitas ayuda?</a>
                     </li>
                     <li class="list__inside">
                         <a class="nav__link nav__link--inside" th:href="@{/listarUsuariosSoli}">Solicitudes realizadas</a>
                     </li>
+                </ul>
+            </li>
 
-						
-					</ul>
-				</li>
-
-
-				
-
-			</ul>
-		</div>
-		<!--Fin menu slider-->
+        </ul>
+    </div>
+    <!--Fin menu slider-->
 		<!--Comienzo contenido de la pagina-->
 		<div class="contenido">
 			<p>
