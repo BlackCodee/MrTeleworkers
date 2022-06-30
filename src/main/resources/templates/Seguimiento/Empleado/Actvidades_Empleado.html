@@ -190,6 +190,7 @@
 									<th>FECHA</th>
 									<th>HORA ENTREGA</th>
 									<th>ENTREGABLE</th>
+									<th>AREA</th>
 									<th>VER</th>
 									</thead>
 									<tbody>
@@ -198,6 +199,7 @@
 											<th th:text="${actividadLaboral.fechaEntrega}"></th>
 											<th th:text="${actividadLaboral.horaEntrega}"></th>
 											<th th:text="${actividadLaboral.entregable}"></th>
+											<th th:text="${actividadLaboral.idArea.nombreArea}"></th>
 											<th><a th:href="@{/EntregarActividad/}+${actividadLaboral.idActividad}" class="btn btn-info txt-light">VER</a></th>
 										</tr>
 									</tbody>
