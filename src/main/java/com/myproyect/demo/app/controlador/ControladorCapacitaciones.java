@@ -42,6 +42,15 @@ public class ControladorCapacitaciones {
 		model.addAttribute("capacitaciones", capacitaciones);
 		return "Seguimiento/Empleado/Inscripcion_Empleado";
 	}
+	
+	
+	@GetMapping("/verCapacitacionJefe/{idCapacitacion}")
+	public String verCapacitacion(@PathVariable int idCapacitacion, Model model) {		
+		Capacitaciones capacitaciones = iCapacitacion.findIdCapacitacion(idCapacitacion);
+		model.addAttribute("capacitaciones", capacitaciones);
+		return "Seguimiento/JefeArea/Inscripcion_Jefe";
+	}
+	
 	@GetMapping("/listarCapacitacionesEmpleado")
 	public String listarE(Model model) {		
 		List<Capacitaciones>capacitaciones=service.Listar();
