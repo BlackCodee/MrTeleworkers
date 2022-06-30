@@ -85,7 +85,7 @@ public class ControladorEntregables {
 		
 		ActividadLaboral actividad = iActividad.findByIdActividad(idActividad);	
 		int idUsu = (int) session.getAttribute("idusuario");
-		Usuario usu = iUsuario.findId(idUsu);
+		Usuario usu = iUsuario.findIdUsuario(idUsu);
 		
 		Date fecha = new Date();
 		Date hora = new Date();

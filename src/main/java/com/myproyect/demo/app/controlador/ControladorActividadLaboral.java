@@ -54,7 +54,7 @@ public class ControladorActividadLaboral {
 	@GetMapping("/listarActividadLaboralEmpleado")
 	public String listarE(Model model) {
 		int idUsu = (int) session.getAttribute("idusuario");
-		Usuario usu = iUsuario.findId(idUsu); 
+		Usuario usu = iUsuario.findIdUsuario(idUsu); 
 		List<ActividadLaboral> actividadesArea = iActividad.findActividadesArea(usu.getAreaidArea().getIdArea());
 		
 		model.addAttribute("usuario", usu);
