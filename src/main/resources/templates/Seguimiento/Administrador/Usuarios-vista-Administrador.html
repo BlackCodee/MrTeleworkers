@@ -11,7 +11,7 @@
   <script src="/js/morris.min.js"></script>
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/estilosadminAsistenciaT.css">
-<title>Usuarios Vista</title>
+    <title>Usuarios</title>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="calendario/jsCalendar.css">
@@ -21,18 +21,11 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <!-- CSS Files -->
-  <link href="/assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
   <!-- <!-- <link href="/assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" /> -->
   <link rel="stylesheet" href="/css/estilosSlider.css">
-<!-- CSS Files -->
-<link rel="stylesheet" href="/css/recursos-humanos-usuarios-estilos.css">
-<link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
-<!-- <link href="/assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" /> -->
-<link href="/assets/demo/demo.css" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
-<link rel="stylesheet" href="/css/estilosSlider.css">
-
+  
+  <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="/assets/demo/demo.css" rel="stylesheet" />
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <link rel="stylesheet" href="calendario/estilosCalendar.css">
@@ -64,13 +57,20 @@
     <!-- ALERTS -->
     <link href="/assets/css/sweetalert.css" rel="stylesheet" type="text/css">
     <script src="/assets/js/sweetalert.min.js" type="text/javascript"></script>
-    
-       
+    <style>
+        #mydatatable tfoot input {
+            width: 100% !important;
+        }
+
+        #mydatatable tfoot {
+            display: table-header-group !important;
+        }
+    </style>
 </head>
 
 
-<body class="">
-	<!--inicio header-->
+<body >
+        <!--inicio header-->
 	<header class=" py-1 mb-0 bg-dark ">
 		<div class="container d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 			<button type="button">
@@ -78,8 +78,8 @@
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
-				
 				<li><a href="#" class="nav-link px-2 text-light">ADMINISTRADOR</a></li>
+				
 			</ul>
 
 			<div class="col-md-1 text-center">
@@ -95,116 +95,117 @@
 			<h2>MRTW</h2>
 			<ul class="list">
 				<li class="list__item">
-					<div class="list__button">
-						<img src="/assets/dashboard.svg" class="list__img">
-						<a th:href="@{/dashboard-Admin}" class="nav__link">Inicio</a>
-					</div>
-				</li>
+				<div class="list__button">
+					<img src="/assets/dashboard.svg" class="list__img">
+					<a href="#" class="nav__link">Inicio</a>
+				</div>
+			</li>
 
-				<li class="list__item list__item--click">
-					<div class="list__button list__button--click">
-						<img src="/assets/docs.svg" class="list__img">
-						<a href="#" class="nav__link">SEGUIMIENTO EMPLEADO</a>
-						<img src="/assets/arrow.svg" class="list__arrow">
-					</div>
+			<li class="list__item list__item--click">
+				<div class="list__button list__button--click">
+					<img src="/assets/docs.svg" class="list__img">
+					<a href="#" class="nav__link">SEGUIMIENTO EMPLEADO</a>
+					<img src="/assets/arrow.svg" class="list__arrow">
+				</div>
 
-					<ul class="list__show">
-						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/newUsuario}">Crear Usuarios</a>
-						</li>
+				<ul class="list__show">
+					<li class="list__inside">
+						<a class="nav__link nav__link--inside" th:href="@{/newUsuario}">Crear Usuarios</a>
+					</li>
 
-						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarUsuario}">Ver Usuarios</a>
-						</li>
+					<li class="list__inside">
+						<a class="nav__link nav__link--inside" th:href="@{/listarUsuario}">Ver Usuarios</a>
+					</li>
 
-						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarCapacitaciones}">Gestionar Capacitacion</a>
-						</li>
-					</ul>
+					<li class="list__inside">
+						<a class="nav__link nav__link--inside" th:href="@{/listarCapacitaciones}">Gestionar
+							Capacitacion</a>
+					</li>
+				</ul>
 
-				</li>
+			</li>
 
-				<li class="list__item list__item--click">
-					<div class="list__button list__button--click">
-						<img src="/assets/stats.svg" class="list__img">
-						<a href="#" class="nav__link">INVENTARIOS</a>
-						<img src="/assets/arrow.svg" class="list__arrow">
-					</div>
-					<ul class="list__show">
-						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarInsumos}">Insumos</a>
-						</li>
+			<li class="list__item list__item--click">
+				<div class="list__button list__button--click">
+					<img src="/assets/stats.svg" class="list__img">
+					<a href="#" class="nav__link">INVENTARIOS</a>
+					<img src="/assets/arrow.svg" class="list__arrow">
+				</div>
+				<ul class="list__show">
+					<li class="list__inside">
+						<a class="nav__link nav__link--inside" th:href="@{/listarInsumos}">Insumos</a>
+					</li>
 
-						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarComputador}">Computadores</a>
-						</li>
+					<li class="list__inside">
+						<a class="nav__link nav__link--inside" th:href="@{/listarComputador}">Computadores</a>
+					</li>
 
-						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarProveedor}">Proveedores</a>
-						</li>
+					<li class="list__inside">
+						<a class="nav__link nav__link--inside" th:href="@{/listarProveedor}">Proveedores</a>
+					</li>
 
-						
-					</ul>
-				</li>
+				</ul>
+			</li>
 
-				<li class="list__item list__item--click">
-					<div class="list__button list__button--click">
-						<img src="/assets/message.svg" class="list__img">
-						<a href="#" class="nav__link">ASISTENCIA TECNICA</a>
-						<img src="/assets/arrow.svg" class="list__arrow">
-					</div>
+			<li class="list__item list__item--click">
+				<div class="list__button list__button--click">
+					<img src="/assets/message.svg" class="list__img">
+					<a href="#" class="nav__link">ASISTENCIA TECNICA</a>
+					<img src="/assets/arrow.svg" class="list__arrow">
+				</div>
 
-					<ul class="list__show">
-					 <li class="list__inside">
+				<ul class="list__show">
+				 <li class="list__inside">
                         <a class="nav__link nav__link--inside" th:href="@{/Asistencia-Admin}">Inicio</a>
                     </li>
-						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarSolicitudes}">Gestion de Solicitudes</a>
-						</li>
+					<li class="list__inside">
+						<a class="nav__link nav__link--inside" th:href="@{/listarSolicitudes}">Gestion de
+							Solicitudes</a>
+					</li>
 
-						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/Informes-Admin}">Informe</a>
-						</li>
+					<li class="list__inside">
+						<a class="nav__link nav__link--inside" th:href="@{/Informes-Admin}">Informe</a>
+					</li>
 
-						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarAgentes}">agentes Tecnicos</a>
-						</li>
-					</ul>
-				</li>
+					<li class="list__inside">
+						<a class="nav__link nav__link--inside" th:href="@{/listarAgentes}">agentes Tecnicos</a>
+					</li>
+				</ul>
+			</li>
 
+                    
+                </ul>
 
-		</ul>
-	</div>
-	<!--Fin menu slider-->
-	<!--Comienzo contenido de la pagina-->
-	<div class="contenido">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 col-md-8 text-lg-center">
-					<br>
-					<h1 class="font-weight-bold mb-0">Bienvenido</h1>
-					<p class="lead text-muted">¿Que es lo que haras hoy?</p>
+		</div>
+		<!--Fin menu slider-->
+		<!--Comienzo contenido de la pagina-->
+		<div class="contenido">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-8 text-lg-center">
+						<br>
+						<h1 class="font-weight-bold mb-0">Bienvenido Administrador</h1>
+						<p class="lead text-muted">usuarios</p>
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="card">
-						<div class="card-header">
-							<h3>Ultimos Usuarios aceptados</h3>
-							
-								<a class="pdf btn btn-danger"
-								href="/report/actividades/download?fechaInicio=2019-10-10&fechaFin=2030-10-10&tipo=PDF"><i
-								class="fas fa-file-pdf"></i>
-								</a>
-						</div>
-
-						<div class="card-body" id="mydatatable-container">
-							<div class="table-responsive">
-								<table id="mydatatable"
-									class="records_list table table-striped table-bordered table-hover"
-									cellspacing="0" width="100%">
-									<thead>
-										<tr>
+				<br>
+				<div class="row">
+					<div class="col-md-9 ml-5">
+						<h3>Ultimos Usuarios aceptados</h3>
+					</div>
+					<div class="col-md-2">
+						<a class="pdf" th:href="@{https://drive.google.com/file/d/1_zh4V9WCRGszm6h2mPKY9nXwxDTzrXcp/view}"><img  src="/img/pdf.jpg"  width="30" height="30"></a>
+						<a th:href="@{/newUsuario}" class="btn btn-primary "> CREAR</a>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">					
+							<div class="card-body" id="mydatatable-container">
+								<div class="table-responsive">
+									<table id="mydatatable"	class="records_list table table-striped table-bordered table-hover"	cellspacing="0" width="100%">
+										<thead>
 											<th>ID</th>
 											<th>NOMBRE</th>
 											<th>DNI</th>
@@ -215,113 +216,107 @@
 											<th>ROL</th>
 											<th>AREA</th>
 											<th>ACCIONES</th>
-
-										</tr>
-									</thead>
-									<tbody>
-										<tr th:each="usuario:${usuario}" th:if="${usuario.estado} == activo">
-											<th th:text="${usuario.idUsuario}"></th>
-											<th th:text="${usuario.nombre}"></th>
-											<th th:text="${usuario.dni}"></th>
-											<th th:text="${usuario.telefono}"></th>
-											<th th:text="${usuario.email}"></th>
-											<th th:text="${usuario.horario}"></th>
-											<th th:text="${usuario.fechaIngreso}"></th>
-											<th th:text="${usuario.idRol.nomRol}"></th>
-											<th th:text="${usuario.areaidArea.nombreArea}"></th>
-											<th>
-												<a th:href="@{/editarUsuario/}+${usuario.idUsuario}"
-												class="btn btn-info txt-light">Editar</a>
-												<button type="button" class="btn btn-danger"
-													data-toggle="modal" data-target="#exampleModal"
-													th:attr="data-target='#exampleModal'+${usuario.idUsuario}">
-													<i class="fas fa-screwdriver"></i>
-												</button>
-											</th>
 											
-											<!-- Modal Eliminar -->
-											<div class="modal fade"
-												th:attr="id='exampleModal'+${usuario.idUsuario}"
-												tabindex="-1" aria-labelledby="exampleModalLabel"
-												aria-hidden="true">
-												<div class="modal-dialog">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title" id="exampleModalLabel">Desactivar Usuario
-															</h5>
-															<button type="button" class="close" data-dismiss="modal"
-																aria-label="Close">
-																<span aria-hidden="true">&times;</span>
-															</button>
-														</div>
-														<div class="modal-body">
-															Desea cambiar el estado del Usuario <span
-																th:text="${usuario.nombre}"></span>?
-														</div>
-														<div class="modal-footer">
-															<button type="button" class="btn btn-secondary"
-																data-dismiss="modal">Close</button>
-															<span th:if="${usuario.estado == 'activo'}"><a
-																th:href="@{/estadoUsuario(idUsuario=${usuario.idUsuario})}"
-																type="button" class="btn btn-danger">INACTIVO</a></span> <span
-																th:if="${usuario.estado == 'inactivo'}"><a
-																th:href="@{/estadoUsuario(idUsuario=${usuario.idUsuario})}"
-																type="button" class="btn btn-warning">ACTIVO</a></span>
+										</thead>
+										<tbody>
+											<tr th:each="usuario:${usuario}" th:if="${usuario.estado} == activo">
+												<th th:text="${usuario.idUsuario}"></th>
+												<th th:text="${usuario.nombre}"></th>
+												<th th:text="${usuario.dni}"></th>
+												<th th:text="${usuario.telefono}"></th>
+												<th th:text="${usuario.email}"></th>
+												<th th:text="${usuario.horario}"></th>
+												<th th:text="${usuario.fechaIngreso}"></th>
+												<th th:text="${usuario.idRol.nomRol}"></th>
+												<th th:text="${usuario.areaidArea.nombreArea}"></th>
+												<th>
+													<a th:href="@{/editarUsuario/}+${usuario.idUsuario}"
+													class="btn btn-info txt-light">EDITAR</a>
+													<button type="button" class="btn btn-danger"
+														data-toggle="modal" data-target="#exampleModal"
+														th:attr="data-target='#exampleModal'+${usuario.idUsuario}">
+														<i class="fas fa-screwdriver"></i>
+													</button>
+												</th>
+												
+												<!-- Modal Eliminar -->
+												<div class="modal fade"
+													th:attr="id='exampleModal'+${usuario.idUsuario}"
+													tabindex="-1" aria-labelledby="exampleModalLabel"
+													aria-hidden="true">
+													<div class="modal-dialog">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h5 class="modal-title" id="exampleModalLabel">Desactivar Usuario
+																</h5>
+																<button type="button" class="close" data-dismiss="modal"
+																	aria-label="Close">
+																	<span aria-hidden="true">&times;</span>
+																</button>
+															</div>
+															<div class="modal-body">
+																Desea cambiar el estado del Usuario <span
+																	th:text="${usuario.nombre}"></span>?
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-secondary"
+																	data-dismiss="modal">Close</button>
+																<span th:if="${usuario.estado == 'activo'}"><a
+																	th:href="@{/estadoUsuario(idUsuario=${usuario.idUsuario})}"
+																	type="button" class="btn btn-danger">INACTIVO</a></span> <span
+																	th:if="${usuario.estado == 'inactivo'}"><a
+																	th:href="@{/estadoUsuario(idUsuario=${usuario.idUsuario})}"
+																	type="button" class="btn btn-warning">ACTIVO</a></span>
+															</div>
 														</div>
 													</div>
 												</div>
-											</div>
-											<!-- Modal -->
-
-										</tr>
-									</tbody>
-								</table>
+												<!-- Modal -->
+												
+											</tr>
+										</tbody>
+									</table>
+								</div>
 							</div>
-						</div>
-						<div class="card-footer">
-							<center>
-								<a th:href="@{/newUsuario}" class="btn btn-primary w-100 align-self-center"> CREAR</a>
-							</center>
 						</div>
 					</div>
 				</div>
-			</div>
-			<br>
-			<br>
-			<br>
 			<!--Comienzo contenido del footer-->
-			<footer
-				class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+			<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
 				<div class="col-md-4 d-flex align-items-center">
 					<ul>
-						<li><a href="#" target="_blank"
-							class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">MR
-								TW</a></li>
-						<li><a href="#" target="_blank"
-							class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">CONTACTO</a>
+						<li>
+							<a href="#" target="_blank"
+								class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">MR TW</a>
+						</li>
+						<li>
+							<a href="#" target="_blank"
+								class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">CONTACTO</a>
 						</li>
 					</ul>
 				</div>
 				<div
 					class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-					<span class="copyright"> © <script>
+					<span class="copyright">
+						©
+						<script>
 							document.write(new Date().getFullYear())
 						</script>, GAES 4 (SENA) </i>
 					</span>
 				</div>
 				<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-					<li class="ms-3"><a class="text-muted" href="#"><i
-							class="fab fa-facebook-square" width="24" height="24">&nbsp;&nbsp;</i></a></li>
-					<li class="ms-3"><a class="text-muted" href="#"><i
-							class="fab fa-twitter-square" width="24" height="24">&nbsp;&nbsp;</i></a></li>
-					<li class="ms-3"><a class="text-muted" href="#"><i
-							class="fab fa-google-plus" width="24" height="24">&nbsp;&nbsp;</i></a></li>
+					<li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-facebook-square" width="24"
+								height="24">&nbsp;&nbsp;</i></a></li>
+					<li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-twitter-square" width="24"
+								height="24">&nbsp;&nbsp;</i></a></li>
+					<li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-google-plus" width="24"
+								height="24">&nbsp;&nbsp;</i></a></li>
 				</ul>
 			</footer>
 			<!--fin contenido del footer-->
 		</div>
 	</div>
-
+		
 	<!--   Enlaces   -->
 	<script src="/js/sliderjs.js"></script>
 	<script src="/assets/js/core/jquery.min.js"></script>
@@ -357,42 +352,40 @@
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 
-	<script type="text/javascript">
-                $(document).ready(function () {
-                    $('#mydatatable tfoot th').each(function () {
-                        var title = $(this).text();
-                        $(this).html('<input type="text" placeholder="Filtrar.." />');
-                    });
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#mydatatable tfoot th').each(function () {
+                var title = $(this).text();
+                $(this).html('<input type="text" placeholder="Filtrar.." />');
+            });
 
-                    var table = $('#mydatatable').DataTable({
-                        "dom": 'B<"float-left"i><"float-right"f>t<"float-left"l><"float-right"p><"clearfix">',
-                        "responsive": true,
-                        "language": {
-                            "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
-                        },
-                        "order": [
-                            [0, "asc"]
-                        ],
-                        "initComplete": function () {
-                            this.api().columns().every(function () {
-                                var that = this;
+            var table = $('#mydatatable').DataTable({
+                "dom": 'B<"float-left"i><"float-right"f>t<"float-left"l><"float-right"p><"clearfix">',
+                "responsive": true,
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+                },
+                "order": [
+                    [0, "desc"]
+                ],
+                "initComplete": function () {
+                    this.api().columns().every(function () {
+                        var that = this;
 
-                                $('input', this.footer()).on('keyup change', function () {
-                                    if (that.search() !== this.value) {
-                                        that
-                                                .search(this.value)
-                                                .draw();
-                                    }
-                                });
-                            })
-                        },
-
-                        "buttons": ['csv', 'excel', 'pdf', 'print']
-                    });
-                });
-            </script>
-
-
+                        $('input', this.footer()).on('keyup change', function () {
+                            if (that.search() !== this.value) {
+                                that
+                                    .search(this.value)
+                                    .draw();
+                            }
+                        });
+                    })
+                },
+                
+                "buttons": ['csv', 'excel', 'pdf', 'print']
+            });
+        });
+    </script>
 </body>
 
 </html>
