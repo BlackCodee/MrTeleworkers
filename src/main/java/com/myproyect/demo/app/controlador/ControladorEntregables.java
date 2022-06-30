@@ -124,7 +124,7 @@ public class ControladorEntregables {
         	aux.setRevisado("No");
             iEntregable.save(aux);
         }
-		return "redirect:listarActividadLaboral";
+		return "redirect:/listarActividadLaboral";
 	}
 
 	@GetMapping("/newEntregables")
