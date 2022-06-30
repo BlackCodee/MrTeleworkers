@@ -11,7 +11,7 @@
   <script src="/js/morris.min.js"></script>
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/estilosadminAsistenciaT.css">
-    <title>ASISTENCIA TECNICA</title>
+    <title>CREAR USUARIO</title>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="calendario/jsCalendar.css">
@@ -173,123 +173,175 @@
 		<!--Fin menu slider-->
 		<!--Comienzo contenido de la pagina-->
 		<div class="contenido">
-			
-      
-      
-				  <br><br><br>
-			<div class="row">
-				<div class="col-3">
-				  <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-					<a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Canales de atención al empleado</a>
-					<a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Agregar al equipo</a>
-					<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Mensajería y chat en vivo</a>
-					
-				  </div>
-				</div>
-				<div class="col-9">
-				  <div class="tab-content" id="v-pills-tabContent">
-					<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"><h1>Canales de atención al cliente</h1>
-					  <div class="card mb-3" style="max-width: 540px;">
-						<div class="row no-gutters">
-						  <div class="col-md-4">
-							<img src="/img/correo electronico.jpg" alt="...">
-						  </div>
-						  <div class="col-md-8">
-							<div class="card-body">
-							  <h5 class="card-title">Correo electrónico</h5>
-							  <p class="card-text">Comparta este correo electrónico con sus empleados para que puedan comunicarse con usted si necesitan ayuda. Además, puede crear un número ilimitado de correos electrónicos personalizados o reenviar una dirección existente.</p>
-							  <p class="card-text"><small class="text-muted">Su correo electrónico es SupportAdmin@MR.TW.com</small></p>
-							</div>
-						  </div>
-						</div>
-					  </div>
-					
-					<div class="card mb-3" style="max-width: 540px;">
-					  <div class="row no-gutters">
-						<div class="col-md-4">
-						  <img src="/img/mensajeria.jfif" alt="...">
-						</div>
-						<div class="col-md-8">
-						  <div class="card-body">
-							<h5 class="card-title">Mensajería y chat en vivo</h5>
-							<p class="card-text">Conéctese con los clientes a través de Internet, dispositivos móviles y redes sociales.Comience con la red social que desees!</p>
-							<p class="card-text"><small class="text-muted">Agregue una red social</small></p>
-						  </div>
-						</div>
-					  </div>
-					</div>
-					<div class="card mb-3" style="max-width: 540px;">
-					  <div class="row no-gutters">
-						<div class="col-md-4">
-						  <img src="/img/voz.jpg" alt="...">
-						</div>
-						<div class="col-md-8">
-						  <div class="card-body">
-							<h5 class="card-title">Voz</h5>
-							<p class="card-text">Conectarse con sus empleados por telèfono le permite mantenerse al tanto de sus necesidades.</p>
-							<p class="card-text"><small class="text-muted">Su nùmero de telèfono es +1 (619) 567-1597</small></p>
-						  </div>
-						</div>
-					  </div>
-					</div>
-				  </div>
-					<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"><h1>Agregar a su equipo</h1>
-							<div class="card mb-3" style="max-width: 540px;">
-					  <div class="row no-gutters">
-						<div class="col-md-4">
-						  <img src="/img/agente.jpg" alt="...">
-						</div>
-						<div class="col-md-8">
-						  <div class="card-body">
-							<h5 class="card-title">Agentes Tecnicos</h5>
-							<p class="card-text">Añade y soluciona las fallas presentadas o solicitudes realizadas por los empleados de la compañia!</p>
-							<p class="card-text"><a type="button" class="btn btn-primary" th:href="@{/newAgentes}">Agregar agentes</a></p>
-						  </div>
-						</div>
-					  </div>
-					</div>	
-							   
-						  </div>
-					  <br><br>
-					  <br><br>
-					
-					<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"><h1>Configurar en los canales sociales</h1>
-					<br><br>
-					<p>Permita que sus empleados obtengan respuestas ràpidas a travès de sus canales sociales favoritos. Puede conectar aplicaciones de mensajerìa directa a MR.TW en cualquier momento en:  <button type="button" class="btn btn-primary btn-sm">Centro de Administraciòn</button></p>
-					<br>
-					<div class="redes card col-md-11">
-					  <div class="card-body">
-						<img src="/img/messenger.jfif" alt=""> Messenger <img src="/img/WhatsApp-Logotipo.png" alt=""> WhatsApp <img src="/img/instagram_ig_logo_icon_134013.png" alt=""> Instagram <img src="/img/twitter-logo-6.png" alt=""> Twitter <img src="/img/unnamed.png" alt=""> Line
-						
-					  </div>
-					</div>
-					<br>
-						<br>
-						<h4>Comience con Messenger</h4>
-						<br>
-						<p>1. Vincular cuenta de Facebook</p>
-						<br>
-						<button type="button" class="btn "> <a href="https://www.facebook.com/" target="blank">Ir a Facebook</a></button>
-						<br><br>
-						<p>2.Seleccionar página de Facebook</p>
-					</div>
-					<div class="tab-pane fade incidentes" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"><h1>Mayor rapidez al resolver incidentes</h1>
-					<br>
-					<img src="/img/what-is-itil-incident-management.png" alt="">
-					<br>
-					<br>
-				  
-					
-						
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <br><br>
+                            <div class="card">
+                                <div class="card-header bg-dark text-light">
+                                    <center><h4>Formulario de registro de usuarios</h4></center>
+                                </div>
+                                <div class="card-body">
+                                    
+                                     <form th:action="@{/saveUsuario}" th:object=${usuario} id="form-registro"  class="needs-validation" method="POST" novalidate>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="name" class="control-label">Nombre</label>
+                                                <input th:field="*{nombre}" type="text" class="form-control" id="name" placeholder="Nombre" name="nombre" required>
+                                                		
+												<div class="valid-feedback">¡Campo Valido!</div>
+												<div class="invalid-feedback">¡Ingrese nombre del usuario!</div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="DI" class="control-label">Documento de Identificacion</label>
+                                                <input th:field="*{dni}" type="text" class="form-control" id="DI" placeholder="DNI" name="DNI" required>
+                                                		
+												<div class="valid-feedback">¡Campo Valido!</div>
+												<div class="invalid-feedback">¡Ingrese documento del usuario!</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="fechaN" class="control-label">Fecha de Nacimiento</label>
+                                                <input th:field="*{fechadenacimiento}" type="text" class="form-control" id="fechaN" placeholder="YYYY-MM-DD" name="nacimiento" required>
+		
+												<div class="valid-feedback">¡Campo Valido!</div>
+												<div class="invalid-feedback">¡Ingrese fecha de nacimiento del usuario!</div>                                                
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="Tel" class="control-label">Telefono</label>
+                                                <input th:field="*{telefono}" type="number" class="form-control" id="tel" placeholder="Numero de Telefono" name="telefono" required>
+                                                		
+												<div class="valid-feedback">¡Campo Valido!</div>
+												<div class="invalid-feedback">¡Ingrese telefono del usuario!</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="email" class="control-label">email</label>
+                                                <input th:field="*{email}" type="email" class="form-control" id="email" placeholder="Email" name="email" required>
+                                                		
+												<div class="valid-feedback">¡Campo Valido!</div>
+												<div class="invalid-feedback">¡Ingrese email del usuario!</div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="area" class="control-label">area</label>
+                                                <select th:field="*{areaidArea.idArea}" id="area" class="form-control" name="area" required>
+                                                    <option value="1">Contabilidad</option>
+                                                    <option value="2">Manufactura</option>
+                                                    <option value="3">Bienestar al empleado</option>
+                                                    <option value="4">Administrativa</option>
+                                                    <option value="5">Envios</option>
+                                                </select>
+                                                		
+												<div class="valid-feedback">¡Campo Valido!</div>
+												<div class="invalid-feedback">¡Asigne un area al empleado!</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="horario" class="control-label">Horario</label>
+                                                <select th:field="*{horario}" id="horario" class="form-control" name="horario" required>
+                                                    <option value="6 AM">6 AM</option>
+                                                    <option value="9 AM">9 AM</option>
+                                                    <option value="2 PM">2 PM</option>
+                                                </select>
+                                                		
+												<div class="valid-feedback">¡Campo Valido!</div>
+												<div class="invalid-feedback">¡Asigne un horario al empleado!</div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="rol" class="control-label">Rol del empleado</label>
+                                                <select th:field="*{idRol.idRol}" id="rol" class="form-control"  name="rol" required>
+                                                    <option value="3">Jefe de Area</option>
+                                                    <option value="2">Empleado</option>
+                                                    <option value="4">Agente Tecnico</option>
+                                                    <option value="1">Administrador</option>
+                                                </select>
+                                                		
+												<div class="valid-feedback">¡Campo Valido!</div>
+												<div class="invalid-feedback">¡Asigne un rol al empleado!</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-3">
+                                                <label for="inventario">inventario</label>
+                                                <input th:field="*{idInventario.idInventario}" type="number" class="form-control" id="inventario" placeholder="inventario" name="inventario" required>
+                                                		
+												<div class="valid-feedback">¡Campo Valido!</div>
+												<div class="invalid-feedback">¡Ingrese id 1 de inventario!</div>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                            	<label for="idUsuario">Id usuario</label>
+                                                <input th:field="*{idUsuario}" type="number" class="form-control" id="idUsuario" placeholder="idUsuario" name="idUsuario" readonly>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                            	<label for="contrasena" class="control-label">Contraseña</label>
+                                               	<input th:field="*{password}" type="text" class="form-control" id="contrasena" placeholder="contraseña" name="contrasena" required>
+		
+												<div class="valid-feedback">¡Campo Valido!</div>
+												<div class="invalid-feedback">¡Ingrese una contraseña para el usuario!</div>
+                                            </div>
+                                        </div>
+		                                <div class="form-row justify-content-center">
+		                                    <center>
+											<button type="button" class="btn btn-success"
+												data-toggle="modal" data-target="#exampleModal"
+												th:attr="data-target='#exampleModal'+${usuario.idUsuario}">
+												Crear
+											</button>
+		                                    <a th:href="@{/listarUsuario}" class="btn btn-primary text-light"> Volver </a>
+		                                    <!-- Modal Editar-->
+												<div class="modal fade"
+													th:attr="id='exampleModal'+${usuario.idUsuario}"
+													tabindex="-1" aria-labelledby="exampleModalLabel"
+													aria-hidden="true">
+													<div class="modal-dialog">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h5 class="modal-title" id="exampleModalLabel">Crear Usuario</h5>
+																<button type="button" class="close" data-dismiss="modal"
+																	aria-label="Close">
+																	<span aria-hidden="true">&times;</span>
+																</button>
+															</div>
+															<div class="modal-body">
+																Desea crear el usuario <span
+																	th:text="${usuario.idUsuario}"></span>?
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+																<button type="submit" class="btn btn-info text-light" name="btnCrear">Crear</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											<!-- Modal -->   
+		                                    </center>
+		                                </div>
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <br><br>
+                            <div class="card">
+                                <div class="card-header bg-dark text-light">
+                                    <h3>Creados recientemente</h3>
+                                </div>
 
-					
-						
+                                <div class="card-body">
 
-					 
-				  </div>
-					</div>
-				  </div>
-				</div>
+                                </div>
+                                <div class="card-footer">
+                                    <center><a th:href="@{/listarUsuario}" class="btn btn-primary text-light"> Ver todos </a></center>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 			<!--Comienzo contenido del footer-->
 			<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
 				<div class="col-md-4 d-flex align-items-center">
@@ -323,11 +375,47 @@
 				</ul>
 			</footer>
 			<!--fin contenido del footer-->
-		</div>
-		
-	<script src="/js/sliderjs.js"></script>
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    
-</body>
+            </div>
+        <!--   Enlaces   -->
+		<script src="/js/sliderjs.js"></script>
+        <script src="/assets/js/core/jquery.min.js"></script>
+        <script src="/assets/js/core/popper.min.js"></script>
+        <script src="/assets/js/core/bootstrap.min.js"></script>
+        <!--   Datatables-->
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>  
+
+        <!-- extension responsive -->
+        <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>  
+        <script>
+            $(document).ready(function () {
+                $('#tableCap').DataTable({
+                    responsive: true
+                });
+            });
+
+        </script>
+   		<script> (function () {
+			  'use strict'
+			
+			  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+			  var forms = document.querySelectorAll('.needs-validation')
+			
+			  // Loop over them and prevent submission
+			  Array.prototype.slice.call(forms)
+			    .forEach(function (form) {
+			      form.addEventListener('submit', function (event) {
+			        if (!form.checkValidity()) {
+			          event.preventDefault()
+			          event.stopPropagation()
+			        }
+			
+			        form.classList.add('was-validated')
+			      }, false)
+			    })
+			})()
+		</script>
+
+
+    </body>
 
 </html>
