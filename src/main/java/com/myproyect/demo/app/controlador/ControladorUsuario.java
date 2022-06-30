@@ -59,8 +59,8 @@ public class ControladorUsuario {
 	
 	@GetMapping("/editarUsuario/{idUsuario}")
 	public String editar(@PathVariable int idUsuario, Model model) {
-		//Usuario usu = iUsuario.findIdUsuario(idUsuario);
-		model.addAttribute("usuario", new Usuario());
+		Usuario usu = iUsuario.findIdUsuario(idUsuario);
+		model.addAttribute("usuario", usu);
 		return "Seguimiento/Administrador/editarUsuario";
 	}
 	
