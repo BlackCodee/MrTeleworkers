@@ -80,7 +80,7 @@ public class ControladorEntregables {
 		return "Seguimiento/Empleado/Entrega_Actividad";
 	}
 	
-	@GetMapping("/saveEntregables/{idActividad}")
+	@PostMapping("/saveEntregables/{idActividad}")
 	public String save(@Validated Entregables ent, @PathVariable int idActividad , Model model) {
 		
 		ActividadLaboral actividad = iActividad.findByIdActividad(idActividad);	
