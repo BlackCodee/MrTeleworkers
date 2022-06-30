@@ -110,7 +110,7 @@ public class ControladorEntregables {
 		
 		
 		service.save(ent);
-		return "redirect:listarActividadLaboralEmpleado";
+		return "redirect:/listarActividadLaboralEmpleado";
 		
 	}
 	
