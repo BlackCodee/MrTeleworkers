@@ -67,7 +67,7 @@
 	<header class=" py-1 mb-0 bg-dark ">
 		<div class="container d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 			<button type="button">
-				<img src="assets/message.svg" alt="" class="menu-bar bi me-2 bg-light text-light">
+				<img src="assets/menu.png" alt="" width="30" height="30" class="menu-bar bi me-2 bg-light text-light">
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
@@ -111,7 +111,7 @@
 						</li>
 
 						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarCapacitaciones}">Gestionar Capacitacion</a>
+							<a class="nav__link nav__link--inside" th:href="@{/listarCapacitaciones}">Gestionar Capacitación</a>
 						</li>
 					</ul>
 
@@ -143,7 +143,7 @@
 				<li class="list__item list__item--click">
 					<div class="list__button list__button--click">
 						<img src="/assets/message.svg" class="list__img">
-						<a href="#" class="nav__link">ASISTENCIA TECNICA</a>
+						<a href="#" class="nav__link">ASISTENCIA TÉCNICA</a>
 						<img src="/assets/arrow.svg" class="list__arrow">
 					</div>
 
@@ -152,7 +152,7 @@
                         <a class="nav__link nav__link--inside" th:href="@{/Asistencia-Admin}">Inicio</a>
                     </li>
 						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarSolicitudes}">Gestion de Solicitudes</a>
+							<a class="nav__link nav__link--inside" th:href="@{/listarSolicitudes}">Gestión de Solicitudes</a>
 						</li>
 
 						<li class="list__inside">
@@ -160,7 +160,7 @@
 						</li>
 
 						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarAgentes}">agentes Tecnicos</a>
+							<a class="nav__link nav__link--inside" th:href="@{/listarAgentes}">Agentes Técnicos</a>
 						</li>
 					</ul>
 				</li>
@@ -193,7 +193,7 @@
 												<div class="invalid-feedback">¡Ingrese nombre del usuario!</div>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="DI" class="control-label">Documento de Identificacion</label>
+                                                <label for="DI" class="control-label">Documento de Identificación</label>
                                                 <input th:field="*{dni}" type="text" class="form-control" id="DI" placeholder="DNI" name="DNI" required>
                                                 		
 												<div class="valid-feedback">¡Campo Valido!</div>
@@ -203,17 +203,17 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="fechaN" class="control-label">Fecha de Nacimiento</label>
-                                                <input th:field="*{fechadenacimiento}" type="text" class="form-control" id="fechaN" placeholder="YYYY-MM-DD" name="nacimiento" required>
+                                                <input th:field="*{fechadenacimiento}" type="date" class="form-control" id="fechaN" placeholder="YYYY-MM-DD" name="nacimiento" required>
 		
 												<div class="valid-feedback">¡Campo Valido!</div>
 												<div class="invalid-feedback">¡Ingrese fecha de nacimiento del usuario!</div>                                                
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="Tel" class="control-label">Telefono</label>
-                                                <input th:field="*{telefono}" type="number" class="form-control" id="tel" placeholder="Numero de Telefono" name="telefono" required>
+                                                <label for="Tel" class="control-label">Teléfono</label>
+                                                <input th:field="*{telefono}" type="number" class="form-control" id="tel" placeholder="Numero de Teléfono" name="telefono" required>
                                                 		
 												<div class="valid-feedback">¡Campo Valido!</div>
-												<div class="invalid-feedback">¡Ingrese telefono del usuario!</div>
+												<div class="invalid-feedback">¡Ingrese teléfono del usuario!</div>
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -231,7 +231,7 @@
                                                     <option value="2">Manufactura</option>
                                                     <option value="3">Bienestar al empleado</option>
                                                     <option value="4">Administrativa</option>
-                                                    <option value="5">Envios</option>
+                                                    <option value="5">Envíos</option>
                                                 </select>
                                                 		
 												<div class="valid-feedback">¡Campo Valido!</div>
@@ -255,7 +255,7 @@
                                                 <select th:field="*{idRol.idRol}" id="rol" class="form-control"  name="rol" required>
                                                     <option value="3">Jefe de Area</option>
                                                     <option value="2">Empleado</option>
-                                                    <option value="4">Agente Tecnico</option>
+                                                    <option value="4">Agente Técnico</option>
                                                     <option value="1">Administrador</option>
                                                 </select>
                                                 		

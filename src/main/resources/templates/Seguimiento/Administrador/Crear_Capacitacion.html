@@ -108,8 +108,7 @@
 		<div
 			class="container d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 			<button type="button">
-				<img src="assets/message.svg" alt=""
-					class="menu-bar bi me-2 bg-light text-light">
+				<img src="assets/menu.png" alt="" width="30" height="30" class="menu-bar bi me-2 bg-light text-light">
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
@@ -154,7 +153,7 @@
 
 					<li class="list__inside"><a
 						class="nav__link nav__link--inside"
-						th:href="@{/listarCapacitaciones}">Gestionar Capacitacion</a></li>
+						th:href="@{/listarCapacitaciones}">Gestionar Capacitación</a></li>
 				</ul>
 
 			</li>
@@ -183,7 +182,7 @@
 			<li class="list__item list__item--click">
 				<div class="list__button list__button--click">
 					<img src="/assets/message.svg" class="list__img"> <a href="#"
-						class="nav__link">ASISTENCIA TECNICA</a> <img
+						class="nav__link">ASISTENCIA TÉCNICA</a> <img
 						src="/assets/arrow.svg" class="list__arrow">
 				</div>
 
@@ -193,15 +192,15 @@
 					</li>
 					<li class="list__inside"><a
 						class="nav__link nav__link--inside"
-						th:href="@{/listarSolicitudes}">Gestion de Solicitudes</a></li>
+						th:href="@{/listarSolicitudes}">Gestión de Solicitudes</a></li>
 
 					<li class="list__inside"><a
 						class="nav__link nav__link--inside" th:href="@{/Informes-Admin}">Informe</a>
 					</li>
 
 					<li class="list__inside"><a
-						class="nav__link nav__link--inside" th:href="@{/listarAgentes}">agentes
-							Tecnicos</a></li>
+						class="nav__link nav__link--inside" th:href="@{/listarAgentes}">Agentes
+							Técnicos</a></li>
 				</ul>
 			</li>
 
@@ -248,10 +247,10 @@
 												<div class="invalid-feedback text-light">¡Ingrese nombre del encargado!</div>
 											</div>
 											<div class="form-group col-md-5">
-												<label for="DNI">Documento de Identificacion</label> 
+												<label for="DNI">Documento de Identificación</label> 
 												<input
 													th:field="*{dni}" type="number" class="form-control"
-													id="DNI" placeholder="Doc. Identificacion" name="DNI" required>
+													id="DNI" placeholder="Doc. Identificación" name="DNI" required>
 												
 												<div class="valid-feedback text-light">¡Campo Valido!</div>
 												<div class="invalid-feedback text-light">¡Ingrese el documento del encargado!</div>
@@ -268,43 +267,43 @@
 												<div class="invalid-feedback text-light">¡Ingrese el email del encargado!</div>
 											</div>
 											<div class="form-group col-md-4">
-												<label for="nomcap">Nombre capacitacion</label> 
+												<label for="nomcap">Nombre capacitación</label> 
 												<input
 													th:field="*{nombreCapacitacion}" type="text"
 													class="form-control" id="nomcap" name="nomcap"
-													placeholder="Nombre de la capacitacion" required>
+													placeholder="Nombre de la capacitación" required>
 													
 												<div class="valid-feedback text-light">¡Campo Valido!</div>
-												<div class="invalid-feedback text-light">¡Ingrese nombre de la capacitacion!</div>
+												<div class="invalid-feedback text-light">¡Ingrese nombre de la capacitación!</div>
 											</div>
 											<div class="form-group col-md-4">
-												<label for="Telefono">Telefono celular</label> 
+												<label for="Telefono">Teléfono celular</label> 
 												<input
 													th:field="*{telefono}" type="text" class="form-control"
-													id="tel" name="tel" placeholder="Telefono" required>
+													id="tel" name="tel" placeholder="Teléfono" required>
 													
 												<div class="valid-feedback text-light">¡Campo Valido!</div>
-												<div class="invalid-feedback text-light">¡Ingrese el telefono del encargado!</div>
+												<div class="invalid-feedback text-light">¡Ingrese el teléfono del encargado!</div>
 											</div>
 										</div>
 										<div class="form-row">
 											<div class="form-group col-md-4">
-												<label for="clases">Hora de realizacion</label> 
+												<label for="clases">Hora de realización</label> 
 												<input
-													th:field="*{hora}" type="text" class="form-control"
+													th:field="*{hora}" type="time" class="form-control"
 													id="hora" name="hora" placeholder="HH:MM:SS" required>
 													
 												<div class="valid-feedback text-light">¡Campo Valido!</div>
 												<div class="invalid-feedback text-light">¡Ingrese la hora de la capacitación!</div>
 											</div>
 											<div class="form-group col-md-4">
-												<label for="fecha">Fecha de realizacion</label> 
+												<label for="fecha">Fecha de realización</label> 
 												<input
-													th:field="*{fecha}" type="text" class="form-control"
+													th:field="*{fecha}" type="date" class="form-control"
 													id="fecha" name="fecha" placeholder="YYYY:MM:DD" required> 
 													
 												<div class="valid-feedback text-light">¡Campo Valido!</div>
-												<div class="invalid-feedback text-light">¡Ingrese la fecha de la capacitacion!</div>
+												<div class="invalid-feedback text-light">¡Ingrese la fecha de la capacitación!</div>
 											</div>
 											<div class="form-group col-md-4">
 												<label for="Estado">Estado</label> 
@@ -313,7 +312,7 @@
 													id="estado" name="estado" placeholder="activo/inactivo" required>
 													
 												<div class="valid-feedback text-light">¡Campo Valido!</div>
-												<div class="invalid-feedback text-light">¡Ingrese estado de la capacitacion!</div>
+												<div class="invalid-feedback text-light">¡Ingrese estado de la capacitación!</div>
 											</div>
 										</div>
 										<div class="form-row">
@@ -333,12 +332,12 @@
 											<div class="form-group col-md-12">
 												<div class="form-check">
 													<label class="form-check-label" for="gridCheck">
-														Descripcion de la capacitacion</label><br>
+														Descripción de la capacitación</label><br>
 													<textarea th:field="*{descripcion}" name="Descripcion"
 														id="Descripcion" cols="140" rows="10" required></textarea>
 													
 													<div class="valid-feedback text-light">¡Campo Valido!</div>
-													<div class="invalid-feedback text-light">¡Ingrese descripcion de la capacitación!</div>
+													<div class="invalid-feedback text-light">¡Ingrese descripción de la capacitación!</div>
 												</div>
 											</div>
 										</div>
@@ -362,7 +361,7 @@
 													<div class="modal-dialog">
 														<div class="modal-content">
 															<div class="modal-header">
-																<h5 class="modal-title" id="exampleModalLabel">Crear capacitacion</h5>
+																<h5 class="modal-title" id="exampleModalLabel">Crear capacitación</h5>
 																<button type="button" class="close" data-dismiss="modal"
 																	aria-label="Close">
 																	<span aria-hidden="true">&times;</span>

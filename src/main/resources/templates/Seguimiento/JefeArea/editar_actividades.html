@@ -77,7 +77,7 @@
 	<header class=" py-1 mb-0 bg-dark ">
 		<div class="container d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 			<button type="button">
-				<img src="/assets/message.svg" alt="" class="menu-bar bi me-2 bg-light text-light">
+				<img src="assets/menu.png" alt="" width="30" height="30" class="menu-bar bi me-2 bg-light text-light">
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
@@ -118,7 +118,7 @@
                     </li>
 
                     <li class="list__inside">
-                        <a class="nav__link nav__link--inside" th:href="@{/newActividadLaboral}">Creacion Eventos</a>
+                        <a class="nav__link nav__link--inside" th:href="@{/newActividadLaboral}">Creación Eventos</a>
                     </li>
 
                     <li class="list__inside">
@@ -170,7 +170,7 @@
 											<option value="2">Manufactura</option>
 											<option value="3">Bienestar al empleado</option>
 											<option value="4">Administrativa</option>
-											<option value="5">Envios</option>
+											<option value="5">Envíos</option>
 										</select>
 									</div>
 									<div class="form-group col-md-6">
@@ -184,31 +184,31 @@
 								</div>
 								<div class="form-row">
 									<div class="form-group col-md-6">
-										<label for="fecha_f">Fecha finalizacion</label> 
-										<input th:field="*{fechaEntrega}" type="text" class="form-control"
+										<label for="fecha_f">Fecha finalización</label> 
+										<input th:field="*{fechaEntrega}" type="date" class="form-control"
 										id="fecha_f" name="fecha_f"
-										placeholder="fecha de entrega o finalizacion" required>
+										placeholder="fecha de entrega o finalización" required>
 										
 										<div class="valid-feedback">¡Campo Valido!</div>
-										<div class="invalid-feedback">¡Ingrese la fecha de finalizacion de la actividad!</div>
+										<div class="invalid-feedback">¡Ingrese la fecha de finalización de la actividad!</div>
 									</div>
 									<div class="form-group col-md-6">
-										<label for="hora_f">Hora finalizacion</label> 
-										<input th:field="*{horaEntrega}" type="text" class="form-control"
-										id="hora_f" name="hora_f" placeholder="Hora de finalizacion" required>
+										<label for="hora_f">Hora finalización</label> 
+										<input th:field="*{horaEntrega}" type="time" class="form-control"
+										id="hora_f" name="hora_f" placeholder="Hora de finalización" required>
 										
 										<div class="valid-feedback">¡Campo Valido!</div>
-										<div class="invalid-feedback">¡Ingrese la hora de finalizacion de la actividad!</div>
+										<div class="invalid-feedback">¡Ingrese la hora de finalización de la actividad!</div>
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="form-group col-md-12">
-										<label for="descri">Descripcion</label> 
+										<label for="descri">Descripción</label> 
 										<input th:field="*{descripcion}" type="text" class="form-control"
-										id="descri" name="descri" placeholder="descripcion" required>
+										id="descri" name="descri" placeholder="descripción" required>
 										
 										<div class="valid-feedback">¡Campo Valido!</div>
-										<div class="invalid-feedback">¡Ingrese la descripcion de la actividad!</div>
+										<div class="invalid-feedback">¡Ingrese la descripción de la actividad!</div>
 									</div>
 								</div>
 								<br>

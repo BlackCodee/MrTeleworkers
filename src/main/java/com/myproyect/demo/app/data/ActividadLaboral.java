@@ -45,7 +45,7 @@ public class ActividadLaboral implements Serializable{
     private Date fechaEntrega;
     @Column(name = "Hora_Entrega")
     @Temporal(TemporalType.TIME)
-    @DateTimeFormat(pattern="HH:mm:ss")
+    @DateTimeFormat(pattern="HH:mm")
     private Date horaEntrega;
     @Column(name = "Descripcion" ,length = 200)
     private String descripcion;

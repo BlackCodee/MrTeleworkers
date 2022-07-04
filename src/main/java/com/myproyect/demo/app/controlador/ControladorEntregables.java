@@ -89,7 +89,7 @@ public class ControladorEntregables {
 		
 		Date fecha = new Date();
 		Date hora = new Date();
-		
+	
 		ent.setFechaEntrega(fecha);
 		ent.setHoraEntrega(hora);
 		

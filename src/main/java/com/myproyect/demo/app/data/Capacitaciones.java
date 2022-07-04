@@ -37,7 +37,7 @@ public class Capacitaciones implements Serializable{
     private Date fecha;
     @Column(name = "Hora")
     @Temporal (TemporalType.TIME)
-    @DateTimeFormat(pattern="HH:mm:ss")
+    @DateTimeFormat(pattern="HH:mm")
     private Date hora;
     @Column(name = "Nombre_Encargado")
     private String nombreEncargado;
