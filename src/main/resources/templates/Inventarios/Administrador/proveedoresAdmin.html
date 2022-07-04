@@ -133,7 +133,7 @@ function eliminarProveedor(idProveedor){
 	<header class=" py-1 mb-0 bg-dark ">
 		<div class="container d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 			<button type="button">
-				<img src="assets/message.svg" alt="" class="menu-bar bi me-2 bg-light text-light">
+				<img src="assets/menu.png" alt="" width="30" height="30" class="menu-bar bi me-2 bg-light text-light">
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
@@ -176,7 +176,7 @@ function eliminarProveedor(idProveedor){
 						</li>
 
 						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarCapacitaciones}">Gestionar Capacitacion</a>
+							<a class="nav__link nav__link--inside" th:href="@{/listarCapacitaciones}">Gestionar Capacitación</a>
 						</li>
 					</ul>
 
@@ -215,7 +215,7 @@ function eliminarProveedor(idProveedor){
                         <a class="nav__link nav__link--inside" th:href="@{/Asistencia-Admin}">Inicio</a>
                     </li>
 						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarSolicitudes}">Gestion de Solicitudes</a>
+							<a class="nav__link nav__link--inside" th:href="@{/listarSolicitudes}">Gestión de Solicitudes</a>
 						</li>
 
 						<li class="list__inside">
@@ -223,7 +223,7 @@ function eliminarProveedor(idProveedor){
 						</li>
 
 						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarAgentes}">agentes Tecnicos</a>
+							<a class="nav__link nav__link--inside" th:href="@{/listarAgentes}">Agentes Técnicos</a>
 						</li>
 					</ul>
 				</li>
@@ -249,7 +249,7 @@ function eliminarProveedor(idProveedor){
 									<th>NOMBRE</th>
 									<th>ESTADO</th>
 									<th>CORREO</th>
-									<th>TELEFONO</th>
+									<th>TELÉFONO</th>
 									<th>ACCIONES</th>
 
 								</thead>
@@ -280,7 +280,7 @@ function eliminarProveedor(idProveedor){
 							        </button>
 							      </div>
 							      <div class="modal-body">
-							        Desea cambiar el estado del proveedor <span th:text="${proveedor.nombreProveedor}"></span>?
+							        ¿Desea cambiar el estado del proveedor <span th:text="${proveedor.nombreProveedor}"></span>?
 							      </div>
 							      <div class="modal-footer">
 							        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

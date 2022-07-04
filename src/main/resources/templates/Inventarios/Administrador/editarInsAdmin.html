@@ -133,7 +133,7 @@ function eliminarInsumos(idInsumo){
 	<header class=" py-1 mb-0 bg-dark ">
 		<div class="container d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 			<button type="button">
-				<img src="/assets/message.svg" alt="" class="menu-bar bi me-2 bg-light text-light">
+				<img src="/assets/menu.png" alt="" width="30" height="30" class="menu-bar bi me-2 bg-light text-light">
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
@@ -176,7 +176,7 @@ function eliminarInsumos(idInsumo){
 						</li>
 
 						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarCapacitaciones}">Gestionar Capacitacion</a>
+							<a class="nav__link nav__link--inside" th:href="@{/listarCapacitaciones}">Gestionar Capacitación</a>
 						</li>
 					</ul>
 
@@ -215,7 +215,7 @@ function eliminarInsumos(idInsumo){
                         <a class="nav__link nav__link--inside" th:href="@{/Asistencia-Admin}">Inicio</a>
                     </li>
 						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarSolicitudes}">Gestion de Solicitudes</a>
+							<a class="nav__link nav__link--inside" th:href="@{/listarSolicitudes}">Gestión de Solicitudes</a>
 						</li>
 
 						<li class="list__inside">
@@ -223,7 +223,7 @@ function eliminarInsumos(idInsumo){
 						</li>
 
 						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarAgentes}">agentes Tecnicos</a>
+							<a class="nav__link nav__link--inside" th:href="@{/listarAgentes}">Agentes Técnicos</a>
 						</li>
 					</ul>
 				</li>
@@ -250,7 +250,7 @@ function eliminarInsumos(idInsumo){
 											<label>ID INVENTARIO</label> 
 											<input th:field="*{idInventario}" type="text" class="form-control" required>
 												
-											<div class="valid-feedback">¡Campo Valido!</div>
+											<div class="valid-feedback">¡Campo Válido!</div>
 											<div class="invalid-feedback">¡Ingrese el id de inventario!</div>
 										</div>
 										<div class="col-md-6 mb-3">
@@ -260,10 +260,10 @@ function eliminarInsumos(idInsumo){
 									</div>
 									<div class="form-row">
 										<div class="col-md-6 mb-3">
-											<label>DESCRIPCION</label> 
+											<label>DESCRIPCIÓN</label> 
 											<input th:field="*{descripcion}" type="text" class="form-control" required>
 													
-											<div class="valid-feedback">¡Campo Valido!</div>
+											<div class="valid-feedback">¡Campo Válido!</div>
 											<div class="invalid-feedback">¡Ingrese la descripción del insumo!</div>
 										</div>
                                       
@@ -271,7 +271,7 @@ function eliminarInsumos(idInsumo){
 											<label>NOMBRE INSUMO</label> 
 											<input th:field="*{nombreInsumo}" type="text" class="form-control" required>
 													
-											<div class="valid-feedback">¡Campo Valido!</div>
+											<div class="valid-feedback">¡Campo Válido!</div>
 											<div class="invalid-feedback">¡Ingrese el nombre del insumo!</div>
 										</div>
 									</div>	
@@ -280,14 +280,14 @@ function eliminarInsumos(idInsumo){
 											<label>CANTIDAD</label> 
 											<input th:field="*{cantidadDisponible}" type="text" class="form-control" required>
 													
-											<div class="valid-feedback">¡Campo Valido!</div>
+											<div class="valid-feedback">¡Campo Válido!</div>
 											<div class="invalid-feedback">¡Ingrese la cantidad disponible!</div>
 										</div>
 										<div class="col-md-6 mb-3">
 											<label>ESTADO</label> 
 											<input th:field="*{estado}" type="text" class="form-control" required>
 												
-											<div class="valid-feedback">¡Campo Valido!</div>
+											<div class="valid-feedback">¡Campo Válido!</div>
 											<div class="invalid-feedback">¡Ingrese el estado del insumo!</div>
 										</div>
 									</div>
@@ -314,7 +314,7 @@ function eliminarInsumos(idInsumo){
 																</button>
 															</div>
 															<div class="modal-body">
-																Desea editar el insumo <span
+																¿Desea editar el insumo <span
 																	th:text="${insumos.idInsumo}"></span>?
 															</div>
 															<div class="modal-footer">

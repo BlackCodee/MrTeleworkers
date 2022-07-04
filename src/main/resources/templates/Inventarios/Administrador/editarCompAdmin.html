@@ -133,7 +133,7 @@ function eliminarInsumos(idInsumo){
 	<header class=" py-1 mb-0 bg-dark ">
 		<div class="container d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 			<button type="button">
-				<img src="/assets/message.svg" alt="" class="menu-bar bi me-2 bg-light text-light">
+				<img src="/assets/menu.png" alt="" width="30" height="30" class="menu-bar bi me-2 bg-light text-light">
 			</button>
 
 			<ul class="nav col-12 col-md-10 mb-2 justify-content-center mb-md-0">
@@ -176,7 +176,7 @@ function eliminarInsumos(idInsumo){
 						</li>
 
 						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarCapacitaciones}">Gestionar Capacitacion</a>
+							<a class="nav__link nav__link--inside" th:href="@{/listarCapacitaciones}">Gestionar Capacitación</a>
 						</li>
 					</ul>
 
@@ -215,7 +215,7 @@ function eliminarInsumos(idInsumo){
                         <a class="nav__link nav__link--inside" th:href="@{/Asistencia-Admin}">Inicio</a>
                     </li>
 						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarSolicitudes}">Gestion de Solicitudes</a>
+							<a class="nav__link nav__link--inside" th:href="@{/listarSolicitudes}">Gestión de Solicitudes</a>
 						</li>
 
 						<li class="list__inside">
@@ -223,7 +223,7 @@ function eliminarInsumos(idInsumo){
 						</li>
 
 						<li class="list__inside">
-							<a class="nav__link nav__link--inside" th:href="@{/listarAgentes}">agentes Tecnicos</a>
+							<a class="nav__link nav__link--inside" th:href="@{/listarAgentes}">Agentes Técnicos</a>
 						</li>
 					</ul>
 				</li>
@@ -253,7 +253,7 @@ function eliminarInsumos(idInsumo){
 												<label>ID INVENTARIO</label> 
 												<input th:field="*{idInventario}" type="text" class="form-control" required>
 												
-												<div class="valid-feedback">¡Campo Valido!</div>
+												<div class="valid-feedback">¡Campo Válido!</div>
 												<div class="invalid-feedback">¡Ingrese el id de inventario!</div>
 											</div>
 										</div>
@@ -262,14 +262,14 @@ function eliminarInsumos(idInsumo){
 												<label>MARCA</label> 
 												<input th:field="*{marca}" type="text" class="form-control" required>
 												
-												<div class="valid-feedback">¡Campo Valido!</div>
+												<div class="valid-feedback">¡Campo Válido!</div>
 												<div class="invalid-feedback">¡Ingrese la marca del computador!</div>
 											</div>
 											<div class="col-md-6 mb-3">
 												<label>MODELO</label> 
 												<input th:field="*{modelo}" type="text" class="form-control" required>
 												
-												<div class="valid-feedback">¡Campo Valido!</div>
+												<div class="valid-feedback">¡Campo Válido!</div>
 												<div class="invalid-feedback">¡Ingrese el modelo de computador!</div>
 											</div>
 										</div>
@@ -278,15 +278,15 @@ function eliminarInsumos(idInsumo){
 												<label>COLOR</label> 
 												<input th:field="*{color}" type="text" class="form-control" required>
 												
-												<div class="valid-feedback">¡Campo Valido!</div>
+												<div class="valid-feedback">¡Campo Válido!</div>
 												<div class="invalid-feedback">¡Ingrese el color del computador!</div>
 											</div>
 											<div class="col-md-6 mb-3">
-												<label>DESCRIPCION</label> 
+												<label>DESCRIPCIÓN</label> 
 												<input th:field="*{descripcion}" type="text" class="form-control" required>
 												
-												<div class="valid-feedback">¡Campo Valido!</div>
-												<div class="invalid-feedback">¡Ingrese la descripcion del computador!</div>
+												<div class="valid-feedback">¡Campo Válido!</div>
+												<div class="invalid-feedback">¡Ingrese la descripción del computador!</div>
 											</div>
 										</div>
 										<div class="form-row">
@@ -294,7 +294,7 @@ function eliminarInsumos(idInsumo){
 												<label>ESTADO</label> 
 												<input th:field="*{estado}" type="text" class="form-control" required>
 												
-												<div class="valid-feedback">¡Campo Valido!</div>
+												<div class="valid-feedback">¡Campo Válido!</div>
 												<div class="invalid-feedback">¡Ingrese el estado del computador!</div>
 											</div>
 											
@@ -322,7 +322,7 @@ function eliminarInsumos(idInsumo){
 																</button>
 															</div>
 															<div class="modal-body">
-																Desea editar el computador <span
+																¿Desea editar el computador <span
 																	th:text="${computador.idComputador}"></span>?
 															</div>
 															<div class="modal-footer">
